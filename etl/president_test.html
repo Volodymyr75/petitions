@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<title>ID.GOV.UA</title>
+
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
+<meta name="theme-color" content="#000000">
+<meta name="google" content="notranslate">
+<meta name="robots" content="noindex,follow" />
+
+<link rel="shortcut icon" href="https://id.gov.ua/favicon.ico">
+<link rel="apple-touch-icon" sizes="76x76" href="https://id.gov.ua/apple-icon.png">
+<link rel="stylesheet" href="design/styles/tooltip.css">
+<link rel="stylesheet" href="design/styles/butn_error.css">
+<link rel="stylesheet" href="design/styles/browserError.css">
+
+<link rel="stylesheet" href="design/styles/main.css?v=251211">
+<link rel="stylesheet" href="design/styles/msgbox.css">
+
+<link rel="stylesheet" href="design/styles/popup.css">
+<link rel="stylesheet" href="design/styles/alert.css">
+
+<link rel="stylesheet" href="design/vendor/jquery-ui/jquery-ui.min.css">
+
+<style data-jss="" data-meta="MuiTouchRipple">
+@-moz-keyframes mui-ripple-enter {
+    0% {
+    opacity: 0.1;
+    transform: scale(0);
+    }
+    100% {
+    opacity: 0.3;
+    transform: scale(1);
+    }
+}
+@-moz-keyframes mui-ripple-exit {
+    0% {
+    opacity: 1;
+    }
+    100% {
+    opacity: 0;
+    }
+}
+@-moz-keyframes mui-ripple-pulsate {
+    0% {
+    transform: scale(1);
+    }
+    50% {
+    transform: scale(0.92);
+    }
+    100% {
+    transform: scale(1);
+    }
+}
+</style><style data-jss="" data-meta="MuiTypography">
+.jss105 {
+    margin: 0;
+    display: block;
+}
+.jss110 {
+    color: rgba(0, 0, 0, 0.87);
+    font-size: 1.5rem;
+    font-weight: 400;
+    font-family: "e-Ukraine";
+    line-height: 1.35417em;
+}
+.jss112 {
+    color: rgba(0, 0, 0, 0.87);
+    font-size: 1rem;
+    font-weight: 400;
+    font-family: "e-Ukraine";
+    line-height: 1.5em;
+}
+.jss113 {
+    color: #000000;
+    font-size: 16px;
+    font-weight: 400;
+    font-family: "e-Ukraine";
+    line-height: 24px;
+    letter-spacing: -0.02em;
+}
+.jss114 {
+    color: rgba(0, 0, 0, 0.87);
+    font-size: 1rem;
+    font-weight: 400;
+    font-family: "e-Ukraine";
+    line-height: 1.5;
+    letter-spacing: 0.00938em;
+}
+.jss128 {
+    color: rgba(0, 0, 0, 0.54);
+}
+</style><style data-jss="" data-meta="MuiPaper">
+.jss20 {
+    background-color: #fff;
+}
+.jss22 {
+    box-shadow: none;
+}
+.jss29 {
+    box-shadow: 0px 4px 5px -2px rgba(0, 0, 0, 0.2),0px 7px 10px 1px rgba(0, 0, 0, 0.14),0px 2px 16px 1px rgba(0, 0, 0, 0.12);
+}
+</style><style data-jss="" data-meta="MuiSvgIcon">
+.jss151 {
+    fill: currentColor;
+    width: 1em;
+    height: 1em;
+    display: inline-block;
+    font-size: 24px;
+    transition: fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    user-select: none;
+    flex-shrink: 0;
+}
+</style><style data-jss="" data-meta="MuiToolbar">
+.jss147 {
+    display: flex;
+    position: relative;
+    align-items: center;
+}
+.jss148 {
+    padding-left: 16px;
+    padding-right: 16px;
+}
+@media (min-width:600px) {
+    .jss148 {
+    padding-left: 24px;
+    padding-right: 24px;
+    }
+}
+.jss149 {
+    min-height: 56px;
+}
+@media (min-width:0px) and (orientation: landscape) {
+    .jss149 {
+    min-height: 48px;
+    }
+}
+@media (min-width:600px) {
+    .jss149 {
+    min-height: 64px;
+    }
+}
+</style><style data-jss="" data-meta="MuiAppBar">
+.jss139 {
+    width: 100%;
+    display: flex;
+    z-index: 1100;
+    box-sizing: border-box;
+    flex-shrink: 0;
+    flex-direction: column;
+}
+.jss145 {
+    color: #fff;
+    background-color: #000000;
+}
+</style><style data-jss="" data-meta="MuiCssBaseline">
+html {
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+body {
+    margin: 0;
+    background-color: #fafafa;
+}
+@media print {
+    body {
+    background-color: #fff;
+    }
+}
+</style><style data-jss="" data-meta="MuiDivider">
+.jss158 {
+    height: 1px;
+    margin: 0;
+    border: none;
+    flex-shrink: 0;
+    background-color: rgba(0, 0, 0, 0.12);
+}
+</style><style data-jss="" data-meta="MuiDrawer">
+.jss94 {
+    flex: 0 0 auto;
+}
+.jss95 {
+    top: 0;
+    flex: 1 0 auto;
+    height: 100%;
+    display: flex;
+    z-index: 1200;
+    outline: none;
+    position: fixed;
+    overflow-y: auto;
+    flex-direction: column;
+    -webkit-overflow-scrolling: touch;
+}
+.jss96 {
+    left: 0;
+    right: auto;
+}
+.jss100 {
+    border-right: 1px solid rgba(0, 0, 0, 0.12);
+}
+</style><style data-jss="" data-meta="MuiGrid">
+.jss306 {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+}
+.jss307 {
+    margin: 0;
+    box-sizing: border-box;
+}
+.jss328 {
+    width: calc(100% + 8px);
+    margin: -4px;
+}
+.jss328 > .jss307 {
+    padding: 4px;
+}
+.jss346 {
+    flex-grow: 0;
+    max-width: 100%;
+    flex-basis: 100%;
+}
+@media (min-width:600px) {
+    .jss354 {
+    flex-grow: 0;
+    max-width: 50%;
+    flex-basis: 50%;
+    }
+}
+@media (min-width:1280px) {
+}
+@media (min-width:1920px) {
+}
+</style><style data-jss="">
+@media (max-width:1279.95px) {
+    .jss82 {
+    display: none;
+    }
+}
+</style><style data-jss="" data-meta="MuiListItemText">
+.jss403 {
+    flex: 1 1 auto;
+    padding: 0 16px;
+    min-width: 0;
+}
+.jss403:first-child {
+    padding-left: 0;
+}
+.jss406.jss408 {
+    font-size: inherit;
+}
+.jss407.jss408 {
+    font-size: inherit;
+}
+</style><style data-jss="">
+.jss130 {
+    color: #000;
+    padding: 20px;
+    background: #fff;
+}
+@media (max-width:599.95px) {
+    .jss130 {
+    padding: 8px;
+    }
+}
+.jss131 {
+    color: #000;
+    cursor: pointer;
+    line-height: 3em;
+}
+.jss132 {
+    color: #000000;
+    text-decoration: none;
+    text-decoration-color: #000;
+}
+.jss133 {
+    transition: .2s ease-in-out;
+    margin-left: 8px;
+    vertical-align: super;
+    text-decoration-color: #000;
+}
+@media (max-width:599.95px) {
+    .jss133 {
+    display: none;
+    }
+}
+.jss134 {
+    width: 178px;
+    height: 48px;
+    display: block;
+}
+@media (max-width:599.95px) {
+    .jss134 {
+    width: 119px;
+    height: 32px;
+    background-size: cover;
+    }
+}
+.jss135 {
+    padding: 0 4px;
+    min-height: auto;
+    align-items: center;
+}
+@media (max-width:599.95px) {
+    .jss135 {
+    padding: 0;
+    }
+}
+.jss135 > * {
+    margin-right: 8px;
+}
+.jss135 > *:last-child {
+    margin-right: 0;
+}
+.jss136 {
+    flex-grow: 1;
+}
+.jss137 {
+    margin-top: 10px;
+}
+@media (max-width:599.95px) {
+    .jss137 {
+    margin-top: 7px;
+    }
+}
+.jss138 {
+    width: 48px;
+    height: 48px;
+    border-bottom: 1px solid transparent!important;
+}
+.jss139 {
+    margin-top: 20px;
+}
+@media (max-width:599.95px) {
+    .jss139 {
+    margin-top: 14px;
+    }
+}
+
+@media (max-width:599.95px) {
+    .jss138 {
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    }
+}
+</style><style data-jss="">
+.jss297 {
+    height: 192px;
+    margin: auto;
+    display: flex;
+    max-width: 1280px;
+    background: #000;
+    padding-left: 76px;
+    padding-right: 76px;
+    overflow: hidden;
+}
+@media (max-width:1279.95px) {
+    .jss297 {
+    min-height: 180px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    }
+}
+@media (max-width:599.95px) {
+    .jss297 {
+    /*padding-left: 24px;
+    padding-right: 24px;*/
+    display: none;
+    }
+}
+.jss298 {
+    width: 48px;
+    height: 48px;
+    display: block;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+.jss299 {
+    width: 36px;
+    height: 36px;
+    display: block;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+.jss300 {
+    color: #fff;
+    font-size: 15px;
+    line-height: 20px;
+    letter-spacing: -0.02em;
+}
+@media (max-width:1279.95px) {
+    .jss300 {
+    font-size: 14px;
+    }
+}
+.jss301 > * {
+    margin-right: 10px;
+}
+@media (max-width:1279.95px) {
+    .jss301 > * {
+    margin-right: 5px;
+    }
+}
+.jss302 {
+    display: flex;
+    align-items: center;
+}
+.jss302 > *:last-child {
+    margin-right: 0;
+}
+.jss304 {
+    margin: 0;
+}
+.jss305 {
+    align-items: center;
+    justify-content: flex-end;
+}
+@media (max-width:599.95px) {
+    .jss305 {
+    justify-content: space-between;
+    }
+}
+</style><style data-jss="">
+.jss89 {
+    height: 100%;
+}
+.jss90 {
+    width: 400px;
+    /*padding: 340px 40px 0;*/
+    padding: 80px 40px 0;
+    position: inherit;
+    border-right: 0;
+    background-color: #D6DCEA;
+}
+</style><style data-jss="">
+.jss60 {
+    flex: 1;
+    height: 100%;
+    overflow: auto;
+    min-height: calc(100% - 130px);
+}
+@media (max-width:599.95px) {
+    .jss60 {
+    overflow: unset;
+    }
+}
+.jss61 {
+    flex: 1;
+    margin: auto;
+    display: flex;
+    overflow: unset;
+    max-width: 1280px;
+    min-height: calc(100% - 130px);
+    flex-direction: row-reverse;
+}
+@media (max-width:599.95px) {
+    .jss61 {
+    display: block;
+    background-color: #fff;
+    }
+}
+.jss63 {
+    flex: 1;
+    display: flex;
+    overflow: unset;
+    transition: margin 225ms cubic-bezier(0.0, 0, 0.2, 1) 0ms;
+    margin-left: 0;
+    flex-direction: column;
+    background-color: #fff;
+}
+.jss64 {
+    padding: 32px 120px 80px 80px;
+    position:relative;
+}
+@media (max-width:959.95px) {
+    .jss64 {
+    padding: 20px;
+    }
+.mh-lang__item{cursor:pointer;position:relative;display:inline-block;color:#2F4F4F;font-size:14px;transition:color .3s ease-out;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}
+.mh-lang__item:first-child{margin-right:20px}
+.mh-lang__item:first-child:after{pointer-events:none;content:"";position:absolute;top:50%;right:-12px;transform:translateY(-50%);height:12px;width:1px;background-color:#000}
+.mh-lang__item:focus,
+.mh-lang__item:hover{color:#000;text-decoration:underline;text-underline-offset:1px}
+.mh-lang__item.active{color:#000;font-weight:700;pointer-events:none}
+}
+
+</style><style data-jss="">
+.jss58 {
+    margin-bottom: 32px;
+}
+.jss59 {
+    margin-bottom: 18px;
+}
+
+.jss202 {
+    color: inherit;
+    border: 0;
+    margin: 0;
+    cursor: pointer;
+    display: inline-flex;
+    outline: none;
+    padding: 0;
+    position: relative;
+    align-items: center;
+    user-select: none;
+    border-radius: 0;
+    vertical-align: middle;
+    justify-content: center;
+    appearance: none;
+    -moz-appearance: none;
+    text-decoration: none;
+    background-color: transparent;
+    -webkit-appearance: none;
+    -webkit-tap-highlight-color: transparent;
+}
+.jss202::-moz-focus-inner {
+    border-style: none;
+}
+.jss202.jss203 {
+    cursor: default;
+    pointer-events: none;
+}
+
+.jss122 {
+    margin-bottom: 0.35em;
+}
+.jss56 {
+    font-size: 48px;
+    line-height: 50px;
+}
+@media (max-width:959.95px) {
+    .jss56 {
+    font-size: 36px;
+    line-height: 40px;
+    }
+.mh-lang__item{cursor:pointer;position:relative;display:inline-block;color:#2F4F4F;font-size:14px;transition:color .3s ease-out;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}
+.mh-lang__item:first-child{margin-right:20px}
+.mh-lang__item:first-child:after{pointer-events:none;content:"";position:absolute;top:50%;right:-12px;transform:translateY(-50%);height:12px;width:1px;background-color:#000}
+.mh-lang__item:focus,
+.mh-lang__item:hover{color:#000;text-decoration:underline;text-underline-offset:1px}
+.mh-lang__item.active{color:#000;font-weight:700;pointer-events:none}
+}
+</style>
+
+<script type="text/JavaScript">
+var URL_CAS 				= "/data/CAs.json?v=1.1.42";
+var URL_GET_CERTIFICATES 	= "/data/CACertificates.TSL.CrossBorder.All.p7b?v=1.1.42";
+</script>
+
+<script type="text/JavaScript" src="/js/common.js"></script>
+<script type="text/JavaScript" src="/design/vendor/jquery/jquery.min.js"></script>
+<script type="text/JavaScript" src="/design/vendor/jquery-ui/jquery-ui.min.js"></script>
+<script type="text/JavaScript" src="/design/vendor/jquery/jquery.blockUI.js"></script>
+
+		<script type="text/JavaScript" src="/js/sign-js/signauthrequest.js?v=1.0.18"></script></head>
+
+<body spellcheck="true"><noscript>Вам потрібно ввімкнути JavaScript для запуску цієї сторінки.</noscript>
+<div id="root">
+    <div class="jss60">
+    <div class="jss61">
+        <div class="jss82">
+    <div class="jss94 jss89">
+        <div class="jss20 jss22 jss95 jss90 jss96 jss100" id="divPrompt"><h1 class="jss105 jss110 jss58"><img src="design/images/diia_logo.svg" alt="" height="50">&nbsp;<img src="design/images/MC_logo.svg" alt="" height="50"><br><br><br><br>Нам необхідно впевнитись, що це дійсно ви</h1><h3 class="jss105 jss112 jss59">Для того, щоб скористатися електронними послугами, вам необхідно підтвердити свою особу, використовуючи електронний підпис чи BankID.</h3>        </div>
+    </div>
+        </div>
+        <div class="jss63">
+    <header class="jss20 jss22 jss139 jss145 jss130">
+        <div class="jss147 jss149 jss148 jss135">
+        
+        <a href="/main" class="jss132"><p class="jss105 jss114 jss131">
+        <span class="jss138"><svg class="jss151" focusable="false" viewBox="0 0 24 24" aria-hidden="true">
+	<path fill="none" d="M0 0h24v24H0z"></path>
+	<path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"></path>
+        </svg></span><span class="jss133">Повернутись на сайт</span>
+        </p></a>
+                <span class="jss136"></span>
+        <a href="https://id.gov.ua/"><span class="jss131 jss134" style="background-image: url(&quot;/design/images/id-gov-ua-diia.svg&quot;);"></span></a>
+        
+        
+        <div class="mh-lang"><a href="?lang=ua" class="mh-lang__item active">UA</a><a href="?lang=en" class="mh-lang__item ">EN</a></div>
+        </div>
+        <hr class="jss158 jss137">
+    </header>
+
+    <div class="jss64"><h1 class="jss105 jss110 jss122 jss56" id="id-app-login-title">Увійти за допомогою</h1>
+		<hr class="hr-split">
+		<div class="div100">
+		<div class="jss105 jss110 jss122 flex grow1"><a href="/euid-auth-js" class="a1">Електронного підпису</a></div>
+		<a href="/euid-auth-js"><span class="jss131 btn-arrow" style="background:no-repeat; 
+			background-image: url(&quot;/design/images/back-icon.svg&quot;);"></span></a>
+		</div>
+
+		<div class="jss139"><table border="0" align="center" cellspacing="0" cellpadding="0" width="100%">
+		<tr>
+		<td class="icon-td"><img src="design/images/back-icon.svg" alt="" width="15"></td>
+		<td class="icon-td" width="35%" nowrap><a href="/euid-auth-js" class="a2">
+		<span>Файловий носій</span>
+		</a></td>
+		<td>&nbsp;</td>
+		<td>&nbsp;</td>
+		</tr>
+
+		<tr>
+		<td class="icon-td"><img src="design/images/back-icon.svg" alt="" width="15"></td>
+		<td class="icon-td" width="35%" nowrap><a href="/euid-auth" class="a2">
+		<span>Токен</span>
+		</a></td>
+		<td class="icon-td">&nbsp;</td>
+		<td class="icon-td" width="65%" nowrap>&nbsp;</td>
+		</tr>
+
+		<tr>
+		<td class="icon-td"><img src="design/images/back-icon.svg" alt="" width="15"></td>
+		<td class="icon-td" nowrap><a href="/ksp-auth" class="a2">
+		<span>Хмарне сховище</span>
+		</a></td>
+		<td>&nbsp;</td>
+		<td>&nbsp;</td>
+		</tr>
+		</table>
+		</div>
+	
+		<hr class="hr-split">
+		<div class="div100" onclick="gotolocation('bankid-nbu-auth')">
+		<div class="jss105 jss110 jss122 flex grow1"><a href="/bankid-nbu-auth" class="a1">Bank ID НБУ</a></div>
+		<a href="/bankid-nbu-auth"><span class="jss131 btn-arrow" style="background:no-repeat; 
+			background-image: url(&quot;/design/images/back-icon.svg&quot;);"></span></a>
+		</div>
+	
+		<hr class="hr-split">
+		<div class="div100" onclick="gotolocation('diiaid-auth')">
+		<div class="jss105 jss110 jss122 flex grow1"><a href="/diiaid-auth" class="a1">Дія.Підпис</a></div>
+		<a href="/diiaid-auth"><span class="jss131 btn-arrow" style="background:no-repeat; background-image: url(&quot;/design/images/back-icon.svg&quot;);"></span></a>
+		</div>
+	</div>
+
+        </div>
+    </div>
+
+    <div class="jss297">
+        <div class="jss306 jss328 jss304">
+    <div class="jss307 jss346 jss354 jss302 jss301">
+        <span class="jss298" style="background-image: url(&quot;/design/images/uasign-invert.5ceead23.svg&quot;);"></span>
+        <span class="jss298" style="background-image: url(&quot;/design/images/diia-logo-invert.614ba4d9.svg&quot;);"></span>
+        <span class="jss105">
+        <div class="jss403"><span class="jss105 jss112 jss406 jss300">diia.gov.ua</span>
+        <p class="jss105 jss114 jss128 jss407 jss300">2025. Всі права захищені.</p></div>
+        </span>
+    </div>
+
+    <div class="jss307 jss346 jss354 jss302 jss301 jss305">
+
+        <ul class="footer-menu">
+        <li><a href="/connect">Про підключення</a></li>
+        <li><a href="/sign">Підпис файлів</a></li>
+        <li><a href="/verify">Перевірка файлів</a></li>
+        </ul>
+
+    </div>
+        </div>
+    </div>
+    </div>
+</div>
+<script type="text/JavaScript" src="design/vendor/jquery/jquery.validate.min.js"></script>
+<script type="text/JavaScript" src="design/vendor/jquery/jquery.nice-select.min.js"></script>
+<script type="text/JavaScript" src="design/vendor/bootstrap/bootstrap.min.js"></script>
+</body>
+</html>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-165090311-1"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'UA-165090311-1');
+</script>
+
+
+
+
+
+<script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="2c62049c-575b-460b-9390-b1715f7b5ff5" data-blockingmode="auto" type="text/javascript"></script>
