@@ -14,7 +14,8 @@ function App() {
       const response = await fetch('/.netlify/functions/get-petitions')
 
       if (!response.ok) {
-        throw new Error(`Server responded with ${response.status}`)
+        const errorData = await response.json().catch(() => ({}))
+        throw new Error(errorData.error || `Server responded with ${response.status}`)
       }
 
       const result = await response.json()
