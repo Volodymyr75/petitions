@@ -21,7 +21,10 @@ export default async (req, context) => {
         // The API returns { count: N, rows: [...] }
         const dataList = jsonResp.rows || [];
 
-        const petitions = dataList.map(item => ({
+        // User requested to limit to 10
+        const limitedList = dataList.slice(0, 10);
+
+        const petitions = limitedList.map(item => ({
             id: String(item.id),
             number: item.code,
             title: item.title,
