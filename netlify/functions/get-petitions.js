@@ -69,7 +69,11 @@ export default async (req, context) => {
       }
     } else {
       // Simple CSV handling
-      const text = await resourceRes.text();
+      const arrayBuffer = await resourceRes.arrayBuffer();
+      // Try decoding as Windows-1251 (common for valid legacy gov data)
+      const decoder = new TextDecoder('windows-1251');
+      const text = decoder.decode(arrayBuffer);
+
       const lines = text.split('\n');
       // Get header and first 10 rows
       resultData = lines.slice(0, 11);
