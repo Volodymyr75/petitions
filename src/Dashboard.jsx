@@ -6,7 +6,7 @@ import {
 import { FileText, ThumbsUp, Activity, CheckCircle } from 'lucide-react';
 
 // Use a try-catch import or default to empty if file missing (for safety)
-import analyticsData from '../analytics_data.json';
+import analyticsData from './analytics_data.json';
 
 const Dashboard = () => {
     if (!analyticsData) return <div className="p-4">Loading analytics...</div>;
