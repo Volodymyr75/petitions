@@ -62,7 +62,7 @@ def save_to_db(con, petitions):
     
     print("Saved successfully.")
 
-def export_analytics(con):
+def export_analytics(con, growth_stats=[]):
     """
     Calculates stats and saves to src/analytics_data.json
     """
@@ -93,17 +93,21 @@ def export_analytics(con):
             "url": r[3], "date": r[4], "status": r[5]
         } for r in rows]
 
+    # Sort growth stats by delta descending
+    growth_stats.sort(key=lambda x: x['delta'], reverse=True)
+
     data = {
         "totals": total_map,
         "top_president": fmt(top_pres),
         "top_cabinet": fmt(top_cab),
+        "trending": growth_stats[:10], # Top 10 growers
         "generated_at": time.strftime("%Y-%m-%d %H:%M:%S")
     }
     
     with open('src/analytics_data.json', 'w', encoding='utf-8') as f:
         json.dump(data, f, indent=2, ensure_ascii=False)
     
-    print(f"✅ Saved to src/analytics_data.json")
+    print(f"✅ Saved to src/analytics_data.json (Trends: {len(growth_stats)})")
 
 def run_pipeline():
     # 1. Connect to DB
@@ -111,18 +115,44 @@ def run_pipeline():
     init_db(con)
 
     # 2. Scrape President (Source A)
-    # Daily run: scrape only 2 pages to catch updates
-    print("\n--- Starting President Scraper (Daily Update) ---")
-    pres_data = scrape_president_petitions(max_pages=2, status="active")
+    # Strategy: Scrape ALL active pages (approx 28) to update vote counts for every running petition
+    print("\n--- Starting President Scraper (Full Active Update) ---")
+    
+    # 1. Load existing votes to calculate delta
+    existing_votes = con.execute("SELECT external_id, votes FROM petitions WHERE source='president'").fetchall()
+    vote_map = {row[0]: row[1] for row in existing_votes}
+    
+    # 2. Scrape fresh data
+    pres_data = scrape_president_petitions(max_pages=30, status="active")
+    
+    # 3. Calculate growth and enrich data
+    growth_stats = []
+    for p in pres_data:
+        str_id = str(p['id'])
+        old_votes = vote_map.get(str_id, 0)
+        new_votes = p['votes']
+        delta = new_votes - old_votes
+        
+        # Only meaningful growth
+        if delta > 0:
+            growth_stats.append({
+                "title": p['title'],
+                "delta": delta,
+                "total": new_votes,
+                "url": p['url']
+            })
+
     save_to_db(con, pres_data)
 
     # 3. Scrape Cabinet (Source B)
+    # Cabinet API returns "most recent" by default. 
+    # To get updates on older ones we might need a different strategy, but their API is fast.
     print("\n--- Starting Cabinet Scraper ---")
     cab_data = fetch_cabinet_petitions()
     save_to_db(con, cab_data)
 
-    # 4. Export Analytics for Frontend
-    export_analytics(con)
+    # 4. Export Analytics (Pass growth stats)
+    export_analytics(con, growth_stats)
 
     con.close()
 

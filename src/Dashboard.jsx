@@ -124,6 +124,33 @@ const Dashboard = () => {
                 </div>
             </div>
 
+            {/* TRENDING SECTION (New) */}
+            {analyticsData.trending && analyticsData.trending.length > 0 && (
+                <div className="mb-8">
+                    <div className="flex items-center gap-2 mb-4">
+                        <div className="p-2 bg-pink-100 rounded-lg text-pink-600">
+                            <Activity size={20} />
+                        </div>
+                        <h3 className="text-xl font-bold text-slate-800">🚀 Trending Today (Live Updates)</h3>
+                    </div>
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                        {analyticsData.trending.slice(0, 3).map((item, idx) => (
+                            <div key={idx} className="bg-gradient-to-br from-white to-pink-50 p-4 rounded-xl border border-pink-100 shadow-sm">
+                                <div className="flex justify-between items-start mb-2">
+                                    <span className="bg-pink-100 text-pink-700 text-xs font-bold px-2 py-1 rounded-full">
+                                        +{item.delta} votes
+                                    </span>
+                                    <span className="text-slate-400 text-xs">Total: {item.total.toLocaleString()}</span>
+                                </div>
+                                <a href={item.url} target="_blank" rel="noreferrer" className="font-semibold text-slate-800 hover:text-blue-600 line-clamp-2">
+                                    {item.title}
+                                </a>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            )}
+
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
                 {/* Source Distribution */}
                 <div className="bg-white p-4 rounded-lg shadow-sm border border-slate-200 lg:col-span-1">
