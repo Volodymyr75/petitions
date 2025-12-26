@@ -1,0 +1,1010 @@
+[
+  {
+    "id": 1002,
+    "title": "Национализация телеканала \"Интер\".",
+    "fields_found": [
+      "number",
+      "author",
+      "date_published",
+      "status",
+      "text",
+      "answer"
+    ],
+    "number": "№22/001002-еп",
+    "author": "Автор (ініціатор): Єднак Юрій Леонідович",
+    "date_published": "Дата оприлюднення: 31 серпня 2015",
+    "status": "Архів",
+    "text_length": 325,
+    "has_answer": true
+  },
+  {
+    "id": 1004,
+    "title": "Петиция о становлении Украины европейским центром рекламы.",
+    "fields_found": [
+      "number",
+      "author",
+      "date_published",
+      "status",
+      "text",
+      "answer"
+    ],
+    "number": "№22/001004-еп",
+    "author": "Автор (ініціатор):  Порошенко Петр Алексеевич",
+    "date_published": "Дата оприлюднення: 31 серпня 2015",
+    "status": "Архів",
+    "text_length": 435,
+    "has_answer": true
+  },
+  {
+    "id": 1005,
+    "title": "УДЕШЕВИТЬ ПОТОЧНЫЙ ТАРИФ ЗА ЭЛЕКТРОЭНЕРГИЮ, до 600 кВт/месяц.",
+    "fields_found": [
+      "number",
+      "author",
+      "date_published",
+      "status",
+      "text",
+      "answer"
+    ],
+    "number": "№22/001005-еп",
+    "author": "Автор (ініціатор):  Карпов Володимир Ілліч",
+    "date_published": "Дата оприлюднення: 30 серпня 2015",
+    "status": "Архів",
+    "text_length": 217,
+    "has_answer": true
+  },
+  {
+    "id": 1006,
+    "title": "завод",
+    "fields_found": [
+      "number",
+      "author",
+      "date_published",
+      "status",
+      "text",
+      "answer"
+    ],
+    "number": "№22/001006-еп",
+    "author": "Автор (ініціатор):  Петренко Вано Михайлович",
+    "date_published": "Дата оприлюднення: 01 вересня 2015",
+    "status": "Архів",
+    "text_length": 135,
+    "has_answer": true
+  },
+  {
+    "id": 1007,
+    "title": "Опубликовать доказательства агрессии России",
+    "fields_found": [
+      "number",
+      "author",
+      "date_published",
+      "status",
+      "text",
+      "answer"
+    ],
+    "number": "№22/001007-еп",
+    "author": "Автор (ініціатор):  Кулик Олексій Петрович",
+    "date_published": "Дата оприлюднення: 31 серпня 2015",
+    "status": "Архів",
+    "text_length": 579,
+    "has_answer": true
+  },
+  {
+    "id": 1009,
+    "title": "НЕ ОБЛАГАТЬ НАЛОГОМ ЛЮБЫЕ АЛЬТЕРНАТИВНЫЕ ИСТОЧНИКИ ЭНЕРГИИ.",
+    "fields_found": [
+      "number",
+      "author",
+      "date_published",
+      "status",
+      "text",
+      "answer"
+    ],
+    "number": "№22/001009-еп",
+    "author": "Автор (ініціатор):  Карпов Володимир Ілліч",
+    "date_published": "Дата оприлюднення: 30 серпня 2015",
+    "status": "Архів",
+    "text_length": 216,
+    "has_answer": true
+  },
+  {
+    "id": 1010,
+    "title": "Легализовать проституцию",
+    "fields_found": [
+      "number",
+      "author",
+      "date_published",
+      "status",
+      "text",
+      "answer"
+    ],
+    "number": "№22/001010-еп",
+    "author": "Автор (ініціатор):  Поросёнко Петро Бандерович",
+    "date_published": "Дата оприлюднення: 30 серпня 2015",
+    "status": "Архів",
+    "text_length": 249,
+    "has_answer": true
+  },
+  {
+    "id": 1011,
+    "title": "ПЕТИЦИИ В МЭРИИ",
+    "fields_found": [
+      "number",
+      "author",
+      "date_published",
+      "status",
+      "text",
+      "answer"
+    ],
+    "number": "№22/001011-еп",
+    "author": "Автор (ініціатор):  Карпов Володимир Ілліч",
+    "date_published": "Дата оприлюднення: 30 серпня 2015",
+    "status": "Архів",
+    "text_length": 85,
+    "has_answer": true
+  },
+  {
+    "id": 1012,
+    "title": "продать Рошен или уйти с поста президента",
+    "fields_found": [
+      "number",
+      "author",
+      "date_published",
+      "status",
+      "text",
+      "answer"
+    ],
+    "number": "№22/001012-еп",
+    "author": "Автор (ініціатор):  Петренко Петро Петрович",
+    "date_published": "Дата оприлюднення: 01 вересня 2015",
+    "status": "Архів",
+    "text_length": 174,
+    "has_answer": true
+  },
+  {
+    "id": 1013,
+    "title": "О назначении А.Шария",
+    "fields_found": [
+      "number",
+      "author",
+      "date_published",
+      "status",
+      "text",
+      "answer"
+    ],
+    "number": "№22/001013-еп",
+    "author": "Автор (ініціатор):  Гун  Павел Борисович",
+    "date_published": "Дата оприлюднення: 01 вересня 2015",
+    "status": "Архів",
+    "text_length": 335,
+    "has_answer": true
+  },
+  {
+    "id": 1014,
+    "title": "Bitcoin. Визнати Bitcoin валютою.",
+    "fields_found": [
+      "number",
+      "author",
+      "date_published",
+      "status",
+      "text",
+      "answer"
+    ],
+    "number": "№22/001014-еп",
+    "author": "Автор (ініціатор): Усов Віктор Іванович",
+    "date_published": "Дата оприлюднення: 31 серпня 2015",
+    "status": "Архів",
+    "text_length": 206,
+    "has_answer": true
+  },
+  {
+    "id": 1016,
+    "title": "ПРОШУ ВВЕСТИ ЗАПРЕТ НА ПРОДАЖУ РОССИЙСКИХ ПРЕЗЕРВАТИВОВ.",
+    "fields_found": [
+      "number",
+      "author",
+      "date_published",
+      "status",
+      "text",
+      "answer"
+    ],
+    "number": "№22/001016-еп",
+    "author": "Автор (ініціатор):  Роман",
+    "date_published": "Дата оприлюднення: 31 серпня 2015",
+    "status": "Архів",
+    "text_length": 494,
+    "has_answer": true
+  },
+  {
+    "id": 1017,
+    "title": "Побороти \"кнопкодавство\" у ВР дуже просто!",
+    "fields_found": [
+      "number",
+      "author",
+      "date_published",
+      "status",
+      "text",
+      "answer"
+    ],
+    "number": "№22/001017-еп",
+    "author": "Автор (ініціатор): Кононенко Олександр Петрович",
+    "date_published": "Дата оприлюднення: 30 серпня 2015",
+    "status": "Архів",
+    "text_length": 369,
+    "has_answer": true
+  },
+  {
+    "id": 1018,
+    "title": "Зробити Саакашвілі президентом або прем'єр міністром України",
+    "fields_found": [
+      "number",
+      "author",
+      "date_published",
+      "status",
+      "text",
+      "answer"
+    ],
+    "number": "№22/001018-еп",
+    "author": "Автор (ініціатор):  Iванов Андрiй Iгоревич",
+    "date_published": "Дата оприлюднення: 31 серпня 2015",
+    "status": "Архів",
+    "text_length": 278,
+    "has_answer": true
+  },
+  {
+    "id": 1019,
+    "title": "Загрузити роботою Південний машинобудівний завод.",
+    "fields_found": [
+      "number",
+      "author",
+      "date_published",
+      "status",
+      "text",
+      "answer"
+    ],
+    "number": "№22/001019-еп",
+    "author": "Автор (ініціатор): Пристай  Андрій Олегович",
+    "date_published": "Дата оприлюднення: 30 серпня 2015",
+    "status": "Архів",
+    "text_length": 352,
+    "has_answer": true
+  },
+  {
+    "id": 1020,
+    "title": "Заборона використання в державних установах і організаціях пропрієтарного закритого програмного забезпечення зарубіжних корпорацій.",
+    "fields_found": [
+      "number",
+      "author",
+      "date_published",
+      "status",
+      "text",
+      "answer"
+    ],
+    "number": "№22/001020-еп",
+    "author": "Автор (ініціатор): Камнєв Микола Миколайович",
+    "date_published": "Дата оприлюднення: 31 серпня 2015",
+    "status": "Архів",
+    "text_length": 540,
+    "has_answer": true
+  },
+  {
+    "id": 5001,
+    "title": "зробити владу народною, запобігти зловживання владою, прискорити якісні реформи в Україні",
+    "fields_found": [
+      "number",
+      "author",
+      "date_published",
+      "status",
+      "text",
+      "answer"
+    ],
+    "number": "№22/005001-еп",
+    "author": "Автор (ініціатор): Іващенко Андрій Олександрович",
+    "date_published": "Дата оприлюднення: 08 вересня 2015",
+    "status": "Архів",
+    "text_length": 218,
+    "has_answer": true
+  },
+  {
+    "id": 5002,
+    "title": "Заборона вільного обігу на території України грошової одиниці Російської Федерації \"рубля\"",
+    "fields_found": [
+      "number",
+      "author",
+      "date_published",
+      "status",
+      "text",
+      "answer"
+    ],
+    "number": "№22/005002-еп",
+    "author": "Автор (ініціатор): Скібін Олексій Миколайович",
+    "date_published": "Дата оприлюднення: 08 вересня 2015",
+    "status": "Архів",
+    "text_length": 635,
+    "has_answer": true
+  },
+  {
+    "id": 5003,
+    "title": "Дозволити фото- та відеофіксацію порушень ПДР громадянами",
+    "fields_found": [
+      "number",
+      "author",
+      "date_published",
+      "status",
+      "text",
+      "answer"
+    ],
+    "number": "№22/005003-еп",
+    "author": "Автор (ініціатор): Слива Вадим Васильович",
+    "date_published": "Дата оприлюднення: 08 вересня 2015",
+    "status": "Архів",
+    "text_length": 1234,
+    "has_answer": true
+  },
+  {
+    "id": 5004,
+    "title": "ОБМЕЖИТИ КІЛЬКІСТЬ ПЕТИЦІЙ ВІД ОДНІЄЇ ЛЮДИНИ",
+    "fields_found": [
+      "number",
+      "author",
+      "date_published",
+      "status",
+      "text",
+      "answer"
+    ],
+    "number": "№22/005004-еп",
+    "author": "Автор (ініціатор): Товканюк Олександр Петрович",
+    "date_published": "Дата оприлюднення: 08 вересня 2015",
+    "status": "Архів",
+    "text_length": 171,
+    "has_answer": true
+  },
+  {
+    "id": 5005,
+    "title": "про голосівання 29.12.2014 ,а Закон то підписаний 28.12.2014",
+    "fields_found": [
+      "number",
+      "author",
+      "date_published",
+      "status",
+      "text",
+      "answer"
+    ],
+    "number": "№22/005005-еп",
+    "author": "Автор (ініціатор): Колесников  Сергій  Вікторович",
+    "date_published": "Дата оприлюднення: 13 вересня 2015",
+    "status": "Архів",
+    "text_length": 584,
+    "has_answer": true
+  },
+  {
+    "id": 5006,
+    "title": "Заборонити утримувати зарплатні проекти підприємств в іноземних (російських) банках",
+    "fields_found": [
+      "number",
+      "author",
+      "date_published",
+      "status",
+      "text",
+      "answer"
+    ],
+    "number": "№22/005006-еп",
+    "author": "Автор (ініціатор): Слива Вадим Васильович",
+    "date_published": "Дата оприлюднення: 08 вересня 2015",
+    "status": "Архів",
+    "text_length": 606,
+    "has_answer": true
+  },
+  {
+    "id": 5007,
+    "title": "Призначити Лойченко Романа Анатолiйовича  премьер-міністром України",
+    "fields_found": [
+      "number",
+      "author",
+      "date_published",
+      "status",
+      "text",
+      "answer"
+    ],
+    "number": "№22/005007-еп",
+    "author": "Автор (ініціатор):  Роман Романович Азимов",
+    "date_published": "Дата оприлюднення: 08 вересня 2015",
+    "status": "Архів",
+    "text_length": 113,
+    "has_answer": true
+  },
+  {
+    "id": 5008,
+    "title": "Збільшення заробітної плати працівникам залізничного транспорту  роз їзного характеру на 2016 рік від 5% до 30%, окрім працівників ДП \"УЗШК\". Локомотивним бригадам на  23%, Провідникам пасажирських вагонів на 30%,  Монтери колії на 15%, Машиністи колійних машин важкого типу на 12%, Локомотивні бригади МВРС на 23%.\r\nПровідники МВРС з правом продажу квитків на 10%, решту працівників залізничної галу",
+    "fields_found": [
+      "number",
+      "author",
+      "date_published",
+      "status",
+      "text",
+      "answer"
+    ],
+    "number": "№22/005008-еп",
+    "author": "Автор (ініціатор):  Бартащук Владислав Олексійович",
+    "date_published": "Дата оприлюднення: 08 вересня 2015",
+    "status": "Архів",
+    "text_length": 806,
+    "has_answer": true
+  },
+  {
+    "id": 5009,
+    "title": "Розслідування військового злочину",
+    "fields_found": [
+      "number",
+      "author",
+      "date_published",
+      "status",
+      "text",
+      "answer"
+    ],
+    "number": "№22/005009-еп",
+    "author": "Автор (ініціатор):  Главацька Людмила",
+    "date_published": "Дата оприлюднення: 08 вересня 2015",
+    "status": "Архів",
+    "text_length": 203,
+    "has_answer": true
+  },
+  {
+    "id": 5010,
+    "title": "ПЕРЕВІРКА ЗАКОННОСТІ АКТИВІВ 20 НАЙБАГАТШИХ ЛЮДЕЙ УКРАЇНИ",
+    "fields_found": [
+      "number",
+      "author",
+      "date_published",
+      "status",
+      "text",
+      "answer"
+    ],
+    "number": "№22/005010-еп",
+    "author": "Автор (ініціатор):  Піскозуб Андрій Андрійович",
+    "date_published": "Дата оприлюднення: 08 вересня 2015",
+    "status": "Архів",
+    "text_length": 216,
+    "has_answer": true
+  },
+  {
+    "id": 5011,
+    "title": "ПІДТРИМКА ПРОПОЗИЦІЙ ДЖЕМІЛЄВА",
+    "fields_found": [
+      "number",
+      "author",
+      "date_published",
+      "status",
+      "text",
+      "answer"
+    ],
+    "number": "№22/005011-еп",
+    "author": "Автор (ініціатор): Струбіцький Михайло  Васильович",
+    "date_published": "Дата оприлюднення: 08 вересня 2015",
+    "status": "Архів",
+    "text_length": 194,
+    "has_answer": true
+  },
+  {
+    "id": 5013,
+    "title": "ЗАБОРОНІТЬ АБОРТИ!",
+    "fields_found": [
+      "number",
+      "author",
+      "date_published",
+      "status",
+      "text",
+      "answer"
+    ],
+    "number": "№22/005013-еп",
+    "author": "Автор (ініціатор): Жалдак Сергій Борисович",
+    "date_published": "Дата оприлюднення: 08 вересня 2015",
+    "status": "Архів",
+    "text_length": 204,
+    "has_answer": true
+  },
+  {
+    "id": 5014,
+    "title": "Кримінальна відповідальність керівників промислових підприємств за  забруднення навколишнього середовища",
+    "fields_found": [
+      "number",
+      "author",
+      "date_published",
+      "status",
+      "text",
+      "answer"
+    ],
+    "number": "№22/005014-еп",
+    "author": "Автор (ініціатор): Дорошина Аліна Станіславівна",
+    "date_published": "Дата оприлюднення: 08 вересня 2015",
+    "status": "Архів",
+    "text_length": 303,
+    "has_answer": true
+  },
+  {
+    "id": 5015,
+    "title": "Реформувати питання приватних і церковних шкіл. Компенсувати учням цих шкіл частину витрат на навчання з коштів що виділяються на них але не витрачених у загальноосвітніх школах.",
+    "fields_found": [
+      "number",
+      "author",
+      "date_published",
+      "status",
+      "text",
+      "answer"
+    ],
+    "number": "№22/005015-еп",
+    "author": "Автор (ініціатор):  Mещеряков Олександр Миколайович",
+    "date_published": "Дата оприлюднення: 08 вересня 2015",
+    "status": "Архів",
+    "text_length": 248,
+    "has_answer": true
+  },
+  {
+    "id": 5016,
+    "title": "Спочатку зарплати і пенсії,а тоді підвищені тарифи!",
+    "fields_found": [
+      "number",
+      "author",
+      "date_published",
+      "status",
+      "text",
+      "answer"
+    ],
+    "number": "№22/005016-еп",
+    "author": "Автор (ініціатор): Левкович Олексій Іванович",
+    "date_published": "Дата оприлюднення: 08 вересня 2015",
+    "status": "Архів",
+    "text_length": 311,
+    "has_answer": true
+  },
+  {
+    "id": 5017,
+    "title": "заборона виїзду за кордон чоловіків які можуть бути мобілізовані",
+    "fields_found": [
+      "number",
+      "author",
+      "date_published",
+      "status",
+      "text",
+      "answer"
+    ],
+    "number": "№22/005017-еп",
+    "author": "Автор (ініціатор):  Назар",
+    "date_published": "Дата оприлюднення: 08 вересня 2015",
+    "status": "Архів",
+    "text_length": 134,
+    "has_answer": true
+  },
+  {
+    "id": 5018,
+    "title": "Як можна прожити на 1710 грн/мес.",
+    "fields_found": [
+      "number",
+      "author",
+      "date_published",
+      "status",
+      "text",
+      "answer"
+    ],
+    "number": "№22/005018-еп",
+    "author": "Автор (ініціатор):  Громенко Ніна Іванівна",
+    "date_published": "Дата оприлюднення: 08 вересня 2015",
+    "status": "Архів",
+    "text_length": 712,
+    "has_answer": true
+  },
+  {
+    "id": 5019,
+    "title": "Не скасовуйте ЗНО. Не забирайте можливість вступу до ВУЗів без хабарів!",
+    "fields_found": [
+      "number",
+      "author",
+      "date_published",
+      "status",
+      "text",
+      "answer"
+    ],
+    "number": "№22/005019-еп",
+    "author": "Автор (ініціатор):  Лавро Роман Юрійович",
+    "date_published": "Дата оприлюднення: 08 вересня 2015",
+    "status": "Архів",
+    "text_length": 217,
+    "has_answer": true
+  },
+  {
+    "id": 5020,
+    "title": "Отменить подоходный налог с пенсионеров",
+    "fields_found": [
+      "number",
+      "author",
+      "date_published",
+      "status",
+      "text",
+      "answer"
+    ],
+    "number": "№22/005020-еп",
+    "author": "Автор (ініціатор):  Денисенко Сергей Васильевич",
+    "date_published": "Дата оприлюднення: 08 вересня 2015",
+    "status": "Архів",
+    "text_length": 217,
+    "has_answer": true
+  },
+  {
+    "id": 60002,
+    "title": "Зайнятість і задіяність дітей гуртками, секціями, щоб не вештались без діла.",
+    "fields_found": [
+      "number",
+      "author",
+      "date_published",
+      "status",
+      "text",
+      "answer"
+    ],
+    "number": "№22/060002-еп",
+    "author": "Автор (ініціатор): Новоженіна Неля Миколаївна",
+    "date_published": "Дата оприлюднення: 05 червня 2019",
+    "status": "Архів",
+    "text_length": 266,
+    "has_answer": true
+  },
+  {
+    "id": 60004,
+    "title": "Реформування матеріально-технічного забезпечення Зброїних сил України",
+    "fields_found": [
+      "number",
+      "author",
+      "date_published",
+      "status",
+      "text",
+      "answer"
+    ],
+    "number": "№22/060004-еп",
+    "author": "Автор (ініціатор): Мітронов Іван Вікторович",
+    "date_published": "Дата оприлюднення: 05 червня 2019",
+    "status": "Архів",
+    "text_length": 1536,
+    "has_answer": true
+  },
+  {
+    "id": 60006,
+    "title": "Про закриття кредитних установ СмартКредит Швидко Гроші і так далі.",
+    "fields_found": [
+      "number",
+      "author",
+      "date_published",
+      "status",
+      "text",
+      "answer"
+    ],
+    "number": "№22/060006-еп",
+    "author": "Автор (ініціатор): Грабчук Павло Павлович",
+    "date_published": "Дата оприлюднення: 05 червня 2019",
+    "status": "Архів",
+    "text_length": 389,
+    "has_answer": true
+  },
+  {
+    "id": 60008,
+    "title": "Впровадження страхової медицини Европейського зразку для громадян України",
+    "fields_found": [
+      "number",
+      "author",
+      "date_published",
+      "status",
+      "text",
+      "answer"
+    ],
+    "number": "№22/060008-еп",
+    "author": "Автор (ініціатор): Кійков Віталій Миколайович",
+    "date_published": "Дата оприлюднення: 05 червня 2019",
+    "status": "Архів",
+    "text_length": 562,
+    "has_answer": true
+  },
+  {
+    "id": 60012,
+    "title": "Скорочення верховної ради як такої, що не доцільна.",
+    "fields_found": [
+      "number",
+      "author",
+      "date_published",
+      "status",
+      "text",
+      "answer"
+    ],
+    "number": "№22/060012-еп",
+    "author": "Автор (ініціатор): Білявський Йосип Йосипович",
+    "date_published": "Дата оприлюднення: 05 червня 2019",
+    "status": "Архів",
+    "text_length": 491,
+    "has_answer": true
+  },
+  {
+    "id": 60014,
+    "title": "Петиция за пересмотр «языкового закона»!\r\n\r\nЯзыковой закон притесняет права русскоговорящего населения, так как в нём предусмотрены штрафы за его использование!\r\nПриводит к расколу общества внутри государства! Этот закон ещё дальше отдаляет от нас возвращение Крыма и установление мира в Донецке и Луганске.\r\nЯ - патриот, и призываю таких же патриотов поддержать эту петицию!",
+    "fields_found": [
+      "number",
+      "author",
+      "date_published",
+      "status",
+      "text",
+      "answer"
+    ],
+    "number": "№22/060014-еп",
+    "author": "Автор (ініціатор): Глущенко Олексій Валерійович",
+    "date_published": "Дата оприлюднення: 06 червня 2019",
+    "status": "Архів",
+    "text_length": 547,
+    "has_answer": true
+  },
+  {
+    "id": 60016,
+    "title": "Допомога хворим дiтям",
+    "fields_found": [
+      "number",
+      "author",
+      "date_published",
+      "status",
+      "text",
+      "answer"
+    ],
+    "number": "№22/060016-еп",
+    "author": "Автор (ініціатор): Улітушкін Родіон Вікторович",
+    "date_published": "Дата оприлюднення: 08 червня 2019",
+    "status": "Архів",
+    "text_length": 202,
+    "has_answer": true
+  },
+  {
+    "id": 60018,
+    "title": "Дозволити прокат на Україні популярного польського фільму \"Волинь\" для встановлення та вивчення історичної правди щодо України",
+    "fields_found": [
+      "number",
+      "author",
+      "date_published",
+      "status",
+      "text",
+      "answer"
+    ],
+    "number": "№22/060018-еп",
+    "author": "Автор (ініціатор): Ісаєв Микола Всісович",
+    "date_published": "Дата оприлюднення: 06 червня 2019",
+    "status": "Архів",
+    "text_length": 1946,
+    "has_answer": true
+  },
+  {
+    "id": 100002,
+    "title": "Вернуть графу \"ПРОТИВ ВСЕХ\" в бюллетень для голосования на выборах. Избиратели, голосуя против всех, показывают свое отношение к власти, показывают, насколько глубокий уровень недоверия к власти и кандидатам.",
+    "fields_found": [
+      "number",
+      "author",
+      "date_published",
+      "status",
+      "text",
+      "answer"
+    ],
+    "number": "№22/100002-еп",
+    "author": "Автор (ініціатор): Ломова Наталя Євгенівна",
+    "date_published": "Дата оприлюднення: 01 липня 2020",
+    "status": "Архів",
+    "text_length": 278,
+    "has_answer": true
+  },
+  {
+    "id": 100004,
+    "title": "Запретить Facebook!..Или откройте доступ ко всем соцсетям!",
+    "fields_found": [
+      "number",
+      "author",
+      "date_published",
+      "status",
+      "text",
+      "answer"
+    ],
+    "number": "№22/100004-еп",
+    "author": "Автор (ініціатор): Ломова Наталя Євгенівна",
+    "date_published": "Дата оприлюднення: 01 липня 2020",
+    "status": "Архів",
+    "text_length": 128,
+    "has_answer": true
+  },
+  {
+    "id": 100006,
+    "title": "Шановний пане президент! Просимо відкликати запропонований Вами до Верховної Ради України законопроект №3553",
+    "fields_found": [
+      "number",
+      "author",
+      "date_published",
+      "status",
+      "text",
+      "answer"
+    ],
+    "number": "№22/100006-еп",
+    "author": "Автор (ініціатор): Антипчук Олег Ігорович",
+    "date_published": "Дата оприлюднення: 01 липня 2020",
+    "status": "Архів",
+    "text_length": 883,
+    "has_answer": true
+  },
+  {
+    "id": 100008,
+    "title": "Не переводити всі документи в Цифровий аналог!!!!",
+    "fields_found": [
+      "number",
+      "author",
+      "date_published",
+      "status",
+      "text",
+      "answer"
+    ],
+    "number": "№22/100008-еп",
+    "author": "Автор (ініціатор): Постолов Антон Олександрович",
+    "date_published": "Дата оприлюднення: 01 липня 2020",
+    "status": "Архів",
+    "text_length": 591,
+    "has_answer": true
+  },
+  {
+    "id": 100012,
+    "title": "ОБЕСПЕЧИТЬ ВСЕ ГОСУДАРСТВЕННЫЕ ОРГАНИЗАЦИИ номером бесплатной связи 0800, или номерами минимум двух операторов мобильной связи, до конца 2020-го года.",
+    "fields_found": [
+      "number",
+      "author",
+      "date_published",
+      "status",
+      "text",
+      "answer"
+    ],
+    "number": "№22/100012-еп",
+    "author": "Автор (ініціатор): Шкода Богдан Євгенійович",
+    "date_published": "Дата оприлюднення: 01 липня 2020",
+    "status": "Архів",
+    "text_length": 823,
+    "has_answer": true
+  },
+  {
+    "id": 100014,
+    "title": "Депутаты массово демонстрируют свое невежество, чем позорят институт парламентаризма в Украине. Прошу распустить Раду и назначить новые выборы в Парламент.",
+    "fields_found": [
+      "number",
+      "author",
+      "date_published",
+      "status",
+      "text",
+      "answer"
+    ],
+    "number": "№22/100014-еп",
+    "author": "Автор (ініціатор): Ковальов Сергій Вікторович",
+    "date_published": "Дата оприлюднення: 01 липня 2020",
+    "status": "Архів",
+    "text_length": 1144,
+    "has_answer": true
+  },
+  {
+    "id": 100016,
+    "title": "ЗАПОБІГТИ ПОДАЛЬШОЇ \"ПРИВАТИЗАЦІЇ\" ТА ЗНИЩЕННЮ ТАВРІЙСЬКОГО НАЦІОНАЛЬНОГО УНІВЕРСИТЕТУ ІМЕНІ ВЕРНАДСЬКОГО КОРУПЦІОНЕРАМИ ТА ІНОЗЕМНИМИ ГРОМАДЯНАМИ",
+    "fields_found": [
+      "number",
+      "author",
+      "date_published",
+      "status",
+      "text",
+      "answer"
+    ],
+    "number": "№22/100016-еп",
+    "author": "Автор (ініціатор): Бусол Олена Юріївна",
+    "date_published": "Дата оприлюднення: 01 липня 2020",
+    "status": "Архів",
+    "text_length": 5922,
+    "has_answer": true
+  },
+  {
+    "id": 100018,
+    "title": "НЕГАЙНО ЗАБЕЗПЕЧИТИ встановлення МИРУ на Донбасі та виконання Мінських угод",
+    "fields_found": [
+      "number",
+      "author",
+      "date_published",
+      "status",
+      "text",
+      "answer"
+    ],
+    "number": "№22/100018-еп",
+    "author": "Автор (ініціатор): Ісаєв Микола Всісович",
+    "date_published": "Дата оприлюднення: 01 липня 2020",
+    "status": "Архів",
+    "text_length": 1417,
+    "has_answer": true
+  },
+  {
+    "id": 100020,
+    "title": "Забезпечити перевірку ЗАКОННОСТІ створення секретних в'язниць СБУ",
+    "fields_found": [
+      "number",
+      "author",
+      "date_published",
+      "status",
+      "text",
+      "answer"
+    ],
+    "number": "№22/100020-еп",
+    "author": "Автор (ініціатор): Ісаєв Микола Всісович",
+    "date_published": "Дата оприлюднення: 01 липня 2020",
+    "status": "Архів",
+    "text_length": 3928,
+    "has_answer": true
+  },
+  {
+    "id": 150006,
+    "title": "Об'єднати громадян в закриті групи по 5-15 людей і координувати через месенджер, саме для дій з підготовки і тренування на випадок екстрених ситуацій",
+    "fields_found": [
+      "number",
+      "author",
+      "date_published",
+      "status",
+      "text",
+      "answer"
+    ],
+    "number": "№22/150006-еп",
+    "author": "Автор (ініціатор): Мартинчук Руслан Олександрович",
+    "date_published": "Дата оприлюднення: 14 липня 2022",
+    "status": "Архів",
+    "text_length": 201,
+    "has_answer": true
+  },
+  {
+    "id": 150008,
+    "title": "Зменшити вартість навчання для студентів контрактної форми навчання ВНЗ в Україні під час воєнних дій на території України",
+    "fields_found": [
+      "number",
+      "author",
+      "date_published",
+      "status",
+      "text",
+      "answer"
+    ],
+    "number": "№22/150008-еп",
+    "author": "Автор (ініціатор): Лукач Соломія-Тетяна Степанівна",
+    "date_published": "Дата оприлюднення: 14 липня 2022",
+    "status": "Архів",
+    "text_length": 197,
+    "has_answer": true
+  },
+  {
+    "id": 150010,
+    "title": "Посилення контролю діяльності територіальних центрів комплектування, заборона видачі повісток в громадських місцях. А залишити за місцем реєстрації особи.",
+    "fields_found": [
+      "number",
+      "author",
+      "date_published",
+      "status",
+      "text",
+      "answer"
+    ],
+    "number": "№22/150010-еп",
+    "author": "Автор (ініціатор): Леончук Іван Володимирович",
+    "date_published": "Дата оприлюднення: 14 липня 2022",
+    "status": "Архів",
+    "text_length": 1208,
+    "has_answer": true
+  },
+  {
+    "id": 150020,
+    "title": "Зняти заборону розпоряджання іноземною валютою для підприємств та установ",
+    "fields_found": [
+      "number",
+      "author",
+      "date_published",
+      "status",
+      "text",
+      "answer"
+    ],
+    "number": "№22/150020-еп",
+    "author": "Автор (ініціатор): Федорович Віталій Юрійович",
+    "date_published": "Дата оприлюднення: 14 липня 2022",
+    "status": "Архів",
+    "text_length": 1208,
+    "has_answer": true
+  }
+]

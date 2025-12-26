@@ -79,7 +79,10 @@ def scrape_president_petitions(max_pages=1, start_page=1, status="active"):
                         "date": date_text,
                         "status": status_text,
                         "votes": votes,
-                        "url": BASE_URL + href
+                        "url": BASE_URL + href,
+                        "author": None,  # Not available on list page
+                        "text_length": None,  # Not available on list page
+                        "has_answer": None  # Not available on list page
                     })
                 except Exception as e:
                     print(f"Error parsing item: {e}")

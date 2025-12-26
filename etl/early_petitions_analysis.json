@@ -1,0 +1,977 @@
+[
+  {
+    "id": 33,
+    "url": "https://petition.president.gov.ua/petition/33",
+    "title": "Зменшення кількості депутатів Верховної Ради України до 100 осіб.",
+    "number": "№22/000033-еп",
+    "dates": {
+      "author": "Челепіс Тарас Олегович",
+      "published": "29 серпня 2015"
+    },
+    "status": "З відповіддю",
+    "votes": null,
+    "text_length": 504,
+    "has_answer": true,
+    "signers_shown": 30
+  },
+  {
+    "id": 34,
+    "url": "https://petition.president.gov.ua/petition/34",
+    "title": "Відмова від масового використання портретів Президента України",
+    "number": "№22/000034-еп",
+    "dates": {
+      "author": "Шута Захар Зенонович",
+      "published": "29 серпня 2015"
+    },
+    "status": "Архів",
+    "votes": null,
+    "text_length": 300,
+    "has_answer": true,
+    "signers_shown": 30
+  },
+  {
+    "id": 35,
+    "url": "https://petition.president.gov.ua/petition/35",
+    "title": "Подача закону про відміну депутатської недоторканості на засідання Верховної ради, 31 серпня.",
+    "number": "№22/000035-еп",
+    "dates": {
+      "author": "Барабошко Олександр Олександрович",
+      "published": "29 серпня 2015"
+    },
+    "status": "З відповіддю",
+    "votes": null,
+    "text_length": 755,
+    "has_answer": true,
+    "signers_shown": 30
+  },
+  {
+    "id": 36,
+    "url": "https://petition.president.gov.ua/petition/36",
+    "title": "дайте жити малому бізнесу",
+    "number": "№22/000036-еп",
+    "dates": {
+      "author": "Білик Володимир Володимирович",
+      "published": "29 серпня 2015"
+    },
+    "status": "Архів",
+    "votes": null,
+    "text_length": 1010,
+    "has_answer": true,
+    "signers_shown": 30
+  },
+  {
+    "id": 37,
+    "url": "https://petition.president.gov.ua/petition/37",
+    "title": "Відкрита інформація про використання коштів платників податків",
+    "number": "№22/000037-еп",
+    "dates": {
+      "author": "Сміян Дмитро Юрійович",
+      "published": "29 серпня 2015"
+    },
+    "status": "Архів",
+    "votes": null,
+    "text_length": 257,
+    "has_answer": true,
+    "signers_shown": 30
+  },
+  {
+    "id": 38,
+    "url": "https://petition.president.gov.ua/petition/38",
+    "title": "Перейти на накопичувальну пенсійну систему та реформувати Пенсійний Фонд",
+    "number": "№22/000038-еп",
+    "dates": {
+      "author": "Агєєв Валерій Юрійович",
+      "published": "29 серпня 2015"
+    },
+    "status": "Архів",
+    "votes": null,
+    "text_length": 804,
+    "has_answer": true,
+    "signers_shown": 30
+  },
+  {
+    "id": 39,
+    "url": "https://petition.president.gov.ua/petition/39",
+    "title": "Можливість дострокового відкликання будь-якої вибраної особи, що не виправдали довіри виборців.",
+    "number": "№22/000039-еп",
+    "dates": {
+      "author": "Гужва Арсен Володимирович",
+      "published": "29 серпня 2015"
+    },
+    "status": "З відповіддю",
+    "votes": null,
+    "text_length": 156,
+    "has_answer": true,
+    "signers_shown": 30
+  },
+  {
+    "id": 40,
+    "url": "https://petition.president.gov.ua/petition/40",
+    "title": "Законодавчо затвердити право громадян України на захист.",
+    "number": "№22/000040-еп",
+    "dates": {
+      "author": "Учайкін Георгій Миколайович",
+      "published": "29 серпня 2015"
+    },
+    "status": "З відповіддю",
+    "votes": null,
+    "text_length": 780,
+    "has_answer": true,
+    "signers_shown": 30
+  },
+  {
+    "id": 41,
+    "url": "https://petition.president.gov.ua/petition/41",
+    "title": "Всеукраїнський референдум щодо змін Конституції України стосовно децентралізації",
+    "number": "№22/000041-еп",
+    "dates": {
+      "author": "Іванець Руслан Володимирович",
+      "published": "29 серпня 2015"
+    },
+    "status": "Архів",
+    "votes": null,
+    "text_length": 151,
+    "has_answer": true,
+    "signers_shown": 30
+  },
+  {
+    "id": 42,
+    "url": "https://petition.president.gov.ua/petition/42",
+    "title": "Розпуск Верховної Ради України",
+    "number": "№22/000042-еп",
+    "dates": {
+      "author": "Андрусенко Дарьюш Иванович",
+      "published": "31 серпня 2015"
+    },
+    "status": "Архів",
+    "votes": null,
+    "text_length": 464,
+    "has_answer": true,
+    "signers_shown": 22
+  },
+  {
+    "id": 43,
+    "url": "https://petition.president.gov.ua/petition/43",
+    "title": "Виборність суддів, дільничних, прокурорів.",
+    "number": "№22/000043-еп",
+    "dates": {
+      "author": "Врадій Богдан Олександрович",
+      "published": "29 серпня 2015"
+    },
+    "status": "Архів",
+    "votes": null,
+    "text_length": 172,
+    "has_answer": true,
+    "signers_shown": 30
+  },
+  {
+    "id": 44,
+    "url": "https://petition.president.gov.ua/petition/44",
+    "title": "Надати громадянство Гаріку Коргородському",
+    "number": "№22/000044-еп",
+    "dates": {
+      "author": "Колісник Антон Іванович",
+      "published": "29 серпня 2015"
+    },
+    "status": "Архів",
+    "votes": null,
+    "text_length": 263,
+    "has_answer": true,
+    "signers_shown": 30
+  },
+  {
+    "id": 45,
+    "url": "https://petition.president.gov.ua/petition/45",
+    "title": "нова редакція Державного Гімну України",
+    "number": "№22/000045-еп",
+    "dates": {
+      "author": "Відаль Віталі Свєтіславович",
+      "published": "29 серпня 2015"
+    },
+    "status": "Архів",
+    "votes": null,
+    "text_length": 336,
+    "has_answer": true,
+    "signers_shown": 30
+  },
+  {
+    "id": 46,
+    "url": "https://petition.president.gov.ua/petition/46",
+    "title": "Зробіть перевірку тарифів на газ вони дуже високі",
+    "number": "№22/000046-еп",
+    "dates": {
+      "author": "Батурин Андрей Сергеевич",
+      "published": "29 серпня 2015"
+    },
+    "status": "Архів",
+    "votes": null,
+    "text_length": 386,
+    "has_answer": true,
+    "signers_shown": 30
+  },
+  {
+    "id": 47,
+    "url": "https://petition.president.gov.ua/petition/47",
+    "title": "Позбавлення громадянства осіб здійснивших наругу над Державними символами України",
+    "number": "№22/000047-еп",
+    "dates": {
+      "author": "Тарасенко Денис Юрійович",
+      "published": "01 вересня 2015"
+    },
+    "status": "Архів",
+    "votes": null,
+    "text_length": 479,
+    "has_answer": true,
+    "signers_shown": 30
+  },
+  {
+    "id": 48,
+    "url": "https://petition.president.gov.ua/petition/48",
+    "title": "Збільшення міри покарання державних службовців за хабарництво",
+    "number": "№22/000048-еп",
+    "dates": {
+      "author": "Марченко Олександр Миколайович",
+      "published": "29 серпня 2015"
+    },
+    "status": "З відповіддю",
+    "votes": null,
+    "text_length": 376,
+    "has_answer": true,
+    "signers_shown": 30
+  },
+  {
+    "id": 49,
+    "url": "https://petition.president.gov.ua/petition/49",
+    "title": "Поглиблення співпраці з ООН у гуманітарній сфері.",
+    "number": "№22/000049-еп",
+    "dates": {
+      "author": "Бойко Валерій Васильович",
+      "published": "29 серпня 2015"
+    },
+    "status": "Архів",
+    "votes": null,
+    "text_length": 1070,
+    "has_answer": true,
+    "signers_shown": 30
+  },
+  {
+    "id": 50,
+    "url": "https://petition.president.gov.ua/petition/50",
+    "title": "Звільнення пана Шокіна та призначення відкритого та прозорого конкурса на посаду головного прокурора України",
+    "number": "№22/000050-еп",
+    "dates": {
+      "author": "Петренко Олександр Іванович",
+      "published": "29 серпня 2015"
+    },
+    "status": "Unknown",
+    "votes": null,
+    "text_length": 535,
+    "has_answer": true,
+    "signers_shown": 30
+  },
+  {
+    "id": 51,
+    "url": "https://petition.president.gov.ua/petition/51",
+    "title": "Сортування петицій за кількістю наданих за петицію голосів",
+    "number": "№22/000051-еп",
+    "dates": {
+      "author": "Колесниченко Сергій Юрійович",
+      "published": "29 серпня 2015"
+    },
+    "status": "Архів",
+    "votes": null,
+    "text_length": 163,
+    "has_answer": true,
+    "signers_shown": 30
+  },
+  {
+    "id": 52,
+    "url": "https://petition.president.gov.ua/petition/52",
+    "title": "Референдум про вступ в НАТО",
+    "number": "№22/000052-еп",
+    "dates": {
+      "author": "Батурин Андрей Сергеевич",
+      "published": "29 серпня 2015"
+    },
+    "status": "З відповіддю",
+    "votes": null,
+    "text_length": 302,
+    "has_answer": true,
+    "signers_shown": 30
+  },
+  {
+    "id": 53,
+    "url": "https://petition.president.gov.ua/petition/53",
+    "title": "Фонд заробітної платні працівників АКБ доповнювати відсотком від повернутих корупційних коштів.",
+    "number": "№22/000053-еп",
+    "dates": {
+      "author": "Сидоров Володимир Миколайович",
+      "published": "29 серпня 2015"
+    },
+    "status": "Архів",
+    "votes": null,
+    "text_length": 388,
+    "has_answer": true,
+    "signers_shown": 30
+  },
+  {
+    "id": 54,
+    "url": "https://petition.president.gov.ua/petition/54",
+    "title": "Затвердження Великого Гербу України",
+    "number": "№22/000054-еп",
+    "dates": {
+      "author": "Гречаний Михайло Сергійович",
+      "published": "29 серпня 2015"
+    },
+    "status": "Архів",
+    "votes": null,
+    "text_length": 550,
+    "has_answer": true,
+    "signers_shown": 30
+  },
+  {
+    "id": 55,
+    "url": "https://petition.president.gov.ua/petition/55",
+    "title": "СКАСУВАННЯ РОЗМИТНЕННЯ І АКЦИЗНОГО ПОДАТКУ НА ІМПОРТ АВТО",
+    "number": "№22/000055-еп",
+    "dates": {
+      "author": "Матвієнко Ігор Миколайович",
+      "published": "29 серпня 2015"
+    },
+    "status": "З відповіддю",
+    "votes": null,
+    "text_length": 179,
+    "has_answer": true,
+    "signers_shown": 30
+  },
+  {
+    "id": 56,
+    "url": "https://petition.president.gov.ua/petition/56",
+    "title": "Остановите войну!",
+    "number": "№22/000056-еп",
+    "dates": {
+      "author": "Svk",
+      "published": "29 серпня 2015"
+    },
+    "status": "Архів",
+    "votes": null,
+    "text_length": 88,
+    "has_answer": true,
+    "signers_shown": 30
+  },
+  {
+    "id": 57,
+    "url": "https://petition.president.gov.ua/petition/57",
+    "title": "заборона абортів в Україні",
+    "number": "№22/000057-еп",
+    "dates": {
+      "author": "Тіца Олександр Миколайович",
+      "published": "29 серпня 2015"
+    },
+    "status": "Архів",
+    "votes": null,
+    "text_length": 345,
+    "has_answer": true,
+    "signers_shown": 30
+  },
+  {
+    "id": 58,
+    "url": "https://petition.president.gov.ua/petition/58",
+    "title": "Мораторій на відчуження житла в зоні АТО за кредитами іпотеки та заморожування боргу",
+    "number": "№22/000058-еп",
+    "dates": {
+      "author": "Петренко Петро Петрович",
+      "published": "29 серпня 2015"
+    },
+    "status": "Архів",
+    "votes": null,
+    "text_length": 725,
+    "has_answer": true,
+    "signers_shown": 30
+  },
+  {
+    "id": 59,
+    "url": "https://petition.president.gov.ua/petition/59",
+    "title": "Позбавляти громадянства за наругу над Держаними символами України",
+    "number": "№22/000059-еп",
+    "dates": {
+      "author": "Тарасенко Денис Юрійович",
+      "published": "01 вересня 2015"
+    },
+    "status": "Архів",
+    "votes": null,
+    "text_length": 479,
+    "has_answer": true,
+    "signers_shown": 30
+  },
+  {
+    "id": 60,
+    "url": "https://petition.president.gov.ua/petition/60",
+    "title": "Треба порвати дипломатичні стосунки зРосією",
+    "number": "№22/000060-еп",
+    "dates": {
+      "author": "Батурин Андрей Сергеевич",
+      "published": "31 серпня 2015"
+    },
+    "status": "Архів",
+    "votes": null,
+    "text_length": 514,
+    "has_answer": true,
+    "signers_shown": 14
+  },
+  {
+    "id": 61,
+    "url": "https://petition.president.gov.ua/petition/61",
+    "title": "Треба порвати дипломатичні стосунки зРосією",
+    "number": "№22/000061-еп",
+    "dates": {
+      "author": "Батурин Андрей Сергеевич",
+      "published": "31 серпня 2015"
+    },
+    "status": "Архів",
+    "votes": null,
+    "text_length": 514,
+    "has_answer": true,
+    "signers_shown": 27
+  },
+  {
+    "id": 62,
+    "url": "https://petition.president.gov.ua/petition/62",
+    "title": "Оприлюднення розрахунків комунальних тарифів.",
+    "number": "№22/000062-еп",
+    "dates": {
+      "author": "Демидович Денис Миколайович",
+      "published": "29 серпня 2015"
+    },
+    "status": "Архів",
+    "votes": null,
+    "text_length": 331,
+    "has_answer": true,
+    "signers_shown": 30
+  },
+  {
+    "id": 63,
+    "url": "https://petition.president.gov.ua/petition/63",
+    "title": "Cкасування акцизу на імпорт автомобілів",
+    "number": "№22/000063-еп",
+    "dates": {
+      "author": "Топчій Андрій Дмитрович",
+      "published": "29 серпня 2015"
+    },
+    "status": "З відповіддю",
+    "votes": null,
+    "text_length": 1067,
+    "has_answer": true,
+    "signers_shown": 30
+  },
+  {
+    "id": 64,
+    "url": "https://petition.president.gov.ua/petition/64",
+    "title": "Підняти мінімальну зарплатню",
+    "number": "№22/000064-еп",
+    "dates": {
+      "author": "Батурин Андрей Сергеевич",
+      "published": "29 серпня 2015"
+    },
+    "status": "Архів",
+    "votes": null,
+    "text_length": 249,
+    "has_answer": true,
+    "signers_shown": 30
+  },
+  {
+    "id": 65,
+    "url": "https://petition.president.gov.ua/petition/65",
+    "title": "Свобода панорамної зйомки",
+    "number": "№22/000065-еп",
+    "dates": {
+      "author": "Підліснюк Максим Юрійович",
+      "published": "29 серпня 2015"
+    },
+    "status": "Архів",
+    "votes": null,
+    "text_length": 1068,
+    "has_answer": true,
+    "signers_shown": 30
+  },
+  {
+    "id": 66,
+    "url": "https://petition.president.gov.ua/petition/66",
+    "title": "Впровадити електронну систему голосування з відбитком пальців в Верховній Раді",
+    "number": "№22/000066-еп",
+    "dates": {
+      "author": "Кондратьєв Олексій Станіславович",
+      "published": "29 серпня 2015"
+    },
+    "status": "З відповіддю",
+    "votes": null,
+    "text_length": 257,
+    "has_answer": true,
+    "signers_shown": 30
+  },
+  {
+    "id": 67,
+    "url": "https://petition.president.gov.ua/petition/67",
+    "title": "ПЕРЕГОРНУТИ ПРАПОР",
+    "number": "№22/000067-еп",
+    "dates": {
+      "author": "Світличний Владислав Олександрович",
+      "published": "29 серпня 2015"
+    },
+    "status": "Архів",
+    "votes": null,
+    "text_length": 359,
+    "has_answer": true,
+    "signers_shown": 30
+  },
+  {
+    "id": 68,
+    "url": "https://petition.president.gov.ua/petition/68",
+    "title": "Підприємства які займаються громадськими перевезеннаями мають опубліковати розрахунки вартості проїзду.",
+    "number": "№22/000068-еп",
+    "dates": {
+      "author": "Демидович Денис Миколайович",
+      "published": "29 серпня 2015"
+    },
+    "status": "Архів",
+    "votes": null,
+    "text_length": 436,
+    "has_answer": true,
+    "signers_shown": 30
+  },
+  {
+    "id": 69,
+    "url": "https://petition.president.gov.ua/petition/69",
+    "title": "Воссоздание Украиной ядерного оружия",
+    "number": "№22/000069-еп",
+    "dates": {
+      "author": "Ткаченко Георгій Георгійович",
+      "published": "01 вересня 2015"
+    },
+    "status": "Архів",
+    "votes": null,
+    "text_length": 286,
+    "has_answer": true,
+    "signers_shown": 12
+  },
+  {
+    "id": 70,
+    "url": "https://petition.president.gov.ua/petition/70",
+    "title": "Скасувати Закон \"Про засади державної мовної політики\" № 5029-VI",
+    "number": "№22/000070-еп",
+    "dates": {
+      "author": "Гарасим Ярослав Богданович",
+      "published": "01 вересня 2015"
+    },
+    "status": "Архів",
+    "votes": null,
+    "text_length": 313,
+    "has_answer": true,
+    "signers_shown": 17
+  },
+  {
+    "id": 71,
+    "url": "https://petition.president.gov.ua/petition/71",
+    "title": "Заборонити пропаганду гомосексуалізму в Україні",
+    "number": "№22/000071-еп",
+    "dates": {
+      "author": "Любов Проти Гомосексуалізму",
+      "published": "29 серпня 2015"
+    },
+    "status": "Архів",
+    "votes": null,
+    "text_length": 842,
+    "has_answer": true,
+    "signers_shown": 30
+  },
+  {
+    "id": 72,
+    "url": "https://petition.president.gov.ua/petition/72",
+    "title": "Вибори за відкритими партійними списками",
+    "number": "№22/000072-еп",
+    "dates": {
+      "author": "Кондратьєв Олексій Станіславович",
+      "published": "29 серпня 2015"
+    },
+    "status": "Архів",
+    "votes": null,
+    "text_length": 186,
+    "has_answer": true,
+    "signers_shown": 30
+  },
+  {
+    "id": 73,
+    "url": "https://petition.president.gov.ua/petition/73",
+    "title": "On-line голосування на місцевих виборах 25 жовтня 2015",
+    "number": "№22/000073-еп",
+    "dates": {
+      "author": "Гужва Арсен Володимирович",
+      "published": "01 вересня 2015"
+    },
+    "status": "Архів",
+    "votes": null,
+    "text_length": 204,
+    "has_answer": true,
+    "signers_shown": 30
+  },
+  {
+    "id": 74,
+    "url": "https://petition.president.gov.ua/petition/74",
+    "title": "Візовий режим з Російською Федерацією",
+    "number": "№22/000074-еп",
+    "dates": {
+      "author": "Воронін Віталій Вікторович",
+      "published": "31 серпня 2015"
+    },
+    "status": "Архів",
+    "votes": null,
+    "text_length": 208,
+    "has_answer": true,
+    "signers_shown": 30
+  },
+  {
+    "id": 75,
+    "url": "https://petition.president.gov.ua/petition/75",
+    "title": "Скасувати п. 12 порядку тимчасового затримання та зберігання транспортних засобів на спеціальних майданчиках і стоянках (щодо повернення транспортного засобу лише за умови за умови оплати витрат, пов'язаних з транспортуванням та зберіганням такого транспортного засобу)",
+    "number": "№22/000075-еп",
+    "dates": {
+      "author": "Узерчук Олексій Андрійович",
+      "published": "29 серпня 2015"
+    },
+    "status": "Архів",
+    "votes": null,
+    "text_length": 1066,
+    "has_answer": true,
+    "signers_shown": 30
+  },
+  {
+    "id": 76,
+    "url": "https://petition.president.gov.ua/petition/76",
+    "title": "Законодавчо затвредити звільнення депутатів верховноі ради",
+    "number": "№22/000076-еп",
+    "dates": {
+      "author": "Кондратьєв Олексій Станіславович",
+      "published": "29 серпня 2015"
+    },
+    "status": "Архів",
+    "votes": null,
+    "text_length": 282,
+    "has_answer": true,
+    "signers_shown": 30
+  },
+  {
+    "id": 77,
+    "url": "https://petition.president.gov.ua/petition/77",
+    "title": "Дозвіл на реєстрацію громадянами дорожньо-транспортної пригоди на відео- чи фото- пристрої, передача чи виклад на сайт ДАЇ та отримання від 5 до 25% комісії від суми штрафу, накладеного на порушника",
+    "number": "№22/000077-еп",
+    "dates": {
+      "author": "Кашлачов Іван Миколайович",
+      "published": "29 серпня 2015"
+    },
+    "status": "Архів",
+    "votes": null,
+    "text_length": 1014,
+    "has_answer": true,
+    "signers_shown": 30
+  },
+  {
+    "id": 79,
+    "url": "https://petition.president.gov.ua/petition/79",
+    "title": "Заборонити кабінки без туалетного паперу",
+    "number": "№22/000079-еп",
+    "dates": {
+      "author": "Ноддет Батченко",
+      "published": "31 серпня 2015"
+    },
+    "status": "Архів",
+    "votes": null,
+    "text_length": 1028,
+    "has_answer": true,
+    "signers_shown": 28
+  },
+  {
+    "id": 82,
+    "url": "https://petition.president.gov.ua/petition/82",
+    "title": "Виробити механізм покарання народних депутатів України за відсутність на робочому місці.",
+    "number": "№22/000082-еп",
+    "dates": {
+      "author": "Демидович Денис Миколайович",
+      "published": "29 серпня 2015"
+    },
+    "status": "Архів",
+    "votes": null,
+    "text_length": 463,
+    "has_answer": true,
+    "signers_shown": 30
+  },
+  {
+    "id": 83,
+    "url": "https://petition.president.gov.ua/petition/83",
+    "title": "Закон про імпічмент президента",
+    "number": "№22/000083-еп",
+    "dates": {
+      "author": "Чувашов Андрій Сергійович",
+      "published": "01 вересня 2015"
+    },
+    "status": "Архів",
+    "votes": null,
+    "text_length": 345,
+    "has_answer": true,
+    "signers_shown": 30
+  },
+  {
+    "id": 84,
+    "url": "https://petition.president.gov.ua/petition/84",
+    "title": "Швидка державна допомога на операцію",
+    "number": "№22/000084-еп",
+    "dates": {
+      "author": "Кашлачов Іван Миколайович",
+      "published": "29 серпня 2015"
+    },
+    "status": "Архів",
+    "votes": null,
+    "text_length": 1024,
+    "has_answer": true,
+    "signers_shown": 30
+  },
+  {
+    "id": 85,
+    "url": "https://petition.president.gov.ua/petition/85",
+    "title": "Сприяння у покращенні функціонування системи вторинної переробки побутових відходів",
+    "number": "№22/000085-еп",
+    "dates": {
+      "author": "Николишин Василь Петрович",
+      "published": "29 серпня 2015"
+    },
+    "status": "Архів",
+    "votes": null,
+    "text_length": 816,
+    "has_answer": true,
+    "signers_shown": 30
+  },
+  {
+    "id": 86,
+    "url": "https://petition.president.gov.ua/petition/86",
+    "title": "Зміна національного гімну",
+    "number": "№22/000086-еп",
+    "dates": {
+      "author": "Пинхас Вальцман Ааронови",
+      "published": "31 серпня 2015"
+    },
+    "status": "Архів",
+    "votes": null,
+    "text_length": 613,
+    "has_answer": true,
+    "signers_shown": 7
+  },
+  {
+    "id": 87,
+    "url": "https://petition.president.gov.ua/petition/87",
+    "title": "Виплата зарплатні шановному порохоботству України",
+    "number": "№22/000087-еп",
+    "dates": {
+      "author": "Реутов Сергій Васильович",
+      "published": "29 серпня 2015"
+    },
+    "status": "Архів",
+    "votes": null,
+    "text_length": 405,
+    "has_answer": true,
+    "signers_shown": 20
+  },
+  {
+    "id": 88,
+    "url": "https://petition.president.gov.ua/petition/88",
+    "title": "Переглянути вартість та перелік товарів та послуг споживчого кошика.",
+    "number": "№22/000088-еп",
+    "dates": {
+      "author": "Гурін Олександр Володимирович",
+      "published": "29 серпня 2015"
+    },
+    "status": "Архів",
+    "votes": null,
+    "text_length": 434,
+    "has_answer": true,
+    "signers_shown": 30
+  },
+  {
+    "id": 89,
+    "url": "https://petition.president.gov.ua/petition/89",
+    "title": "Зрівняти мінімальну заробітну плату та прожитковий мінімум з вартістю споживчого кошика.",
+    "number": "№22/000089-еп",
+    "dates": {
+      "author": "Гурін Олександр Володимирович",
+      "published": "29 серпня 2015"
+    },
+    "status": "Архів",
+    "votes": null,
+    "text_length": 266,
+    "has_answer": true,
+    "signers_shown": 30
+  },
+  {
+    "id": 90,
+    "url": "https://petition.president.gov.ua/petition/90",
+    "title": "Проведення НЕВІДКЛАДНОЇ РЕФОРМИ з виводу заробітної плати з тіні та створення умов гідного пенсійного забезпечення",
+    "number": "№22/000090-еп",
+    "dates": {
+      "author": "Марченко Олександр Миколайович",
+      "published": "29 серпня 2015"
+    },
+    "status": "Архів",
+    "votes": null,
+    "text_length": 756,
+    "has_answer": true,
+    "signers_shown": 30
+  },
+  {
+    "id": 91,
+    "url": "https://petition.president.gov.ua/petition/91",
+    "title": "Звернутися до Гаазького трибуналу щодо публічного процесу над Володимиром Путіним",
+    "number": "№22/000091-еп",
+    "dates": {
+      "author": "Задорецький Олег Богданович",
+      "published": "29 серпня 2015"
+    },
+    "status": "Архів",
+    "votes": null,
+    "text_length": 509,
+    "has_answer": true,
+    "signers_shown": 30
+  },
+  {
+    "id": 92,
+    "url": "https://petition.president.gov.ua/petition/92",
+    "title": "Обмежене прав нових громадян України - право на голосування на виборах з третього покоління",
+    "number": "№22/000092-еп",
+    "dates": {
+      "author": "Кашлачов Іван Миколайович",
+      "published": "31 серпня 2015"
+    },
+    "status": "Архів",
+    "votes": null,
+    "text_length": 413,
+    "has_answer": true,
+    "signers_shown": 19
+  },
+  {
+    "id": 93,
+    "url": "https://petition.president.gov.ua/petition/93",
+    "title": "Позбавлення громадянства України за тероризм, сепаратизм та хабарництво державних службовців",
+    "number": "№22/000093-еп",
+    "dates": {
+      "author": "Кашлачов Іван Миколайович",
+      "published": "01 вересня 2015"
+    },
+    "status": "Архів",
+    "votes": null,
+    "text_length": 419,
+    "has_answer": true,
+    "signers_shown": 30
+  },
+  {
+    "id": 94,
+    "url": "https://petition.president.gov.ua/petition/94",
+    "title": "евиконання ДМС України судових рішень",
+    "number": "№22/000094-еп",
+    "dates": {
+      "author": "Слинько Віктор Миколайович",
+      "published": "29 серпня 2015"
+    },
+    "status": "Архів",
+    "votes": null,
+    "text_length": 1070,
+    "has_answer": true,
+    "signers_shown": 30
+  },
+  {
+    "id": 95,
+    "url": "https://petition.president.gov.ua/petition/95",
+    "title": "ДІЄВА БОРОТЬБА ІЗ КОРУПЦІЄЮ",
+    "number": "№22/000095-еп",
+    "dates": {
+      "author": "Фарбак Павло Володимирович",
+      "published": "29 серпня 2015"
+    },
+    "status": "Архів",
+    "votes": null,
+    "text_length": 482,
+    "has_answer": true,
+    "signers_shown": 30
+  },
+  {
+    "id": 96,
+    "url": "https://petition.president.gov.ua/petition/96",
+    "title": "Ввести візовий режим з РФ.",
+    "number": "№22/000096-еп",
+    "dates": {
+      "author": "Іванців Руслан Васильович",
+      "published": "31 серпня 2015"
+    },
+    "status": "Архів",
+    "votes": null,
+    "text_length": 570,
+    "has_answer": true,
+    "signers_shown": 30
+  },
+  {
+    "id": 97,
+    "url": "https://petition.president.gov.ua/petition/97",
+    "title": "Впровадити високі штрафи за сміття на вулиці.",
+    "number": "№22/000097-еп",
+    "dates": {
+      "author": "Єлізаренко Олексій Олегович",
+      "published": "29 серпня 2015"
+    },
+    "status": "Архів",
+    "votes": null,
+    "text_length": 247,
+    "has_answer": true,
+    "signers_shown": 30
+  },
+  {
+    "id": 98,
+    "url": "https://petition.president.gov.ua/petition/98",
+    "title": "Про обов'язкову покрокову програму кандидата в депутати ВР",
+    "number": "№22/000098-еп",
+    "dates": {
+      "author": "Верба Сергій Олександрович",
+      "published": "29 серпня 2015"
+    },
+    "status": "Архів",
+    "votes": null,
+    "text_length": 702,
+    "has_answer": true,
+    "signers_shown": 30
+  },
+  {
+    "id": 99,
+    "url": "https://petition.president.gov.ua/petition/99",
+    "title": "Відновити статус української мови як єдиної державної, забезпечивши внесення змін до Закону України \"Про засади державної мовної політики\" від 03.07.2012 № 5029-VI",
+    "number": "№22/000099-еп",
+    "dates": {
+      "author": "Кошів Руслан Олегович",
+      "published": "01 вересня 2015"
+    },
+    "status": "Архів",
+    "votes": null,
+    "text_length": 1070,
+    "has_answer": true,
+    "signers_shown": 30
+  },
+  {
+    "id": 100,
+    "url": "https://petition.president.gov.ua/petition/100",
+    "title": "Сучасне українське козацтво (реформа ЗСУ)",
+    "number": "№22/000100-еп",
+    "dates": {
+      "author": "Соловйов Сергій Ігорович",
+      "published": "29 серпня 2015"
+    },
+    "status": "Архів",
+    "votes": null,
+    "text_length": 1070,
+    "has_answer": true,
+    "signers_shown": 30
+  }
+]

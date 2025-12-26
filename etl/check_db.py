@@ -1,0 +1,13 @@
+import duckdb
+con = duckdb.connect('petitions.duckdb')
+print("--- SCHEMA ---")
+print(con.execute("DESCRIBE petitions").df())
+print("\n--- SAMPLE DATA ---")
+print(con.execute("SELECT * FROM petitions LIMIT 5").df())
+print("\n--- DATE SAMPLES ---")
+print(con.execute("SELECT date FROM petitions LIMIT 10").fetchall())
+print("\n--- STATUS SAMPLES ---")
+print(con.execute("SELECT DISTINCT status FROM petitions").fetchall())
+print("\n--- MISSING DATA STATS ---")
+print(con.execute("SELECT COUNT(*), COUNT(author), COUNT(text_length), COUNT(has_answer) FROM petitions").fetchall())
+con.close()

@@ -1,16 +1,9 @@
-import React from 'react';
-import {
-    BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer,
-    Cell, PieChart, Pie, Legend
+```javascript
+import { useState } from 'react';
+import { 
+  BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, 
+  AreaChart, Area, ScatterChart, Scatter, ZAxis, Legend 
 } from 'recharts';
-import { FileText, ThumbsUp, Activity, CheckCircle } from 'lucide-react';
-
-// Use a try-catch import or default to empty if file missing (for safety)
-import analyticsData from './analytics_data.json';
-
-const Dashboard = () => {
-    if (!analyticsData) return <div className="p-4">Loading analytics...</div>;
-
     const { totals, top_president, top_cabinet, generated_at } = analyticsData;
 
     // KPIs
@@ -48,8 +41,9 @@ const Dashboard = () => {
                                 </p>
                                 <div className="flex items-center gap-2 mt-1 text-xs text-slate-400">
                                     <span>{item.date}</span>
-                                    <span className={`px-1.5 py-0.5 rounded-full ${item.status.includes('відповіддю') ? 'bg-green-100 text-green-700' : 'bg-gray-100 text-gray-600'
-                                        }`}>
+                                    <span className={`px - 1.5 py - 0.5 rounded - full ${
+    item.status.includes('відповіддю') ? 'bg-green-100 text-green-700' : 'bg-gray-100 text-gray-600'
+} `}>
                                         {item.status}
                                     </span>
                                 </div>
@@ -168,7 +162,7 @@ const Dashboard = () => {
                                     dataKey="value"
                                 >
                                     {pieData.map((entry, index) => (
-                                        <Cell key={`cell-${index}`} fill={entry.color} />
+                                        <Cell key={`cell - ${ index } `} fill={entry.color} />
                                     ))}
                                 </Pie>
                                 <Tooltip />
@@ -212,7 +206,7 @@ const Dashboard = () => {
                                         [...top_cabinet.slice(0, 3), ...top_president.slice(0, 3)]
                                             .sort((a, b) => b.votes - a.votes)
                                             .map((entry, index) => (
-                                                <Cell key={`cell-${index}`} fill={entry.source === 'president' ? '#0088FE' : '#00C49F'} />
+                                                <Cell key={`cell - ${ index } `} fill={entry.source === 'president' ? '#0088FE' : '#00C49F'} />
                                             ))
                                     }
                                 </Bar>
