@@ -1,228 +1,242 @@
-```javascript
 import { useState } from 'react';
-import { 
-  BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, 
-  AreaChart, Area, ScatterChart, Scatter, ZAxis, Legend 
+import {
+    BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer,
+    AreaChart, Area, ScatterChart, Scatter, ZAxis, Legend
 } from 'recharts';
-    const { totals, top_president, top_cabinet, generated_at } = analyticsData;
+import {
+    TrendingUp, Users, FileText, CheckCircle, AlertCircle,
+    Clock, Server, Database, Activity, Info
+} from 'lucide-react';
+import data from './analytics_data.json';
 
-    // KPIs
-    const totalCount = (totals.president || 0) + (totals.cabinet || 0);
-    const presCount = totals.president || 0;
-    const cabCount = totals.cabinet || 0;
+const Card = ({ children, className = "" }) => (
+    <div className={`bg-white rounded-xl shadow-sm border border-slate-200 p-6 ${className}`}>
+        {children}
+    </div>
+);
 
-    // Data for Pie Chart
-    const pieData = [
-        { name: 'President', value: presCount, color: '#0088FE' },
-        { name: 'Cabinet', value: cabCount, color: '#00C49F' },
-    ];
-
-    // Helper for Top List
-    const TopList = ({ data, title, icon: Icon }) => (
-        <div className="bg-white p-4 rounded-lg shadow-sm border border-slate-200">
-            <div className="flex items-center gap-2 mb-4 border-b pb-2">
-                <Icon className="w-5 h-5 text-blue-600" />
-                <h3 className="font-semibold text-slate-700">{title}</h3>
+const StatCard = ({ title, value, subtext, icon: Icon, color = "blue" }) => (
+    <Card>
+        <div className="flex items-start justify-between">
+            <div>
+                <p className="text-sm font-medium text-slate-500 mb-1">{title}</p>
+                <h3 className="text-2xl font-bold text-slate-900">{value}</h3>
+                {subtext && <p className="text-xs text-slate-400 mt-2">{subtext}</p>}
             </div>
-            <div className="space-y-3">
-                {data.slice(0, 5).map((item, idx) => (
-                    <a
-                        key={idx}
-                        href={item.url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="block group"
-                    >
-                        <div className="flex justify-between items-start">
-                            <span className="text-sm font-medium text-slate-500 w-6">#{idx + 1}</span>
-                            <div className="flex-1">
-                                <p className="text-sm text-slate-800 line-clamp-2 group-hover:text-blue-600 transition-colors">
-                                    {item.title}
-                                </p>
-                                <div className="flex items-center gap-2 mt-1 text-xs text-slate-400">
-                                    <span>{item.date}</span>
-                                    <span className={`px - 1.5 py - 0.5 rounded - full ${
-    item.status.includes('відповіддю') ? 'bg-green-100 text-green-700' : 'bg-gray-100 text-gray-600'
-} `}>
-                                        {item.status}
-                                    </span>
-                                </div>
-                            </div>
-                            <div className="text-right pl-2">
-                                <span className="block text-sm font-bold text-slate-700">
-                                    {item.votes.toLocaleString()}
-                                </span>
-                                <span className="text-[10px] text-slate-400">votes</span>
-                            </div>
-                        </div>
-                    </a>
-                ))}
+            <div className={`p-3 rounded-lg bg-${color}-50 text-${color}-600`}>
+                <Icon size={20} />
             </div>
         </div>
-    );
+    </Card>
+);
+
+export default function Dashboard() {
+    const { overview, daily, analytics, pipeline } = data;
 
     return (
-        <div className="max-w-6xl mx-auto p-6 bg-slate-50 min-h-screen">
-            <header className="mb-8">
-                <h1 className="text-3xl font-bold text-slate-800 mb-2">📊 Analytics Dashboard</h1>
-                <p className="text-sm text-slate-500">
-                    Last updated: {generated_at} | Source: Active & Archived Petitions
-                </p>
-            </header>
+        <div className="min-h-screen bg-slate-50 p-8 font-sans text-slate-900">
+            <div className="max-w-7xl mx-auto space-y-8">
 
-            {/* KPI Cards */}
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-8">
-                <div className="bg-white p-4 rounded-lg shadow-sm border border-slate-200 flex items-center gap-4">
-                    <div className="p-3 bg-blue-100 rounded-full text-blue-600">
-                        <Activity size={24} />
-                    </div>
-                    <div>
-                        <p className="text-xs text-slate-500 uppercase font-semibold">Total Petitions</p>
-                        <p className="text-2xl font-bold text-slate-800">{totalCount.toLocaleString()}</p>
-                    </div>
-                </div>
+                {/* HEADER */}
+                <header className="mb-8">
+                    <h1 className="text-3xl font-bold text-slate-900 tracking-tight">Petition Analytics</h1>
+                    <p className="text-slate-500 mt-2">Comprehensive analysis of Ukrainian electronic petitions (President & Cabinet)</p>
+                </header>
 
-                <div className="bg-white p-4 rounded-lg shadow-sm border border-slate-200 flex items-center gap-4">
-                    <div className="p-3 bg-indigo-100 rounded-full text-indigo-600">
-                        <FileText size={24} />
+                {/* BLOCK 1: OVERVIEW */}
+                <section className="space-y-4">
+                    <div className="flex items-center space-x-2 mb-2">
+                        <Activity className="text-blue-600" size={20} />
+                        <h2 className="text-xl font-semibold text-slate-800">Overview</h2>
                     </div>
-                    <div>
-                        <p className="text-xs text-slate-500 uppercase font-semibold">President's Office</p>
-                        <p className="text-2xl font-bold text-slate-800">{presCount.toLocaleString()}</p>
-                    </div>
-                </div>
 
-                <div className="bg-white p-4 rounded-lg shadow-sm border border-slate-200 flex items-center gap-4">
-                    <div className="p-3 bg-teal-100 rounded-full text-teal-600">
-                        <FileText size={24} />
+                    <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+                        <StatCard
+                            title="Total Petitions"
+                            value={overview.total.toLocaleString()}
+                            subtext={`${overview.president_count.toLocaleString()} President • ${overview.cabinet_count.toLocaleString()} Cabinet`}
+                            icon={FileText}
+                            color="indigo"
+                        />
+                        <StatCard
+                            title="Success Rate"
+                            value={`${overview.success_rate}%`}
+                            subtext="reached 25,000 votes"
+                            icon={CheckCircle}
+                            color="green"
+                        />
+                        <StatCard
+                            title="Median Votes"
+                            value={overview.median_votes}
+                            subtext="50% of petitions get less"
+                            icon={Users}
+                            color="amber"
+                        />
+                        <StatCard
+                            title="Response Rate"
+                            value={`${overview.response_rate}%`}
+                            subtext="received official answer"
+                            icon={Info}
+                            color="cyan"
+                        />
                     </div>
-                    <div>
-                        <p className="text-xs text-slate-500 uppercase font-semibold">Cabinet of Ministers</p>
-                        <p className="text-2xl font-bold text-slate-800">{cabCount.toLocaleString()}</p>
-                    </div>
-                </div>
 
-                <div className="bg-white p-4 rounded-lg shadow-sm border border-slate-200 flex items-center gap-4">
-                    <div className="p-3 bg-amber-100 rounded-full text-amber-600">
-                        <ThumbsUp size={24} />
-                    </div>
-                    <div>
-                        <p className="text-xs text-slate-500 uppercase font-semibold">Top Vote</p>
-                        <p className="text-2xl font-bold text-slate-800">
-                            {Math.max(
-                                ...top_president.map(p => p.votes),
-                                ...top_cabinet.map(p => p.votes)
-                            ).toLocaleString()}
+                    <div className="bg-blue-50 border border-blue-100 rounded-lg p-4 flex items-start space-x-3">
+                        <Info className="text-blue-600 min-w-5 mt-0.5" size={20} />
+                        <p className="text-sm text-blue-800">
+                            <strong>Data Insight:</strong> {overview.insight}
                         </p>
                     </div>
-                </div>
-            </div>
+                </section>
 
-            {/* TRENDING SECTION (New) */}
-            {analyticsData.trending && analyticsData.trending.length > 0 && (
-                <div className="mb-8">
-                    <div className="flex items-center gap-2 mb-4">
-                        <div className="p-2 bg-pink-100 rounded-lg text-pink-600">
-                            <Activity size={20} />
-                        </div>
-                        <h3 className="text-xl font-bold text-slate-800">🚀 Trending Today (Live Updates)</h3>
+                {/* BLOCK 2: DAILY DYNAMICS */}
+                <section className="space-y-4">
+                    <div className="flex items-center space-x-2 mb-2">
+                        <TrendingUp className="text-emerald-600" size={20} />
+                        <h2 className="text-xl font-semibold text-slate-800">Daily Dynamics</h2>
                     </div>
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                        {analyticsData.trending.slice(0, 3).map((item, idx) => (
-                            <div key={idx} className="bg-gradient-to-br from-white to-pink-50 p-4 rounded-xl border border-pink-100 shadow-sm">
-                                <div className="flex justify-between items-start mb-2">
-                                    <span className="bg-pink-100 text-pink-700 text-xs font-bold px-2 py-1 rounded-full">
-                                        +{item.delta} votes
-                                    </span>
-                                    <span className="text-slate-400 text-xs">Total: {item.total.toLocaleString()}</span>
+
+                    <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                        <Card className="lg:col-span-1 bg-gradient-to-br from-emerald-50 to-white border-emerald-100">
+                            <h3 className="text-lg font-semibold text-emerald-900 mb-4">Last 24 Hours</h3>
+                            <div className="space-y-4">
+                                <div className="flex justify-between items-center border-b border-emerald-100 pb-2">
+                                    <span className="text-emerald-700">New Petitions</span>
+                                    <span className="font-bold text-2xl text-emerald-600">+{daily.new_petitions}</span>
                                 </div>
-                                <a href={item.url} target="_blank" rel="noreferrer" className="font-semibold text-slate-800 hover:text-blue-600 line-clamp-2">
-                                    {item.title}
-                                </a>
+                                <div className="flex justify-between items-center border-b border-emerald-100 pb-2">
+                                    <span className="text-emerald-700">Votes Added</span>
+                                    <span className="font-bold text-2xl text-emerald-600">+{daily.votes_added}</span>
+                                </div>
+                                <div className="text-xs text-emerald-500 mt-2">
+                                    * Updates occur daily at 23:00 UTC
+                                </div>
                             </div>
-                        ))}
-                    </div>
-                </div>
-            )}
+                        </Card>
 
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
-                {/* Source Distribution */}
-                <div className="bg-white p-4 rounded-lg shadow-sm border border-slate-200 lg:col-span-1">
-                    <h3 className="font-semibold text-slate-700 mb-4">Platform Distribution</h3>
-                    <div className="h-64">
-                        <ResponsiveContainer width="100%" height="100%">
-                            <PieChart>
-                                <Pie
-                                    data={pieData}
-                                    cx="50%"
-                                    cy="50%"
-                                    innerRadius={60}
-                                    outerRadius={80}
-                                    paddingAngle={5}
-                                    dataKey="value"
-                                >
-                                    {pieData.map((entry, index) => (
-                                        <Cell key={`cell - ${ index } `} fill={entry.color} />
-                                    ))}
-                                </Pie>
-                                <Tooltip />
-                                <Legend verticalAlign="bottom" height={36} />
-                            </PieChart>
-                        </ResponsiveContainer>
+                        <Card className="lg:col-span-2">
+                            <h3 className="text-lg font-semibold text-slate-800 mb-4">Biggest Movers (Top Growth)</h3>
+                            {daily.biggest_movers.length > 0 ? (
+                                <div className="overflow-x-auto">
+                                    <table className="w-full text-sm text-left">
+                                        <thead className="text-xs text-slate-500 uppercase bg-slate-50">
+                                            <tr>
+                                                <th className="px-4 py-2">Change</th>
+                                                <th className="px-4 py-2">Total</th>
+                                                <th className="px-4 py-2">Petition</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            {daily.biggest_movers.map((m, i) => (
+                                                <tr key={i} className="border-b border-slate-100 last:border-0 hover:bg-slate-50">
+                                                    <td className="px-4 py-3 font-bold text-green-600">+{m.delta}</td>
+                                                    <td className="px-4 py-3 text-slate-600">{m.total.toLocaleString()}</td>
+                                                    <td className="px-4 py-3 truncate max-w-xs">
+                                                        <a href={m.url} target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">
+                                                            {m.title}
+                                                        </a>
+                                                    </td>
+                                                </tr>
+                                            ))}
+                                        </tbody>
+                                    </table>
+                                </div>
+                            ) : (
+                                <div className="h-32 flex items-center justify-center text-slate-400">
+                                    Waiting for next daily update cycle...
+                                </div>
+                            )}
+                        </Card>
                     </div>
-                </div>
+                </section>
 
-                {/* Voting Power Comparison */}
-                <div className="bg-white p-4 rounded-lg shadow-sm border border-slate-200 lg:col-span-2">
-                    <h3 className="font-semibold text-slate-700 mb-4">Top 5 Petitions (Votes Comparison)</h3>
-                    <div className="h-64">
-                        <ResponsiveContainer width="100%" height="100%">
-                            <BarChart
-                                data={[
-                                    ...top_cabinet.slice(0, 3).map(i => ({ name: 'Cab: ' + i.title.substring(0, 10) + '...', votes: i.votes, full: i })),
-                                    ...top_president.slice(0, 3).map(i => ({ name: 'Pres: ' + i.title.substring(0, 10) + '...', votes: i.votes, full: i }))
-                                ].sort((a, b) => b.votes - a.votes)}
-                                layout="vertical"
-                                margin={{ top: 5, right: 30, left: 40, bottom: 5 }}
-                            >
-                                <XAxis type="number" hide />
-                                <YAxis type="category" dataKey="name" width={150} tick={{ fontSize: 12 }} />
-                                <Tooltip
-                                    content={({ payload }) => {
-                                        if (payload && payload.length) {
-                                            const data = payload[0].payload;
-                                            return (
-                                                <div className="bg-white p-2 border shadow-lg rounded max-w-xs">
-                                                    <p className="font-bold text-sm">{data.full.title}</p>
-                                                    <p className="text-blue-600">{data.votes.toLocaleString()} votes</p>
-                                                </div>
-                                            );
-                                        }
-                                        return null;
-                                    }}
-                                />
-                                <Bar dataKey="votes" fill="#8884d8" radius={[0, 4, 4, 0]}>
-                                    {
-                                        [...top_cabinet.slice(0, 3), ...top_president.slice(0, 3)]
-                                            .sort((a, b) => b.votes - a.votes)
-                                            .map((entry, index) => (
-                                                <Cell key={`cell - ${ index } `} fill={entry.source === 'president' ? '#0088FE' : '#00C49F'} />
-                                            ))
-                                    }
-                                </Bar>
-                            </BarChart>
-                        </ResponsiveContainer>
+                {/* BLOCK 3: DEEP ANALYTICS */}
+                <section className="space-y-4">
+                    <div className="flex items-center space-x-2 mb-2">
+                        <Database className="text-indigo-600" size={20} />
+                        <h2 className="text-xl font-semibold text-slate-800">Deep Analytics</h2>
                     </div>
-                </div>
-            </div>
 
-            {/* Lists */}
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-                <TopList data={top_president} title="🏛️ Top President Petitions" icon={CheckCircle} />
-                <TopList data={top_cabinet} title="🏢 Top Cabinet Petitions" icon={CheckCircle} />
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                        <Card>
+                            <h3 className="text-lg font-semibold text-slate-800 mb-4">Vote Distribution</h3>
+                            <p className="text-xs text-slate-500 mb-4">Logarithmic breakdown of vote counts</p>
+                            <div className="h-64">
+                                <ResponsiveContainer width="100%" height="100%">
+                                    <BarChart data={analytics.histogram}>
+                                        <XAxis dataKey="bin" tick={{ fontSize: 12 }} />
+                                        <YAxis />
+                                        <Tooltip
+                                            contentStyle={{ borderRadius: '8px', border: 'none', boxShadow: '0 4px 6px -1px rgb(0 0 0 / 0.1)' }}
+                                        />
+                                        <Bar dataKey="count" fill="#4f46e5" radius={[4, 4, 0, 0]} />
+                                    </BarChart>
+                                </ResponsiveContainer>
+                            </div>
+                        </Card>
+
+                        <Card>
+                            <h3 className="text-lg font-semibold text-slate-800 mb-4">Historical Activity</h3>
+                            <p className="text-xs text-slate-500 mb-4">Number of petitions created over time</p>
+                            <div className="h-64">
+                                <ResponsiveContainer width="100%" height="100%">
+                                    <AreaChart data={analytics.timeline}>
+                                        <XAxis dataKey="month" tick={{ fontSize: 10 }} minTickGap={30} />
+                                        <YAxis />
+                                        <Tooltip />
+                                        <Legend />
+                                        <Area type="monotone" dataKey="president" stackId="1" stroke="#3b82f6" fill="#3b82f6" />
+                                        <Area type="monotone" dataKey="cabinet" stackId="1" stroke="#0ea5e9" fill="#0ea5e9" />
+                                    </AreaChart>
+                                </ResponsiveContainer>
+                            </div>
+                        </Card>
+
+                        <Card className="lg:col-span-2">
+                            <h3 className="text-lg font-semibold text-slate-800 mb-4">Text Length vs. Votes</h3>
+                            <p className="text-xs text-slate-500 mb-4">Sample of 300 petitions</p>
+                            <div className="h-64">
+                                <ResponsiveContainer width="100%" height="100%">
+                                    <ScatterChart margin={{ top: 20, right: 20, bottom: 20, left: 20 }}>
+                                        <XAxis type="number" dataKey="x" name="Chars" unit=" chars" />
+                                        <YAxis type="number" dataKey="y" name="Votes" />
+                                        <ZAxis type="category" dataKey="has_answer" name="Answered" />
+                                        <Tooltip cursor={{ strokeDasharray: '3 3' }} />
+                                        <Scatter name="Petitions" data={analytics.scatter} fill="#8884d8" shape="circle" />
+                                    </ScatterChart>
+                                </ResponsiveContainer>
+                            </div>
+                        </Card>
+                    </div>
+                </section>
+
+                {/* BLOCK 4: PIPELINE INFO */}
+                <footer className="mt-12 bg-white border-t border-slate-200 p-8 text-center text-slate-500 text-sm">
+                    <div className="flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0 md:space-x-8 mb-6">
+                        <div className="flex items-center space-x-2">
+                            <Server size={16} />
+                            <span>Pipeline: <strong>Python + DuckDB</strong></span>
+                        </div>
+                        <div className="flex items-center space-x-2">
+                            <Clock size={16} />
+                            <span>Last Updated: <strong>{pipeline.last_updated}</strong></span>
+                        </div>
+                        <div className="flex items-center space-x-2">
+                            <Database size={16} />
+                            <span>DB Size: <strong>{pipeline.db_size_mb} MB</strong></span>
+                        </div>
+                    </div>
+
+                    <div className="max-w-xl mx-auto border-t border-slate-100 pt-6">
+                        <div className="flex items-center justify-center space-x-2 text-indigo-600 mb-2">
+                            <Activity size={16} />
+                            <span className="font-semibold">Coming Soon</span>
+                        </div>
+                        <p>AI Agent integration to answer questions like "Which petitions about taxes are trending?"</p>
+                    </div>
+                </footer>
+
             </div>
         </div>
     );
-};
-
-export default Dashboard;
+}
