@@ -116,12 +116,32 @@ def export_analytics(con, growth_stats=[]):
     # Sort growth stats by delta descending
     growth_stats.sort(key=lambda x: x['delta'], reverse=True)
     
+    today_date = time.strftime("%Y-%m-%d")
+    
+    # Fetch last 7 days history for Sparkline
+    history_query = """
+        SELECT date, total_votes_delta 
+        FROM daily_stats 
+        ORDER BY date ASC 
+        LIMIT 7
+    """
+    history_rows = con.execute(history_query).fetchall()
+    sparkline_data = [{"date": str(h[0]), "value": h[1]} for h in history_rows]
+
     daily_data = {
-        "new_petitions": 0, # Placeholder until daily_stats is populated
+        "new_petitions": 0, # Placeholder until fetched from daily_stats
         "votes_added": sum(g['delta'] for g in growth_stats),
         "biggest_movers": growth_stats[:5],
-        "status_changes": [] # Placeholder
+        "history": sparkline_data,
+        "status_changes": [] 
     }
+    
+    # Try to fill "new_petitions" and "votes_added" from DB if growth_stats is empty (e.g. running generate_json without scrape)
+    if not growth_stats:
+        current_stats = con.execute("SELECT president_new + cabinet_new, total_votes_delta FROM daily_stats WHERE date = ?", [today_date]).fetchone()
+        if current_stats:
+            daily_data["new_petitions"] = current_stats[0]
+            daily_data["votes_added"] = current_stats[1]
 
     # --- BLOCK 3: DEEP ANALYTICS ---
     print("   3. Computing Deep Analytics...")

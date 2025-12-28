@@ -1,13 +1,16 @@
 import { useState } from 'react';
 import {
     BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer,
-    AreaChart, Area, ScatterChart, Scatter, ZAxis, Legend
+    AreaChart, Area, ScatterChart, Scatter, ZAxis, Legend, LineChart, Line
 } from 'recharts';
 import {
     TrendingUp, Users, FileText, CheckCircle, AlertCircle,
-    Clock, Server, Database, Activity, Info
+    Clock, Server, Database, Activity, Info, ExternalLink, Calendar,
+    ChevronUp, ArrowRight
 } from 'lucide-react';
 import data from './analytics_data.json';
+
+// --- COMPONENTS ---
 
 const Card = ({ children, className = "" }) => (
     <div className={`bg-white rounded-xl shadow-sm border border-slate-200 p-6 ${className}`}>
@@ -15,55 +18,96 @@ const Card = ({ children, className = "" }) => (
     </div>
 );
 
-const StatCard = ({ title, value, subtext, icon: Icon, color = "blue" }) => (
-    <Card>
-        <div className="flex items-start justify-between">
+const StatCard = ({ title, value, subtext, icon: Icon, color = "blue", trend }) => (
+    <Card className="relative overflow-hidden group hover:shadow-md transition-shadow">
+        <div className={`absolute top-0 right-0 p-4 opacity-5 group-hover:opacity-10 transition-opacity text-${color}-600`}>
+            <Icon size={48} />
+        </div>
+        <div className="flex items-start justify-between relative z-10">
             <div>
                 <p className="text-sm font-medium text-slate-500 mb-1">{title}</p>
-                <h3 className="text-2xl font-bold text-slate-900">{value}</h3>
+                <h3 className="text-3xl font-bold text-slate-900 tracking-tight">{value}</h3>
                 {subtext && <p className="text-xs text-slate-400 mt-2">{subtext}</p>}
+
+                {trend && (
+                    <div className="flex items-center mt-2 text-xs font-medium text-green-600">
+                        <TrendingUp size={12} className="mr-1" />
+                        {trend}
+                    </div>
+                )}
             </div>
-            <div className={`p-3 rounded-lg bg-${color}-50 text-${color}-600`}>
-                <Icon size={20} />
+            <div className={`p-3 rounded-xl bg-${color}-50 text-${color}-600 ring-1 ring-${color}-100`}>
+                <Icon size={22} />
             </div>
         </div>
     </Card>
 );
 
+const SectionHeader = ({ title, icon: Icon, color = "slate" }) => (
+    <div className="flex items-center space-x-2 mb-4 px-1">
+        <Icon className={`text-${color}-600`} size={24} />
+        <h2 className="text-2xl font-bold text-slate-800 tracking-tight">{title}</h2>
+    </div>
+);
+
+const ProgressBar = ({ value, max, color = "emerald" }) => {
+    const percentage = Math.min((value / max) * 100, 100);
+    return (
+        <div className="w-full bg-slate-100 rounded-full h-1.5 mt-2 overflow-hidden">
+            <div
+                className={`bg-${color}-500 h-1.5 rounded-full`}
+                style={{ width: `${percentage}%` }}
+            />
+        </div>
+    );
+};
+
 export default function Dashboard() {
     const { overview, daily, analytics, pipeline } = data;
 
+    // --- TRANSFORM DATA ---
+    // Prepare history data for simple sparkline
+    const historyData = daily.history ? daily.history.map(d => ({
+        date: d.date.slice(5), // MD only
+        value: d.value
+    })) : [];
+
     return (
-        <div className="min-h-screen bg-slate-50 p-8 font-sans text-slate-900">
-            <div className="max-w-7xl mx-auto space-y-8">
+        <div className="min-h-screen bg-slate-50/50 p-6 md:p-12 font-sans text-slate-900">
+            <div className="max-w-7xl mx-auto space-y-12">
 
                 {/* HEADER */}
-                <header className="mb-8">
-                    <h1 className="text-3xl font-bold text-slate-900 tracking-tight">Petition Analytics</h1>
-                    <p className="text-slate-500 mt-2">Comprehensive analysis of Ukrainian electronic petitions (President & Cabinet)</p>
+                <header className="flex flex-col md:flex-row md:items-end justify-between border-b border-slate-200 pb-6">
+                    <div>
+                        <h1 className="text-4xl font-extrabold text-slate-900 tracking-tight">Petition Analytics</h1>
+                        <p className="text-slate-500 mt-2 text-lg">Ukrainian E-Petitions Dashboard (President & Cabinet)</p>
+                    </div>
+                    <div className="mt-4 md:mt-0 text-right">
+                        <div className="inline-flex items-center space-x-2 bg-white px-3 py-1 rounded-full border border-slate-200 shadow-sm text-sm text-slate-600">
+                            <Clock size={14} className="text-slate-400" />
+                            <span>Last updated: {pipeline.last_updated}</span>
+                        </div>
+                    </div>
                 </header>
 
                 {/* BLOCK 1: OVERVIEW */}
-                <section className="space-y-4">
-                    <div className="flex items-center space-x-2 mb-2">
-                        <Activity className="text-blue-600" size={20} />
-                        <h2 className="text-xl font-semibold text-slate-800">Overview</h2>
-                    </div>
+                <section>
+                    <SectionHeader title="High-Level Overview" icon={Activity} color="indigo" />
 
-                    <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                         <StatCard
                             title="Total Petitions"
                             value={overview.total.toLocaleString()}
-                            subtext={`${overview.president_count.toLocaleString()} President • ${overview.cabinet_count.toLocaleString()} Cabinet`}
+                            subtext={`Pres: ${overview.president_count.toLocaleString()} • Cab: ${overview.cabinet_count.toLocaleString()}`}
                             icon={FileText}
                             color="indigo"
                         />
                         <StatCard
                             title="Success Rate"
                             value={`${overview.success_rate}%`}
-                            subtext="reached 25,000 votes"
+                            subtext="Reached 25,000 votes"
                             icon={CheckCircle}
-                            color="green"
+                            color="emerald"
                         />
                         <StatCard
                             title="Median Votes"
@@ -75,167 +119,192 @@ export default function Dashboard() {
                         <StatCard
                             title="Response Rate"
                             value={`${overview.response_rate}%`}
-                            subtext="received official answer"
+                            subtext="Received official answer"
                             icon={Info}
                             color="cyan"
                         />
                     </div>
-
-                    <div className="bg-blue-50 border border-blue-100 rounded-lg p-4 flex items-start space-x-3">
-                        <Info className="text-blue-600 min-w-5 mt-0.5" size={20} />
-                        <p className="text-sm text-blue-800">
-                            <strong>Data Insight:</strong> {overview.insight}
-                        </p>
-                    </div>
                 </section>
 
                 {/* BLOCK 2: DAILY DYNAMICS */}
-                <section className="space-y-4">
-                    <div className="flex items-center space-x-2 mb-2">
-                        <TrendingUp className="text-emerald-600" size={20} />
-                        <h2 className="text-xl font-semibold text-slate-800">Daily Dynamics</h2>
-                    </div>
+                <section>
+                    <SectionHeader title="Daily Dynamics" icon={TrendingUp} color="emerald" />
 
-                    <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-                        <Card className="lg:col-span-1 bg-gradient-to-br from-emerald-50 to-white border-emerald-100">
-                            <h3 className="text-lg font-semibold text-emerald-900 mb-4">Last 24 Hours</h3>
-                            <div className="space-y-4">
-                                <div className="flex justify-between items-center border-b border-emerald-100 pb-2">
-                                    <span className="text-emerald-700">New Petitions</span>
-                                    <span className="font-bold text-2xl text-emerald-600">+{daily.new_petitions}</span>
+                    <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                        {/* 2.1 Today's Pulse */}
+                        <Card className="bg-gradient-to-br from-emerald-50 to-white border-emerald-100 relative overflow-hidden">
+                            <h3 className="text-lg font-bold text-emerald-900 mb-6 flex items-center">
+                                <Calendar size={18} className="mr-2 opacity-75" /> Last 24 Hours
+                            </h3>
+
+                            <div className="grid grid-cols-2 gap-4 mb-8 relative z-10">
+                                <div>
+                                    <p className="text-sm text-emerald-600 font-medium">New Petitions</p>
+                                    <p className="text-4xl font-extrabold text-emerald-700">+{daily.new_petitions}</p>
                                 </div>
-                                <div className="flex justify-between items-center border-b border-emerald-100 pb-2">
-                                    <span className="text-emerald-700">Votes Added</span>
-                                    <span className="font-bold text-2xl text-emerald-600">+{daily.votes_added}</span>
+                                <div>
+                                    <p className="text-sm text-emerald-600 font-medium">Votes Added</p>
+                                    <p className="text-4xl font-extrabold text-emerald-700">+{daily.votes_added.toLocaleString()}</p>
                                 </div>
-                                <div className="text-xs text-emerald-500 mt-2">
-                                    * Updates occur daily at 23:00 UTC
-                                </div>
+                            </div>
+
+                            {/* Sparkline Area */}
+                            <div className="h-32 -mx-6 -mb-6 mt-4">
+                                {historyData.length > 0 ? (
+                                    <ResponsiveContainer width="100%" height="100%">
+                                        <AreaChart data={historyData}>
+                                            <defs>
+                                                <linearGradient id="colorVote" x1="0" y1="0" x2="0" y2="1">
+                                                    <stop offset="5%" stopColor="#10b981" stopOpacity={0.2} />
+                                                    <stop offset="95%" stopColor="#10b981" stopOpacity={0} />
+                                                </linearGradient>
+                                            </defs>
+                                            <Tooltip
+                                                contentStyle={{ borderRadius: '8px', border: 'none', boxShadow: '0 4px 6px -1px rgb(0 0 0 / 0.1)' }}
+                                                labelStyle={{ color: '#6b7280' }}
+                                                itemStyle={{ color: '#059669', fontWeight: 'bold' }}
+                                            />
+                                            <Area type="monotone" dataKey="value" stroke="#10b981" strokeWidth={3} fillOpacity={1} fill="url(#colorVote)" />
+                                        </AreaChart>
+                                    </ResponsiveContainer>
+                                ) : (
+                                    <div className="h-full flex items-center justify-center text-emerald-300 text-sm">
+                                        Collecting trend data...
+                                    </div>
+                                )}
                             </div>
                         </Card>
 
+                        {/* 2.2 Biggest Movers Table */}
                         <Card className="lg:col-span-2">
-                            <h3 className="text-lg font-semibold text-slate-800 mb-4">Biggest Movers (Top Growth)</h3>
-                            {daily.biggest_movers.length > 0 ? (
-                                <div className="overflow-x-auto">
-                                    <table className="w-full text-sm text-left">
-                                        <thead className="text-xs text-slate-500 uppercase bg-slate-50">
-                                            <tr>
-                                                <th className="px-4 py-2">Change</th>
-                                                <th className="px-4 py-2">Total</th>
-                                                <th className="px-4 py-2">Petition</th>
+                            <div className="flex items-center justify-between mb-6">
+                                <h3 className="text-lg font-bold text-slate-800">Growth Leaders (Top 5)</h3>
+                                <span className="px-2 py-1 bg-green-100 text-green-700 text-xs font-bold rounded uppercase tracking-wide">Trending</span>
+                            </div>
+
+                            <div className="overflow-x-auto">
+                                <table className="w-full text-sm">
+                                    <thead className="text-xs text-slate-400 uppercase font-medium bg-slate-50/50">
+                                        <tr>
+                                            <th className="px-4 py-3 text-left">Petition</th>
+                                            <th className="px-4 py-3 text-right">Growth (24h)</th>
+                                            <th className="px-4 py-3 text-right">Total Votes</th>
+                                            <th className="px-4 py-3 w-32">Progress</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody className="divide-y divide-slate-100">
+                                        {daily.biggest_movers.map((m, i) => (
+                                            <tr key={i} className="hover:bg-slate-50/80 transition-colors">
+                                                <td className="px-4 py-3">
+                                                    <a href={m.url} target="_blank" rel="noopener noreferrer" className="font-medium text-slate-900 hover:text-blue-600 line-clamp-1 block" title={m.title}>
+                                                        {m.title}
+                                                    </a>
+                                                    <div className="text-xs text-slate-400 mt-0.5">ID: {m.url.split('/').pop()}</div>
+                                                </td>
+                                                <td className="px-4 py-3 text-right font-bold text-emerald-600">
+                                                    +{m.delta}
+                                                </td>
+                                                <td className="px-4 py-3 text-right text-slate-600">
+                                                    {m.total.toLocaleString()}
+                                                </td>
+                                                <td className="px-4 py-3">
+                                                    <ProgressBar value={m.total} max={25000} />
+                                                    <div className="text-[10px] text-slate-400 text-right mt-1">
+                                                        {Math.round((m.total / 25000) * 100)}%
+                                                    </div>
+                                                </td>
                                             </tr>
-                                        </thead>
-                                        <tbody>
-                                            {daily.biggest_movers.map((m, i) => (
-                                                <tr key={i} className="border-b border-slate-100 last:border-0 hover:bg-slate-50">
-                                                    <td className="px-4 py-3 font-bold text-green-600">+{m.delta}</td>
-                                                    <td className="px-4 py-3 text-slate-600">{m.total.toLocaleString()}</td>
-                                                    <td className="px-4 py-3 truncate max-w-xs">
-                                                        <a href={m.url} target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">
-                                                            {m.title}
-                                                        </a>
-                                                    </td>
-                                                </tr>
-                                            ))}
-                                        </tbody>
-                                    </table>
-                                </div>
-                            ) : (
-                                <div className="h-32 flex items-center justify-center text-slate-400">
-                                    Waiting for next daily update cycle...
-                                </div>
-                            )}
+                                        ))}
+                                    </tbody>
+                                </table>
+                            </div>
                         </Card>
                     </div>
                 </section>
 
                 {/* BLOCK 3: DEEP ANALYTICS */}
-                <section className="space-y-4">
-                    <div className="flex items-center space-x-2 mb-2">
-                        <Database className="text-indigo-600" size={20} />
-                        <h2 className="text-xl font-semibold text-slate-800">Deep Analytics</h2>
-                    </div>
+                <section>
+                    <SectionHeader title="Deep Dive Analytics" icon={Database} color="blue" />
 
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                         <Card>
-                            <h3 className="text-lg font-semibold text-slate-800 mb-4">Vote Distribution</h3>
-                            <p className="text-xs text-slate-500 mb-4">Logarithmic breakdown of vote counts</p>
+                            <h3 className="text-lg font-bold text-slate-800 mb-2">Vote Distribution</h3>
+                            <p className="text-sm text-slate-500 mb-6">How hard is it to get votes?</p>
                             <div className="h-64">
                                 <ResponsiveContainer width="100%" height="100%">
                                     <BarChart data={analytics.histogram}>
-                                        <XAxis dataKey="bin" tick={{ fontSize: 12 }} />
-                                        <YAxis />
-                                        <Tooltip
-                                            contentStyle={{ borderRadius: '8px', border: 'none', boxShadow: '0 4px 6px -1px rgb(0 0 0 / 0.1)' }}
-                                        />
-                                        <Bar dataKey="count" fill="#4f46e5" radius={[4, 4, 0, 0]} />
+                                        <XAxis dataKey="bin" tick={{ fontSize: 11 }} axisLine={false} tickLine={false} />
+                                        <YAxis axisLine={false} tickLine={false} fontSize={11} />
+                                        <Tooltip cursor={{ fill: '#f1f5f9' }} contentStyle={{ borderRadius: '8px', border: 'none', boxShadow: '0 4px 6px -1px rgb(0 0 0 / 0.1)' }} />
+                                        <Bar dataKey="count" fill="#6366f1" radius={[4, 4, 0, 0]} barSize={40} />
                                     </BarChart>
                                 </ResponsiveContainer>
                             </div>
                         </Card>
 
                         <Card>
-                            <h3 className="text-lg font-semibold text-slate-800 mb-4">Historical Activity</h3>
-                            <p className="text-xs text-slate-500 mb-4">Number of petitions created over time</p>
+                            <h3 className="text-lg font-bold text-slate-800 mb-2">Petition Timeline</h3>
+                            <p className="text-sm text-slate-500 mb-6">Creation volume over time</p>
                             <div className="h-64">
                                 <ResponsiveContainer width="100%" height="100%">
                                     <AreaChart data={analytics.timeline}>
-                                        <XAxis dataKey="month" tick={{ fontSize: 10 }} minTickGap={30} />
-                                        <YAxis />
-                                        <Tooltip />
-                                        <Legend />
-                                        <Area type="monotone" dataKey="president" stackId="1" stroke="#3b82f6" fill="#3b82f6" />
-                                        <Area type="monotone" dataKey="cabinet" stackId="1" stroke="#0ea5e9" fill="#0ea5e9" />
+                                        <defs>
+                                            <linearGradient id="colorPres" x1="0" y1="0" x2="0" y2="1">
+                                                <stop offset="5%" stopColor="#3b82f6" stopOpacity={0.8} />
+                                                <stop offset="95%" stopColor="#3b82f6" stopOpacity={0} />
+                                            </linearGradient>
+                                            <linearGradient id="colorCab" x1="0" y1="0" x2="0" y2="1">
+                                                <stop offset="5%" stopColor="#0ea5e9" stopOpacity={0.8} />
+                                                <stop offset="95%" stopColor="#0ea5e9" stopOpacity={0} />
+                                            </linearGradient>
+                                        </defs>
+                                        <XAxis dataKey="month" tick={{ fontSize: 10 }} minTickGap={30} axisLine={false} tickLine={false} />
+                                        <YAxis axisLine={false} tickLine={false} fontSize={10} />
+                                        <Tooltip contentStyle={{ borderRadius: '8px', border: 'none', boxShadow: '0 4px 6px -1px rgb(0 0 0 / 0.1)' }} />
+                                        <Legend iconType="circle" />
+                                        <Area type="monotone" dataKey="president" stackId="1" stroke="#3b82f6" fill="url(#colorPres)" />
+                                        <Area type="monotone" dataKey="cabinet" stackId="1" stroke="#0ea5e9" fill="url(#colorCab)" />
                                     </AreaChart>
-                                </ResponsiveContainer>
-                            </div>
-                        </Card>
-
-                        <Card className="lg:col-span-2">
-                            <h3 className="text-lg font-semibold text-slate-800 mb-4">Text Length vs. Votes</h3>
-                            <p className="text-xs text-slate-500 mb-4">Sample of 300 petitions</p>
-                            <div className="h-64">
-                                <ResponsiveContainer width="100%" height="100%">
-                                    <ScatterChart margin={{ top: 20, right: 20, bottom: 20, left: 20 }}>
-                                        <XAxis type="number" dataKey="x" name="Chars" unit=" chars" />
-                                        <YAxis type="number" dataKey="y" name="Votes" />
-                                        <ZAxis type="category" dataKey="has_answer" name="Answered" />
-                                        <Tooltip cursor={{ strokeDasharray: '3 3' }} />
-                                        <Scatter name="Petitions" data={analytics.scatter} fill="#8884d8" shape="circle" />
-                                    </ScatterChart>
                                 </ResponsiveContainer>
                             </div>
                         </Card>
                     </div>
                 </section>
 
-                {/* BLOCK 4: PIPELINE INFO */}
-                <footer className="mt-12 bg-white border-t border-slate-200 p-8 text-center text-slate-500 text-sm">
-                    <div className="flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0 md:space-x-8 mb-6">
-                        <div className="flex items-center space-x-2">
-                            <Server size={16} />
-                            <span>Pipeline: <strong>Python + DuckDB</strong></span>
+                {/* BLOCK 4: INFO */}
+                <footer className="mt-8 border-t border-slate-200 pt-8 text-slate-500 text-sm">
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                        <div>
+                            <h4 className="font-bold text-slate-800 mb-4 flex items-center">
+                                <Server size={16} className="mr-2" /> Tech Stack
+                            </h4>
+                            <ul className="space-y-2">
+                                <li>Python ETL (DuckDB)</li>
+                                <li>React + Tailwind + Recharts</li>
+                                <li>Github Actions (Planned)</li>
+                            </ul>
                         </div>
-                        <div className="flex items-center space-x-2">
-                            <Clock size={16} />
-                            <span>Last Updated: <strong>{pipeline.last_updated}</strong></span>
+                        <div>
+                            <h4 className="font-bold text-slate-800 mb-4 flex items-center">
+                                <Database size={16} className="mr-2" /> Data Health
+                            </h4>
+                            <ul className="space-y-2">
+                                <li>Total Records: {pipeline.total_records.toLocaleString()}</li>
+                                <li>Active Sources: {pipeline.sources.length}</li>
+                            </ul>
                         </div>
-                        <div className="flex items-center space-x-2">
-                            <Database size={16} />
-                            <span>DB Size: <strong>{pipeline.db_size_mb} MB</strong></span>
+                        <div>
+                            <h4 className="font-bold text-slate-800 mb-4 flex items-center">
+                                <Activity size={16} className="mr-2" /> Roadmap
+                            </h4>
+                            <p className="text-slate-500 mb-2">Automated daily sync running via cron.</p>
+                            <p className="text-indigo-600 font-medium cursor-pointer hover:underline">View Implementation Plan &rarr;</p>
                         </div>
                     </div>
-
-                    <div className="max-w-xl mx-auto border-t border-slate-100 pt-6">
-                        <div className="flex items-center justify-center space-x-2 text-indigo-600 mb-2">
-                            <Activity size={16} />
-                            <span className="font-semibold">Coming Soon</span>
-                        </div>
-                        <p>AI Agent integration to answer questions like "Which petitions about taxes are trending?"</p>
+                    <div className="mt-8 pt-8 border-t border-slate-100 text-center text-xs text-slate-400">
+                        &copy; 2025 Petition Analytics Project. Open Source.
                     </div>
                 </footer>
-
             </div>
         </div>
     );
