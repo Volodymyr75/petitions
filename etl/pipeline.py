@@ -138,10 +138,28 @@ def export_analytics(con, growth_stats=[]):
     
     # Try to fill "new_petitions" and "votes_added" from DB if growth_stats is empty (e.g. running generate_json without scrape)
     if not growth_stats:
+        print("   ⚠️ growth_stats is empty. Fetching fallback data from DB...")
+        
+        # 1. Fetch totals from daily_stats
         current_stats = con.execute("SELECT president_new + cabinet_new, total_votes_delta FROM daily_stats WHERE date = ?", [today_date]).fetchone()
         if current_stats:
             daily_data["new_petitions"] = current_stats[0]
             daily_data["votes_added"] = current_stats[1]
+            
+        # 2. Fetch Biggest Movers from petitions table (votes - votes_previous)
+        movers_query = """
+            SELECT title, url, (votes - votes_previous) as delta, votes
+            FROM petitions 
+            WHERE votes_previous IS NOT NULL 
+              AND (votes - votes_previous) > 0
+            ORDER BY delta DESC 
+            LIMIT 5
+        """
+        movers_rows = con.execute(movers_query).fetchall()
+        daily_data["biggest_movers"] = [
+            {"title": r[0], "url": r[1], "delta": r[2], "total": r[3]} 
+            for r in movers_rows
+        ]
 
     # --- BLOCK 3: DEEP ANALYTICS ---
     print("   3. Computing Deep Analytics...")
