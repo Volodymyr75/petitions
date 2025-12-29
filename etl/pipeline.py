@@ -129,24 +129,26 @@ def export_analytics(con, growth_stats=[]):
     sparkline_data = [{"date": str(h[0]), "value": h[1]} for h in history_rows]
 
     daily_data = {
-        "new_petitions": 0, # Placeholder until fetched from daily_stats
+        "new_petitions": 0, 
         "votes_added": sum(g['delta'] for g in growth_stats),
         "biggest_movers": growth_stats[:5],
         "history": sparkline_data,
         "status_changes": [] 
     }
     
-    # Try to fill "new_petitions" and "votes_added" from DB if growth_stats is empty (e.g. running generate_json without scrape)
+    # ALWAYS fetch official daily stats for "new_petitions" and "votes_added"
+    # This ensures consistency whether running from daily_sync or just regenerating JSON
+    current_stats = con.execute("SELECT president_new + cabinet_new, total_votes_delta FROM daily_stats WHERE date = ?", [today_date]).fetchone()
+    if current_stats:
+        daily_data["new_petitions"] = current_stats[0]
+        daily_data["votes_added"] = current_stats[1]
+    
+    # Fallback for "Biggest Movers" if runtime stats are empty
     if not growth_stats:
         print("   ⚠️ growth_stats is empty. Fetching fallback data from DB...")
-        
-        # 1. Fetch totals from daily_stats
-        current_stats = con.execute("SELECT president_new + cabinet_new, total_votes_delta FROM daily_stats WHERE date = ?", [today_date]).fetchone()
-        if current_stats:
-            daily_data["new_petitions"] = current_stats[0]
-            daily_data["votes_added"] = current_stats[1]
+        # (Totals already fetched above)
             
-        # 2. Fetch Biggest Movers from petitions table (votes - votes_previous)
+        # 2. Fetch Biggest Movers from petitions table
         movers_query = """
             SELECT title, url, (votes - votes_previous) as delta, votes
             FROM petitions 
