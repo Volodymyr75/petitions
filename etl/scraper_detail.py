@@ -155,7 +155,13 @@ def fetch_petition_detail(pet_id, session=None, attempt=1, max_attempts=3):
         data['votes'] = clean_votes(votes_tag.get_text(strip=True)) if votes_tag else 0
 
         # Text length
-        article = soup.find('article', class_='article')
+        # New structure: text is usually in #pet-tab-1
+        article = soup.find(id='pet-tab-1')
+        if not article:
+             article = soup.find(class_='tab_container')
+        if not article:
+             article = soup.find('article', class_='article')
+             
         data['text_length'] = len(article.get_text(strip=True)) if article else 0
         
         # Legacy field (ignored but kept for schema)

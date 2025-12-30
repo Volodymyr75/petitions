@@ -71,9 +71,9 @@ def sync_president_updates(con, today_str):
         # Update DB
         con.execute("""
             UPDATE petitions 
-            SET votes=?, votes_previous=?, status=?, updated_at=CURRENT_TIMESTAMP
+            SET votes=?, votes_previous=?, status=?, text_length=?, updated_at=CURRENT_TIMESTAMP
             WHERE source='president' AND external_id=?
-        """, (new_votes, old_votes, current_status, pet_id))
+        """, (new_votes, old_votes, current_status, data.get('text_length', 0), pet_id))
         
         # Add to history
         con.execute("""
@@ -103,68 +103,79 @@ def sync_president_updates(con, today_str):
 
 def sync_president_new(con, today_str):
     """
-    Finds new petitions by checking range [max_db_id + 1, current_site_max_id].
+    Finds new petitions by scanning the first few pages of the 'active' list.
+    This is more robust than ID-range as site IDs are not strictly sequential.
     """
-    print("\n--- 2. President New Petitions ---")
+    print("\n--- 2. President New Petitions (Discovery) ---")
     
-    # 1. Get max DB ID
-    max_db = con.execute("SELECT MAX(CAST(external_id AS INTEGER)) FROM petitions WHERE source='president'").fetchone()[0]
-    print(f"Max DB ID: {max_db}")
-    
-    # 2. Find max Site ID (scrape listing page 1)
-    url = "https://petition.president.gov.ua/?status=active&sort=date&order=desc&page=1"
-    try:
-        resp = requests.get(url, timeout=10)
-        if resp.status_code == 200:
-            import re
-            ids = re.findall(r'/petition/(\d+)', resp.text)
-            if ids:
-                max_site = max(map(int, ids))
-                print(f"Max Site ID: {max_site}")
-            else:
-                max_site = max_db + 100
-        else:
-            max_site = max_db + 50
-    except Exception as e:
-        print(f"Error fetching main page: {e}")
-        max_site = max_db + 50
-
-    if max_site - max_db > 500:
-        print(f"Gap too large ({max_site - max_db}). Capping at 500 new petitions.")
-        max_site = max_db + 500
-        
     new_count = 0
     new_petitions_list = []
+    processed_ids = set()
     
-    for pet_id in range(max_db + 1, max_site + 20): 
-        s_id = str(pet_id)
-        exists = con.execute("SELECT 1 FROM petitions WHERE source='president' AND external_id=?", [s_id]).fetchone()
-        if exists: continue
+    # We scan up to 5 pages. Usually 1-2 is enough if run daily.
+    for page in range(1, 6):
+        url = f"https://petition.president.gov.ua/?status=active&sort=date&order=desc&page={page}"
+        print(f"Scanning page {page}...")
         
-        data = fetch_petition_detail(pet_id)
-        if data and 'error' not in data:
-            print(f"✨ Found NEW: {pet_id} - {data['title'][:30]}...")
+        try:
+            resp = requests.get(url, timeout=15)
+            if resp.status_code != 200:
+                print(f"⚠️ Error {resp.status_code} fetching page {page}")
+                break
+                
+            import re
+            found_ids = re.findall(r'/petition/(\d+)', resp.text)
+            if not found_ids:
+                print(f"No IDs found on page {page}")
+                break
             
-            date_norm = data.get('date_normalized')
-            con.execute("""
-                INSERT INTO petitions (source, external_id, number, title, date, status, votes, url, author, text_length, has_answer, date_normalized, crawled_at)
-                VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, CURRENT_TIMESTAMP)
-            """, ('president', s_id, data['number'], data['title'], data['date'], data['status'], data['votes'], data['url'], data['author'], data['text_length'], data.get('has_answer'), date_norm))
+            page_new_count = 0
+            for s_id in found_ids:
+                if s_id in processed_ids: continue
+                processed_ids.add(s_id)
+                
+                # Check DB
+                exists = con.execute("SELECT 1 FROM petitions WHERE source='president' AND external_id=?", [s_id]).fetchone()
+                if exists:
+                    continue
+                
+                # It's new!
+                pet_id = int(s_id)
+                data = fetch_petition_detail(pet_id)
+                
+                if data and 'error' not in data:
+                    print(f"✨ Found NEW: {s_id} - {data['title'][:40]}...")
+                    
+                    date_norm = data.get('date_normalized')
+                    con.execute("""
+                        INSERT INTO petitions (source, external_id, number, title, date, status, votes, url, author, text_length, has_answer, date_normalized, crawled_at)
+                        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, CURRENT_TIMESTAMP)
+                    """, ('president', s_id, data['number'], data['title'], data['date'], data['status'], data['votes'], data['url'], data['author'], data['text_length'], data.get('has_answer'), date_norm))
+                    
+                    con.execute("INSERT OR REPLACE INTO votes_history VALUES (?, ?, ?, ?)", (s_id, 'president', today_str, data['votes']))
+                    
+                    new_count += 1
+                    page_new_count += 1
+                    new_petitions_list.append({
+                        "title": data['title'],
+                        "delta": data['votes'],
+                        "total": data['votes'],
+                        "url": data['url']
+                    })
+                    time.sleep(0.8) # Gentle delay
+                
+            print(f"Page {page}: found {page_new_count} new petitions.")
             
-            con.execute("INSERT OR REPLACE INTO votes_history VALUES (?, ?, ?, ?)", (s_id, 'president', today_str, data['votes']))
+            # Smart Stop: if we found 0 new petitions on a page, we probably reached familiar territory
+            if page_new_count == 0 and len(found_ids) > 0:
+                print("Stopping discovery: reached already known petitions.")
+                break
+                
+        except Exception as e:
+            print(f"Error on page {page}: {e}")
+            break
             
-            new_count += 1
-            new_petitions_list.append({
-                "title": data['title'],
-                "delta": data['votes'], # New petition count as delta? Or just 0? Usually "trending" implies growth. Let's add it.
-                "total": data['votes'],
-                "url": data['url']
-            })
-            time.sleep(0.5)
-        elif data and data.get('error') == 404:
-            pass
-            
-    print(f"✅ Added {new_count} new petitions.")
+    print(f"✅ Discovery complete. Added {new_count} new petitions.")
     return new_count, new_petitions_list
 
 def sync_cabinet(con, today_str):
