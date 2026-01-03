@@ -54,11 +54,17 @@ def extract_status(soup, page_text):
     if soup.find(class_='status_archive'): return "Архів"
     if soup.find(class_='status_process'): return "На розгляді"
     
-    # 2. Text fallback
+    # 2. Text fallback with variations
     if "Триває збір підписів" in page_text: return "Триває збір підписів"
-    if "На розгляді" in page_text: return "На розгляді"
-    if "З відповіддю" in page_text: return "З відповіддю"
-    if "Архів" in page_text: return "Архів"
+    
+    if "На розгляді" in page_text or "Очікує на розгляд" in page_text: 
+        return "На розгляді"
+        
+    if "З відповіддю" in page_text or "Розглянуто" in page_text: 
+        return "З відповіддю"
+        
+    if "Архів" in page_text or "Збір підписів завершено" in page_text or "Не підтримана" in page_text: 
+        return "Архів"
     
     return "Unknown"
 
