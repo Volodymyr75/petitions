@@ -318,25 +318,27 @@ def main():
         "cabinet_new": 0
     }
     
-    # Step 1: Pre-flight Check
-    if not args.skip_preflight:
-        preflight_result = run_preflight_check(verbose=True)
-        if not preflight_result.passed:
-            print("\n❌ Pre-flight check failed. Aborting sync.")
-            notify_sync_failure("Pre-flight Check", preflight_result.errors)
-            sys.exit(1)
-    
-    if args.dry_run:
-        print("\n🔍 Dry run complete. No changes made.")
-        sys.exit(0)
-    
-    # Step 2: Connect to MotherDuck
+    # Step 1: Connect to MotherDuck (Needed for dynamic pre-flight)
     try:
         con = get_motherduck_connection()
     except Exception as e:
         print(f"❌ Failed to connect to MotherDuck: {e}")
         notify_sync_failure("Connection", [str(e)])
         sys.exit(1)
+
+    # Step 2: Pre-flight Check
+    if not args.skip_preflight:
+        preflight_result = run_preflight_check(con, verbose=True)
+        if not preflight_result.passed:
+            print("\n❌ Pre-flight check failed. Aborting sync.")
+            notify_sync_failure("Pre-flight Check", preflight_result.errors)
+            con.close()
+            sys.exit(1)
+    
+    if args.dry_run:
+        print("\n🔍 Dry run complete. No changes made.")
+        con.close()
+        sys.exit(0)
     
     # Step 3: Create Backup
     create_backup(con)
