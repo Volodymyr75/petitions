@@ -134,8 +134,9 @@ def sync_president_updates(con, today_str, stats):
         """, (new_votes, old_votes, current_status, data.get('text_length', 0), pet_id))
         
         con.execute("""
-            INSERT OR REPLACE INTO votes_history (petition_id, source, date, votes)
+            INSERT INTO votes_history (petition_id, source, date, votes)
             VALUES (?, ?, ?, ?)
+            ON CONFLICT (petition_id, source, date) DO UPDATE SET votes = EXCLUDED.votes
         """, (pet_id, 'president', today_str, new_votes))
 
         updates_count += 1
@@ -207,7 +208,11 @@ def sync_president_new(con, today_str, stats):
                         VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, CURRENT_TIMESTAMP)
                     """, ('president', s_id, data['number'], data['title'], data['date'], data['status'], data['votes'], data['url'], data['author'], data['text_length'], data.get('has_answer'), date_norm))
                     
-                    con.execute("INSERT OR REPLACE INTO votes_history VALUES (?, ?, ?, ?)", (s_id, 'president', today_str, data['votes']))
+                    con.execute("""
+                        INSERT INTO votes_history (petition_id, source, date, votes)
+                        VALUES (?, ?, ?, ?)
+                        ON CONFLICT (petition_id, source, date) DO UPDATE SET votes = EXCLUDED.votes
+                    """, (s_id, 'president', today_str, data['votes']))
                     
                     new_count += 1
                     page_new_count += 1
@@ -279,8 +284,12 @@ def sync_cabinet(con, today_str, stats):
                         "total": new_votes,
                         "url": p['url']
                     })
-        
-        con.execute("INSERT OR REPLACE INTO votes_history VALUES (?, ?, ?, ?)", (p_id, 'cabinet', today_str, new_votes))
+        # History
+        con.execute("""
+            INSERT INTO votes_history (petition_id, source, date, votes)
+            VALUES (?, ?, ?, ?)
+            ON CONFLICT (petition_id, source, date) DO UPDATE SET votes = EXCLUDED.votes
+        """, (p_id, 'cabinet', today_str, new_votes))
 
     stats["cabinet_new"] = new_count
     stats["vote_delta"] = stats.get("vote_delta", 0) + votes_delta
@@ -365,8 +374,13 @@ def main():
         
         print("\n--- 4. Saving Daily Stats ---")
         con.execute("""
-            INSERT OR REPLACE INTO daily_stats (date, president_new, cabinet_new, total_votes_delta, status_changes)
+            INSERT INTO daily_stats (date, president_new, cabinet_new, total_votes_delta, status_changes)
             VALUES (?, ?, ?, ?, ?)
+            ON CONFLICT (date) DO UPDATE SET
+                president_new = daily_stats.president_new + EXCLUDED.president_new,
+                cabinet_new = daily_stats.cabinet_new + EXCLUDED.cabinet_new,
+                total_votes_delta = daily_stats.total_votes_delta + EXCLUDED.total_votes_delta,
+                status_changes = EXCLUDED.status_changes
         """, (today, pres_new, cab_new, total_delta, json.dumps(pres_status_changes)))
         
         print(f"Saved stats: +{pres_new + cab_new} petitions, +{total_delta} votes.")
