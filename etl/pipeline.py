@@ -118,12 +118,12 @@ def export_analytics(con, growth_stats=[]):
     
     today_date = time.strftime("%Y-%m-%d")
     
-    # Fetch last 7 days history for Sparkline
+    # Fetch last 30 days history for Sparkline
     history_query = """
         SELECT date, total_votes_delta 
         FROM daily_stats 
-        ORDER BY date ASC 
-        LIMIT 7
+        WHERE date >= CURRENT_DATE - INTERVAL '30 days'
+        ORDER BY date ASC
     """
     history_rows = con.execute(history_query).fetchall()
     sparkline_data = [{"date": str(h[0]), "value": h[1]} for h in history_rows]
