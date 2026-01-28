@@ -38,7 +38,7 @@ jobs:
       
       - name: Install dependencies
         run: |
-          pip install duckdb requests beautifulsoup4
+          pip install duckdb==1.4.3 requests beautifulsoup4
       
       - name: Run Cloud Sync
         id: sync
