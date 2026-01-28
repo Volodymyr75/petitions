@@ -53,9 +53,16 @@ def send_telegram_message(message, parse_mode="Markdown"):
         if response.status_code == 200:
             print("✅ Telegram notification sent")
             return True
-        else:
-            print(f"⚠️ Telegram API error: {response.status_code}")
-            return False
+        elif response.status_code == 400 and parse_mode:
+            print(f"⚠️ Telegram Markdown failed (400), retrying without formatting...")
+            payload["parse_mode"] = None
+            response = requests.post(url, json=payload, timeout=10)
+            if response.status_code == 200:
+                print("✅ Telegram notification sent (plain text fallback)")
+                return True
+        
+        print(f"⚠️ Telegram API error: {response.status_code}")
+        return False
     except Exception as e:
         print(f"⚠️ Failed to send Telegram message: {e}")
         return False
