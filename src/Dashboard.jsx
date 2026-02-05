@@ -6,7 +6,7 @@ import {
 import {
     TrendingUp, Users, FileText, CheckCircle, AlertCircle,
     Clock, Server, Database, Activity, Info, ExternalLink, Calendar,
-    ChevronUp, ArrowRight
+    ChevronUp, ArrowRight, Sparkles
 } from 'lucide-react';
 import data from './analytics_data.json';
 
@@ -281,7 +281,7 @@ export default function Dashboard() {
                             <ul className="space-y-2">
                                 <li>Python ETL (DuckDB)</li>
                                 <li>React + Tailwind + Recharts</li>
-                                <li>Github Actions (Planned)</li>
+                                <li>Github Actions + MotherDuck</li>
                             </ul>
                         </div>
                         <div>
@@ -297,12 +297,48 @@ export default function Dashboard() {
                             <h4 className="font-bold text-slate-800 mb-4 flex items-center">
                                 <Activity size={16} className="mr-2" /> Roadmap
                             </h4>
-                            <p className="text-slate-500 mb-2">Automated daily sync running via cron.</p>
-                            <p className="text-indigo-600 font-medium cursor-pointer hover:underline">View Implementation Plan &rarr;</p>
+                            <ul className="space-y-2">
+                                <li className="text-slate-500">Automated daily sync running via GitHub Actions + MotherDuck.</li>
+                                <li className="text-indigo-600 font-medium group flex items-center">
+                                    <Sparkles size={14} className="mr-1 text-amber-500" />
+                                    AI-powered assistant (Coming Soon)
+                                </li>
+                                <li className="pt-2">
+                                    <a
+                                        href="https://github.com/Volodymyr75/petitions/blob/main/PROJECT_STATE.md"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="text-slate-600 font-medium hover:text-blue-600 flex items-center"
+                                    >
+                                        View Implementation Plan <ArrowRight size={14} className="ml-1" />
+                                    </a>
+                                </li>
+                            </ul>
                         </div>
                     </div>
-                    <div className="mt-8 pt-8 border-t border-slate-100 text-center text-xs text-slate-400">
-                        &copy; 2025 Petition Analytics Project. Open Source.
+
+                    <div className="mt-8 pt-8 border-t border-slate-200 flex flex-col md:flex-row items-center justify-between gap-4">
+                        <div className="flex items-center space-x-6">
+                            <a
+                                href="https://github.com/Volodymyr75/petitions"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="flex items-center text-slate-500 hover:text-slate-900 transition-colors"
+                            >
+                                <Database size={16} className="mr-2" />
+                                GitHub Repository
+                            </a>
+                            <a
+                                href="mailto:strembov@gmail.com"
+                                className="flex items-center text-slate-500 hover:text-slate-900 transition-colors"
+                            >
+                                <Info size={16} className="mr-2" />
+                                strembov@gmail.com
+                            </a>
+                        </div>
+                        <div className="text-xs text-slate-400">
+                            &copy; 2025-2026 Petition Analytics Project. Open Source.
+                        </div>
                     </div>
                 </footer>
             </div>
