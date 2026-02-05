@@ -273,42 +273,47 @@ export default function Dashboard() {
 
                 {/* BLOCK 4: INFO */}
                 <footer className="mt-8 border-t border-slate-200 pt-8 text-slate-500 text-sm">
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                        <div>
-                            <h4 className="font-bold text-slate-800 mb-4 flex items-center">
-                                <Server size={16} className="mr-2" /> Tech Stack
-                            </h4>
-                            <ul className="space-y-2">
-                                <li>Python ETL (DuckDB)</li>
-                                <li>React + Tailwind + Recharts</li>
-                                <li>Github Actions + MotherDuck</li>
-                            </ul>
+                    <div className="max-w-4xl mx-auto space-y-12">
+                        {/* Top Tier: Tech Stack & Data Health */}
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 text-center">
+                            <div className="flex flex-col items-center">
+                                <h4 className="font-bold text-slate-800 mb-4 flex items-center justify-center">
+                                    <Server size={16} className="mr-2 text-indigo-500" /> Tech Stack
+                                </h4>
+                                <ul className="space-y-2">
+                                    <li>Python ETL (DuckDB)</li>
+                                    <li>React + Tailwind + Recharts</li>
+                                    <li>Github Actions + MotherDuck</li>
+                                </ul>
+                            </div>
+                            <div className="flex flex-col items-center">
+                                <h4 className="font-bold text-slate-800 mb-4 flex items-center justify-center">
+                                    <Database size={16} className="mr-2 text-blue-500" /> Data Health
+                                </h4>
+                                <ul className="space-y-2">
+                                    <li>Total Records: {pipeline.total_records.toLocaleString()}</li>
+                                    <li>Active Sources: {pipeline.sources.length}</li>
+                                </ul>
+                            </div>
                         </div>
-                        <div>
-                            <h4 className="font-bold text-slate-800 mb-4 flex items-center">
-                                <Database size={16} className="mr-2" /> Data Health
+
+                        {/* Bottom Tier: Roadmap */}
+                        <div className="flex flex-col items-center text-center">
+                            <h4 className="font-bold text-slate-800 mb-4 flex items-center justify-center">
+                                <Activity size={16} className="mr-2 text-emerald-500" /> Roadmap
                             </h4>
-                            <ul className="space-y-2">
-                                <li>Total Records: {pipeline.total_records.toLocaleString()}</li>
-                                <li>Active Sources: {pipeline.sources.length}</li>
-                            </ul>
-                        </div>
-                        <div>
-                            <h4 className="font-bold text-slate-800 mb-4 flex items-center">
-                                <Activity size={16} className="mr-2" /> Roadmap
-                            </h4>
-                            <ul className="space-y-2">
+                            <ul className="space-y-3 max-w-md">
                                 <li className="text-slate-500">Automated daily sync running via GitHub Actions + MotherDuck.</li>
-                                <li className="text-indigo-600 font-medium group flex items-center">
+                                <li className="text-indigo-600 font-medium flex items-center justify-center">
                                     <Sparkles size={14} className="mr-1 text-amber-500" />
                                     AI-powered assistant (Coming Soon)
                                 </li>
-                                <li className="pt-2">
+                                <li className="pt-2 flex justify-center text-center">
                                     <a
                                         href="https://github.com/Volodymyr75/petitions/blob/main/PROJECT_STATE.md"
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        className="text-slate-600 font-medium hover:text-blue-600 flex items-center"
+                                        className="text-slate-600 font-medium hover:text-blue-600 flex items-center transition-colors"
                                     >
                                         View Implementation Plan <ArrowRight size={14} className="ml-1" />
                                     </a>
