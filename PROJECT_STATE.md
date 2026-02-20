@@ -5,40 +5,36 @@
 
 ---
 
-## 📅 Сесія 2026-02-20: Dashboard V2 — Premium Redesign
-1. **Аналіз рекомендацій**: Проаналізовано 2 блоки рекомендацій (25 пунктів). Відібрано 11 фіч для реалізації, решту — відкладено або адаптовано.
-2. **ETL розширення**: ✅ Додано 6 нових SQL запитів у `pipeline.py` + 5 авто-інсайтів. JSON перегенеровано.
-3. **Dashboard Rewrite**: ✅ Повний рерайт `Dashboard.jsx` — 7 нових графіків та візуалізацій, insight pills, platform comparison, source toggle.
-4. **Deploy**: ✅ Запушено на GitHub (`f14f3b2`).
+## 📅 Сесія 2026-02-20: Dashboard V2 — Premium Redesign ✅ COMPLETED
+1. **Аналіз рекомендацій**: Проаналізовано 2 блоки рекомендацій (25 пунктів). Відібрано 11 фіч для реалізації.
+2. **ETL розширення**: ✅ 6 нових SQL запитів у `pipeline.py` + 5 авто-інсайтів.
+3. **Dashboard Rewrite**: ✅ Повний рерайт `Dashboard.jsx` — 7 нових графіків, insight pills, platform comparison.
+4. **Source Toggle**: ✅ Фільтрація KPI, status distribution, scatter plot по source (All/President/Cabinet).
+5. **Design System**: ✅ Dark Mode + Glassmorphism + Google Fonts + micro-animations + timeline annotation.
+6. **Deploy**: ✅ Запушено на GitHub (`b7f6e62`).
 
-### ✅ Що вже зроблено (V2)
+### ✅ Що зроблено (V2) — повний список
 
 | Компонент | Статус | Деталі |
 |-----------|--------|--------|
-| **ETL: 6 нових SQL запитів** | ✅ Done | status_distribution, top_authors, categories (regex), vote_velocity, keywords_top10, platform_comparison |
-| **ETL: Auto-Insights** | ✅ Done | 5 narrative фактів (military %, viral rarity, median, response rate, platform diff) |
-| **UI: Insight Pills** | ✅ Done | Горизонтальна сітка з емоджі + текст під KPI картками |
-| **UI: Platform Comparison** | ✅ Done | Side-by-side картки President vs Cabinet (total, avg_votes, success/response rate) |
-| **UI: Status Distribution** | ✅ Done | Stacked horizontal bar chart (per source) |
-| **UI: Scatter Plot** | ✅ Done | text_length vs votes, колір по source (раніше дані були, але не рендерились) |
-| **UI: Top Authors** | ✅ Done | Horizontal bar chart, top 7 за total_votes |
-| **UI: Category Breakdown** | ✅ Done | Progress bars з % (6 категорій: Військові, Економічні, Соціальні, Адміністративні, Екологічні, Інші) |
-| **UI: Keywords Top-10** | ✅ Done | Horizontal bar chart з частотними словами з заголовків |
-| **UI: Vote Velocity** | ✅ Done | Таблиця (з'являється при наявності даних у votes_history за 7 днів) |
-| **UI: Source Toggle** | ✅ Done | Segmented control All/President/Cabinet в header |
-| **UI: Data Freshness** | ✅ Done | Pills у footer (Auto-ETL, data span, coverage) |
-| **UI: Enhanced Footer** | ✅ Done | Tech Stack + Roadmap + coverage badge |
-
-### 🔜 Що залишилось зробити (V2)
-
-| Компонент | Пріоритет | Деталі |
-|-----------|-----------|--------|
-| **Dark Mode** | 🔥 HIGH | Tailwind `darkMode: 'class'` + ThemeToggle + dark palette |
-| **Glassmorphism Design** | 🔥 HIGH | `backdrop-blur`, gradient overlays, frosted glass cards |
-| **Google Fonts** | 🔥 MEDIUM | Inter (UI) + DM Mono (числа) — замість system-ui |
-| **Micro-animations** | 🟡 MEDIUM | Hover lift (scale), smooth number transitions |
-| **Source Toggle функціональність** | 🟡 MEDIUM | Фактична фільтрація даних по source (зараз toggle є, але не фільтрує) |
-| **Timeline анотації** | 🟢 LOW | Мітки ключових подій (початок війни 2022-02, etc.) на AreaChart |
+| **ETL: 6 нових SQL запитів** | ✅ | status_distribution, top_authors, categories (regex), vote_velocity, keywords_top10, platform_comparison |
+| **ETL: Auto-Insights** | ✅ | 5 narrative фактів (military %, viral rarity, median, response rate, platform diff) |
+| **UI: Insight Pills** | ✅ | Горизонтальна сітка з емоджі + текст під KPI картками |
+| **UI: Platform Comparison** | ✅ | Side-by-side картки President vs Cabinet |
+| **UI: Status Distribution** | ✅ | Stacked horizontal bar chart (per source) |
+| **UI: Scatter Plot** | ✅ | text_length vs votes, колір по source |
+| **UI: Top Authors** | ✅ | Horizontal bar chart, top 7 за total_votes |
+| **UI: Category Breakdown** | ✅ | Progress bars з % (6 категорій) |
+| **UI: Keywords Top-10** | ✅ | Horizontal bar chart з частотними словами з заголовків |
+| **UI: Vote Velocity** | ✅ | Таблиця (при наявності даних у votes_history) |
+| **UI: Source Toggle** | ✅ | Segmented control + фільтрація KPI, charts |
+| **UI: Data Freshness** | ✅ | Pills у footer (Auto-ETL, data span, coverage) |
+| **UI: Enhanced Footer** | ✅ | Tech Stack + Roadmap + coverage badge |
+| **Dark Mode** | ✅ | Toggle ☀️/🌙 з `localStorage`, повна адаптація фону/карток/графіків |
+| **Glassmorphism** | ✅ | `backdrop-blur`, glass borders, hover lift (-2px) + glow |
+| **Google Fonts** | ✅ | Inter (UI) + DM Mono (числа), gradient text на заголовку |
+| **Micro-animations** | ✅ | Slide-up на секціях, smooth transitions (300ms), custom scrollbar |
+| **Timeline анотація** | ✅ | Червона пунктирна лінія лютий 2022 "Full-scale invasion" |
 
 ### 📊 Нові дані в JSON (analytics_data.json) — ✅ Реалізовано
 - `analytics.status_distribution` — розподіл по статусах
@@ -350,8 +346,9 @@ petition/
 - [x] Налаштувати автоматичний запуск (GitHub Actions + Cron)
 - [x] **ETL V2**: 6 нових SQL запитів + auto-insights
 - [x] **Dashboard V2 Charts**: 7 нових графіків (status dist, scatter, authors, categories, keywords, velocity, platform)
-- [/] **Dashboard V2 Design**: Dark Mode + Glassmorphism + Google Fonts
-- [ ] **Source Toggle**: Фактична фільтрація даних (toggle є, логіка — ні)
+- [x] **Dashboard V2 Design**: Dark Mode + Glassmorphism + Google Fonts + micro-animations
+- [x] **Source Toggle**: Фільтрація KPI + charts по source
+- [x] **Timeline анотація**: Feb 2022 invasion marker
 - [ ] Додати OpenAI/LLM для чат-бота (Заплановано в Roadmap)
 - [ ] Додати аналітику "На розгляді" — days pending
 

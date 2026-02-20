@@ -215,12 +215,24 @@ def export_analytics(con, growth_stats=[]):
     scatter_data = [{"x": r[0], "y": r[1], "source": r[2], "has_answer": r[3]} for r in scatter_rows]
 
     # 3.4 Status Distribution (per source)
+    # Normalize Cabinet English statuses to Ukrainian equivalents
     print("   3.4 Status Distribution...")
     status_dist_query = """
-        SELECT status, source, COUNT(*) as count
+        SELECT 
+            CASE status
+                WHEN 'Unsupported' THEN 'Архів'
+                WHEN 'Approved' THEN 'На розгляді'
+                WHEN 'Answered' THEN 'З відповіддю'
+                WHEN 'Supported' THEN 'Збір підписів'
+                WHEN 'Триває збір підписів' THEN 'Збір підписів'
+                WHEN 'Не підтримано' THEN 'Архів'
+                ELSE status
+            END as unified_status,
+            source, 
+            COUNT(*) as count
         FROM petitions
         WHERE status IS NOT NULL AND status != 'Unknown'
-        GROUP BY status, source
+        GROUP BY unified_status, source
         ORDER BY count DESC
     """
     status_rows = con.execute(status_dist_query).fetchall()
