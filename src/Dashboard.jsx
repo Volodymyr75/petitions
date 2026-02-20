@@ -100,8 +100,8 @@ const InsightPill = ({ emoji, text }) => (
 
 const SourceBadge = ({ source }) => (
     <span className={`px-2 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wide ${source === 'president'
-            ? 'bg-blue-100 text-blue-700'
-            : 'bg-teal-100 text-teal-700'
+        ? 'bg-blue-100 text-blue-700'
+        : 'bg-teal-100 text-teal-700'
         }`}>
         {source === 'president' ? 'Pres' : 'Cab'}
     </span>
@@ -126,9 +126,30 @@ export default function Dashboard() {
         value: d.value
     })) : [];
 
-    // Aggregate status distribution for stacked bars
+    // Source filter helper
+    const isSourceMatch = (source) => activeSource === 'all' || source === activeSource;
+
+    // Filtered overview KPIs based on active source
+    const platforms = overview.platform_comparison || [];
+    const presPlatform = platforms.find(p => p.source === 'president') || {};
+    const cabPlatform = platforms.find(p => p.source === 'cabinet') || {};
+
+    const filteredOverview = activeSource === 'all' ? overview : (() => {
+        const p = platforms.find(pl => pl.source === activeSource) || {};
+        return {
+            ...overview,
+            total: p.total || 0,
+            president_count: activeSource === 'president' ? p.total : 0,
+            cabinet_count: activeSource === 'cabinet' ? p.total : 0,
+            success_rate: p.success_rate || 0,
+            median_votes: p.median_votes || 0,
+            response_rate: p.response_rate || 0,
+        };
+    })();
+
+    // Aggregate status distribution for stacked bars — filtered
     const statusAggregated = {};
-    (analytics.status_distribution || []).forEach(s => {
+    (analytics.status_distribution || []).filter(s => isSourceMatch(s.source)).forEach(s => {
         if (!statusAggregated[s.status]) {
             statusAggregated[s.status] = { status: s.status, president: 0, cabinet: 0, total: 0 };
         }
@@ -139,13 +160,8 @@ export default function Dashboard() {
         .sort((a, b) => b.total - a.total)
         .slice(0, 6);
 
-    // Platform comparison
-    const platforms = overview.platform_comparison || [];
-    const presPlatform = platforms.find(p => p.source === 'president') || {};
-    const cabPlatform = platforms.find(p => p.source === 'cabinet') || {};
-
     // Histogram with percentage
-    const totalPetitions = overview.total || 1;
+    const totalPetitions = filteredOverview.total || 1;
     const histogramWithPct = (analytics.histogram || []).map(h => ({
         ...h,
         percentage: ((h.count / totalPetitions) * 100).toFixed(1)
@@ -173,8 +189,8 @@ export default function Dashboard() {
                                     key={s}
                                     onClick={() => setActiveSource(s)}
                                     className={`px-3 py-1.5 text-xs font-semibold rounded-md transition-all ${activeSource === s
-                                            ? 'bg-indigo-600 text-white shadow-sm'
-                                            : 'text-slate-500 hover:text-slate-700'
+                                        ? 'bg-indigo-600 text-white shadow-sm'
+                                        : 'text-slate-500 hover:text-slate-700'
                                         }`}
                                 >
                                     {s === 'all' ? 'All' : s === 'president' ? 'President' : 'Cabinet'}
@@ -195,28 +211,28 @@ export default function Dashboard() {
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
                         <StatCard
                             title="Total Petitions"
-                            value={overview.total?.toLocaleString()}
-                            subtext={`President: ${overview.president_count?.toLocaleString()} • Cabinet: ${overview.cabinet_count?.toLocaleString()}`}
+                            value={filteredOverview.total?.toLocaleString()}
+                            subtext={activeSource === 'all' ? `President: ${overview.president_count?.toLocaleString()} • Cabinet: ${overview.cabinet_count?.toLocaleString()}` : `Filtered: ${activeSource}`}
                             icon={FileText}
                             color="indigo"
                         />
                         <StatCard
                             title="Success Rate"
-                            value={`${overview.success_rate}%`}
+                            value={`${filteredOverview.success_rate}%`}
                             subtext="Reached 25,000 votes threshold"
                             icon={CheckCircle}
                             color="emerald"
                         />
                         <StatCard
                             title="Median Votes"
-                            value={overview.median_votes?.toLocaleString()}
+                            value={filteredOverview.median_votes?.toLocaleString()}
                             subtext="50% of petitions receive fewer"
                             icon={Users}
                             color="amber"
                         />
                         <StatCard
                             title="Response Rate"
-                            value={`${overview.response_rate}%`}
+                            value={`${filteredOverview.response_rate}%`}
                             subtext="Received an official answer"
                             icon={Info}
                             color="cyan"
@@ -433,18 +449,22 @@ export default function Dashboard() {
                                         <YAxis type="number" dataKey="y" name="Votes" tick={{ fontSize: 10 }} axisLine={false} tickLine={false} label={{ value: 'Votes', angle: -90, position: 'insideLeft', fontSize: 11, fill: '#94a3b8' }} />
                                         <ZAxis range={[20, 80]} />
                                         <Tooltip contentStyle={CustomTooltipStyle} formatter={(value, name) => [value?.toLocaleString(), name]} />
-                                        <Scatter
-                                            data={(analytics.scatter || []).filter(s => s.source === 'president')}
-                                            fill="#3b82f6"
-                                            fillOpacity={0.5}
-                                            name="President"
-                                        />
-                                        <Scatter
-                                            data={(analytics.scatter || []).filter(s => s.source === 'cabinet')}
-                                            fill="#0ea5e9"
-                                            fillOpacity={0.7}
-                                            name="Cabinet"
-                                        />
+                                        {(activeSource === 'all' || activeSource === 'president') && (
+                                            <Scatter
+                                                data={(analytics.scatter || []).filter(s => s.source === 'president')}
+                                                fill="#3b82f6"
+                                                fillOpacity={0.5}
+                                                name="President"
+                                            />
+                                        )}
+                                        {(activeSource === 'all' || activeSource === 'cabinet') && (
+                                            <Scatter
+                                                data={(analytics.scatter || []).filter(s => s.source === 'cabinet')}
+                                                fill="#0ea5e9"
+                                                fillOpacity={0.7}
+                                                name="Cabinet"
+                                            />
+                                        )}
                                         <Legend iconType="circle" />
                                     </ScatterChart>
                                 </ResponsiveContainer>

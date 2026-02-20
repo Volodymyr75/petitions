@@ -7,27 +7,40 @@
 
 ## 📅 Сесія 2026-02-20: Dashboard V2 — Premium Redesign
 1. **Аналіз рекомендацій**: Проаналізовано 2 блоки рекомендацій (25 пунктів). Відібрано 11 фіч для реалізації, решту — відкладено або адаптовано.
-2. **Новий план**: Повний редизайн дашборду: Dark Mode + Glassmorphism, 7 нових графіків, narrative insights.
-3. **ETL розширення**: 6 нових SQL запитів у `pipeline.py` (status distribution, top authors, categories, vote velocity, platform comparison, auto-insights).
-4. **Нова архітектура UI**: 5 блоків (Overview → Daily → Engagement → Deep Analysis → Footer) з GlassCard компонентами та Source/Theme toggles.
+2. **ETL розширення**: ✅ Додано 6 нових SQL запитів у `pipeline.py` + 5 авто-інсайтів. JSON перегенеровано.
+3. **Dashboard Rewrite**: ✅ Повний рерайт `Dashboard.jsx` — 7 нових графіків та візуалізацій, insight pills, platform comparison, source toggle.
+4. **Deploy**: ✅ Запушено на GitHub (`f14f3b2`).
 
-### 🏗️ Dashboard V2 — Архітектура
+### ✅ Що вже зроблено (V2)
 
-| Блок | Зміст | Нове? |
-|------|-------|-------|
-| **1. Overview** | 4 KPI з трендами + Insight Banner (3-5 авто-фактів) + Platform Comparison (Pres vs Cab) | 🔄 Розширено |
-| **2. Daily Dynamics** | Since Yesterday + Growth Leaders + Sparkline | 🔄 Стилізовано |
-| **3. Engagement & Content** | Vote histogram, Status Distribution, Scatter Plot, Vote Velocity, Top Authors | 🆕 Новий |
-| **4. Deep Analysis** | Category Breakdown, Keywords Top-10, Monthly Timeline з анотаціями | 🆕 Новий |
-| **5. Footer** | Data Freshness pill, Coverage card, Tech Stack, Contact | 🔄 Розширено |
+| Компонент | Статус | Деталі |
+|-----------|--------|--------|
+| **ETL: 6 нових SQL запитів** | ✅ Done | status_distribution, top_authors, categories (regex), vote_velocity, keywords_top10, platform_comparison |
+| **ETL: Auto-Insights** | ✅ Done | 5 narrative фактів (military %, viral rarity, median, response rate, platform diff) |
+| **UI: Insight Pills** | ✅ Done | Горизонтальна сітка з емоджі + текст під KPI картками |
+| **UI: Platform Comparison** | ✅ Done | Side-by-side картки President vs Cabinet (total, avg_votes, success/response rate) |
+| **UI: Status Distribution** | ✅ Done | Stacked horizontal bar chart (per source) |
+| **UI: Scatter Plot** | ✅ Done | text_length vs votes, колір по source (раніше дані були, але не рендерились) |
+| **UI: Top Authors** | ✅ Done | Horizontal bar chart, top 7 за total_votes |
+| **UI: Category Breakdown** | ✅ Done | Progress bars з % (6 категорій: Військові, Економічні, Соціальні, Адміністративні, Екологічні, Інші) |
+| **UI: Keywords Top-10** | ✅ Done | Horizontal bar chart з частотними словами з заголовків |
+| **UI: Vote Velocity** | ✅ Done | Таблиця (з'являється при наявності даних у votes_history за 7 днів) |
+| **UI: Source Toggle** | ✅ Done | Segmented control All/President/Cabinet в header |
+| **UI: Data Freshness** | ✅ Done | Pills у footer (Auto-ETL, data span, coverage) |
+| **UI: Enhanced Footer** | ✅ Done | Tech Stack + Roadmap + coverage badge |
 
-### 🎨 Дизайн-система V2
-- **Fonts**: Inter (UI) + DM Mono (числа)
-- **Theme**: Dark Mode з `class` toggle + Glassmorphism (`backdrop-blur`)
-- **Palette**: Статуси кольор-кодовані (зелений/помаранчевий/червоний/синій)
-- **Effects**: Hover lift (scale 1.02), smooth transitions, gradient overlays
+### 🔜 Що залишилось зробити (V2)
 
-### 📊 Нові дані в JSON (analytics_data.json)
+| Компонент | Пріоритет | Деталі |
+|-----------|-----------|--------|
+| **Dark Mode** | 🔥 HIGH | Tailwind `darkMode: 'class'` + ThemeToggle + dark palette |
+| **Glassmorphism Design** | 🔥 HIGH | `backdrop-blur`, gradient overlays, frosted glass cards |
+| **Google Fonts** | 🔥 MEDIUM | Inter (UI) + DM Mono (числа) — замість system-ui |
+| **Micro-animations** | 🟡 MEDIUM | Hover lift (scale), smooth number transitions |
+| **Source Toggle функціональність** | 🟡 MEDIUM | Фактична фільтрація даних по source (зараз toggle є, але не фільтрує) |
+| **Timeline анотації** | 🟢 LOW | Мітки ключових подій (початок війни 2022-02, etc.) на AreaChart |
+
+### 📊 Нові дані в JSON (analytics_data.json) — ✅ Реалізовано
 - `analytics.status_distribution` — розподіл по статусах
 - `analytics.top_authors` — топ-10 авторів за голосами
 - `analytics.categories` — категоризація (regex-based, 6 категорій)
@@ -335,8 +348,10 @@ petition/
 - [x] Реалізувати script `daily_sync.py` (Local) / `cloud_sync.py` (Cloud)
 - [x] Виправлено `scraper_detail.py` (підтримка нового HTML)
 - [x] Налаштувати автоматичний запуск (GitHub Actions + Cron)
-- [/] **Dashboard V2 Redesign**: Dark Mode + Glassmorphism + 7 нових графіків
-- [/] **ETL V2**: 6 нових SQL запитів (status distribution, top authors, categories, velocity, platform, insights)
+- [x] **ETL V2**: 6 нових SQL запитів + auto-insights
+- [x] **Dashboard V2 Charts**: 7 нових графіків (status dist, scatter, authors, categories, keywords, velocity, platform)
+- [/] **Dashboard V2 Design**: Dark Mode + Glassmorphism + Google Fonts
+- [ ] **Source Toggle**: Фактична фільтрація даних (toggle є, логіка — ні)
 - [ ] Додати OpenAI/LLM для чат-бота (Заплановано в Roadmap)
 - [ ] Додати аналітику "На розгляді" — days pending
 
