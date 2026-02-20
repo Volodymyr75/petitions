@@ -1,7 +1,40 @@
 # 📊 Petition Analytics — Project State
 
-> **Останнє оновлення**: 2026-02-14
+> **Останнє оновлення**: 2026-02-20
 > **Призначення:** Швидке відновлення контексту після перезапуску розмови
+
+---
+
+## 📅 Сесія 2026-02-20: Dashboard V2 — Premium Redesign
+1. **Аналіз рекомендацій**: Проаналізовано 2 блоки рекомендацій (25 пунктів). Відібрано 11 фіч для реалізації, решту — відкладено або адаптовано.
+2. **Новий план**: Повний редизайн дашборду: Dark Mode + Glassmorphism, 7 нових графіків, narrative insights.
+3. **ETL розширення**: 6 нових SQL запитів у `pipeline.py` (status distribution, top authors, categories, vote velocity, platform comparison, auto-insights).
+4. **Нова архітектура UI**: 5 блоків (Overview → Daily → Engagement → Deep Analysis → Footer) з GlassCard компонентами та Source/Theme toggles.
+
+### 🏗️ Dashboard V2 — Архітектура
+
+| Блок | Зміст | Нове? |
+|------|-------|-------|
+| **1. Overview** | 4 KPI з трендами + Insight Banner (3-5 авто-фактів) + Platform Comparison (Pres vs Cab) | 🔄 Розширено |
+| **2. Daily Dynamics** | Since Yesterday + Growth Leaders + Sparkline | 🔄 Стилізовано |
+| **3. Engagement & Content** | Vote histogram, Status Distribution, Scatter Plot, Vote Velocity, Top Authors | 🆕 Новий |
+| **4. Deep Analysis** | Category Breakdown, Keywords Top-10, Monthly Timeline з анотаціями | 🆕 Новий |
+| **5. Footer** | Data Freshness pill, Coverage card, Tech Stack, Contact | 🔄 Розширено |
+
+### 🎨 Дизайн-система V2
+- **Fonts**: Inter (UI) + DM Mono (числа)
+- **Theme**: Dark Mode з `class` toggle + Glassmorphism (`backdrop-blur`)
+- **Palette**: Статуси кольор-кодовані (зелений/помаранчевий/червоний/синій)
+- **Effects**: Hover lift (scale 1.02), smooth transitions, gradient overlays
+
+### 📊 Нові дані в JSON (analytics_data.json)
+- `analytics.status_distribution` — розподіл по статусах
+- `analytics.top_authors` — топ-10 авторів за голосами
+- `analytics.categories` — категоризація (regex-based, 6 категорій)
+- `analytics.vote_velocity` — швидкість набору голосів (7 днів)
+- `analytics.keywords_top10` — частотні слова з заголовків
+- `overview.platform_comparison` — порівняння President vs Cabinet
+- `insights[]` — 5 авто-генерованих narrative фактів
 
 ---
 
@@ -302,7 +335,9 @@ petition/
 - [x] Реалізувати script `daily_sync.py` (Local) / `cloud_sync.py` (Cloud)
 - [x] Виправлено `scraper_detail.py` (підтримка нового HTML)
 - [x] Налаштувати автоматичний запуск (GitHub Actions + Cron)
-- [/] Додати OpenAI/LLM для чат-бота (Заплановано в Roadmap)
+- [/] **Dashboard V2 Redesign**: Dark Mode + Glassmorphism + 7 нових графіків
+- [/] **ETL V2**: 6 нових SQL запитів (status distribution, top authors, categories, velocity, platform, insights)
+- [ ] Додати OpenAI/LLM для чат-бота (Заплановано в Roadmap)
 - [ ] Додати аналітику "На розгляді" — days pending
 
 ---

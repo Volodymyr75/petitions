@@ -213,11 +213,208 @@ def export_analytics(con, growth_stats=[]):
     """
     scatter_rows = con.execute(scatter_query).fetchall()
     scatter_data = [{"x": r[0], "y": r[1], "source": r[2], "has_answer": r[3]} for r in scatter_rows]
+
+    # 3.4 Status Distribution (per source)
+    print("   3.4 Status Distribution...")
+    status_dist_query = """
+        SELECT status, source, COUNT(*) as count
+        FROM petitions
+        WHERE status IS NOT NULL AND status != 'Unknown'
+        GROUP BY status, source
+        ORDER BY count DESC
+    """
+    status_rows = con.execute(status_dist_query).fetchall()
+    status_distribution = [{"status": r[0], "source": r[1], "count": r[2]} for r in status_rows]
+
+    # 3.5 Top Authors by total votes
+    print("   3.5 Top Authors...")
+    authors_query = """
+        SELECT author, 
+               COUNT(*) as petition_count,
+               SUM(votes) as total_votes,
+               MAX(votes) as max_votes,
+               ROUND(AVG(votes), 0) as avg_votes
+        FROM petitions
+        WHERE author IS NOT NULL AND author != '' AND LENGTH(author) > 2
+        GROUP BY author
+        ORDER BY total_votes DESC
+        LIMIT 10
+    """
+    authors_rows = con.execute(authors_query).fetchall()
+    top_authors = [{
+        "author": r[0], "petitions": r[1], "total_votes": r[2],
+        "max_votes": r[3], "avg_votes": int(r[4]) if r[4] else 0
+    } for r in authors_rows]
+
+    # 3.6 Category Breakdown (regex-based)
+    print("   3.6 Category Breakdown...")
+    categories_query = """
+        SELECT 
+            CASE
+                WHEN title ILIKE '%герой%' OR title ILIKE '%героя%' OR title ILIKE '%звання%'
+                     OR title ILIKE '%посмертно%' OR title ILIKE '%військов%' OR title ILIKE '%воїн%'
+                     OR title ILIKE '%захисни%' OR title ILIKE '%бойов%' THEN 'Військові честі'
+                WHEN title ILIKE '%тариф%' OR title ILIKE '%газ%' OR title ILIKE '%енерг%'
+                     OR title ILIKE '%подат%' OR title ILIKE '%економ%' OR title ILIKE '%ціна%' THEN 'Економічні'
+                WHEN title ILIKE '%екологі%' OR title ILIKE '%навколишн%' OR title ILIKE '%сміт%'
+                     OR title ILIKE '%забруднен%' OR title ILIKE '%довкілля%' THEN 'Екологічні'
+                WHEN title ILIKE '%пенсі%' OR title ILIKE '%субсиді%' OR title ILIKE '%заробіт%'
+                     OR title ILIKE '%житло%' OR title ILIKE '%соціальн%' OR title ILIKE '%медицин%'
+                     OR title ILIKE '%здоров%' OR title ILIKE '%освіт%' THEN 'Соціальні'
+                WHEN title ILIKE '%міністер%' OR title ILIKE '%реформ%' OR title ILIKE '%закон%'
+                     OR title ILIKE '%суд%' OR title ILIKE '%корупці%' OR title ILIKE '%влад%' THEN 'Адміністративні'
+                ELSE 'Інші'
+            END as category,
+            COUNT(*) as count,
+            ROUND(COUNT(*) * 100.0 / (SELECT COUNT(*) FROM petitions), 1) as percentage
+        FROM petitions
+        GROUP BY category
+        ORDER BY count DESC
+    """
+    cat_rows = con.execute(categories_query).fetchall()
+    categories_data = [{"category": r[0], "count": r[1], "percentage": float(r[2])} for r in cat_rows]
+
+    # 3.7 Vote Velocity (top active petitions, last 7 days from votes_history)
+    print("   3.7 Vote Velocity...")
+    velocity_query = """
+        SELECT vh.petition_id, p.title, p.url,
+               MIN(vh.votes) as votes_7d_ago,
+               MAX(vh.votes) as votes_now,
+               MAX(vh.votes) - MIN(vh.votes) as growth_7d,
+               COUNT(DISTINCT vh.date) as days_tracked
+        FROM votes_history vh
+        JOIN petitions p ON vh.petition_id = p.external_id AND vh.source = p.source
+        WHERE vh.date >= CURRENT_DATE - INTERVAL '7 days'
+          AND p.status = 'Триває збір підписів'
+        GROUP BY vh.petition_id, p.title, p.url
+        HAVING COUNT(DISTINCT vh.date) >= 2
+        ORDER BY growth_7d DESC
+        LIMIT 10
+    """
+    try:
+        vel_rows = con.execute(velocity_query).fetchall()
+        vote_velocity = [{
+            "id": r[0], "title": r[1], "url": r[2],
+            "votes_start": r[3], "votes_current": r[4],
+            "growth_7d": r[5], "days_tracked": r[6],
+            "daily_rate": round(r[5] / max(r[6] - 1, 1), 0)
+        } for r in vel_rows]
+    except Exception as e:
+        print(f"   ⚠️ Vote velocity query failed: {e}")
+        vote_velocity = []
+
+    # 3.8 Keywords Top-10 from titles
+    print("   3.8 Keywords Top-10...")
+    # Extract most frequent meaningful words from titles (>= 4 chars to skip prepositions)
+    keywords_query = """
+        WITH words AS (
+            SELECT UNNEST(string_split(LOWER(title), ' ')) as word
+            FROM petitions
+            WHERE title IS NOT NULL
+        )
+        SELECT word, COUNT(*) as freq
+        FROM words
+        WHERE LENGTH(word) >= 4
+          AND word NOT IN ('про', 'для', 'від', 'або', 'що', 'який', 'яка', 'яке', 'які',
+                           'його', 'його', 'цього', 'того', 'нього', 'неї', 'них',
+                           'при', 'під', 'над', 'між', 'через', 'після', 'перед',
+                           'також', 'щодо', 'та', 'the', 'and', 'for', 'with', 'this', 'that',
+                           'прошу', 'президента', 'україни', 'звання')
+        GROUP BY word
+        ORDER BY freq DESC
+        LIMIT 10
+    """
+    try:
+        kw_rows = con.execute(keywords_query).fetchall()
+        keywords_top10 = [{"word": r[0], "count": r[1]} for r in kw_rows]
+    except Exception as e:
+        print(f"   ⚠️ Keywords query failed: {e}")
+        keywords_top10 = []
+
+    # --- PLATFORM COMPARISON ---
+    print("   3.9 Platform Comparison...")
+    platform_query = """
+        SELECT 
+            source,
+            COUNT(*) as total,
+            ROUND(AVG(votes), 0) as avg_votes,
+            MEDIAN(votes) as median_votes,
+            ROUND(COUNT(*) FILTER (WHERE votes >= 25000) * 100.0 / COUNT(*), 2) as success_rate,
+            ROUND(COUNT(*) FILTER (WHERE status IN ('З відповіддю', 'Answered')) * 100.0 / COUNT(*), 2) as response_rate
+        FROM petitions
+        GROUP BY source
+    """
+    plat_rows = con.execute(platform_query).fetchall()
+    platform_comparison = [{
+        "source": r[0], "total": r[1], "avg_votes": int(r[2]) if r[2] else 0,
+        "median_votes": r[3], "success_rate": float(r[4]), "response_rate": float(r[5])
+    } for r in plat_rows]
+
+    # --- AUTO-INSIGHTS ---
+    print("   3.10 Generating Insights...")
+    insights = []
     
+    # Insight 1: Military petition dominance
+    military_cat = next((c for c in categories_data if c["category"] == "Військові честі"), None)
+    if military_cat:
+        insights.append({
+            "emoji": "⚔️",
+            "text": f"{military_cat['percentage']}% of all petitions are military honor requests, reflecting the ongoing war impact.",
+            "type": "military_dominance"
+        })
+    
+    # Insight 2: Viral rarity
+    viral_count = hist_map.get('25k+', 0)
+    viral_pct = round(viral_count * 100.0 / max(ov[0], 1), 1)
+    insights.append({
+        "emoji": "🦄",
+        "text": f"Only {viral_pct}% of petitions reach the 25,000 signature threshold. Getting viral is exceptionally rare.",
+        "type": "viral_rarity"
+    })
+    
+    # Insight 3: Median engagement
+    insights.append({
+        "emoji": "📊",
+        "text": f"The median petition receives only {ov[4]} votes — half of all petitions get less than this.",
+        "type": "median_engagement"
+    })
+    
+    # Insight 4: Response rate
+    insights.append({
+        "emoji": "📬",
+        "text": f"Only {ov[5]}% of petitions receive an official response — the vast majority go unanswered.",
+        "type": "response_rate"
+    })
+    
+    # Insight 5: Platform scale difference
+    pres_data_plat = next((p for p in platform_comparison if p["source"] == "president"), None)
+    cab_data_plat = next((p for p in platform_comparison if p["source"] == "cabinet"), None)
+    if pres_data_plat and cab_data_plat:
+        ratio = round(pres_data_plat["total"] / max(cab_data_plat["total"], 1))
+        insights.append({
+            "emoji": "🏛️",
+            "text": f"Presidential portal has {ratio}x more petitions than Cabinet, but Cabinet petitions average {cab_data_plat['avg_votes']} votes vs {pres_data_plat['avg_votes']}.",
+            "type": "platform_comparison"
+        })
+
+    # --- DATA SPAN ---
+    span_query = """
+        SELECT MIN(date_normalized), MAX(date_normalized)
+        FROM petitions WHERE date_normalized IS NOT NULL
+    """
+    span_row = con.execute(span_query).fetchone()
+    data_span_start = str(span_row[0])[:4] if span_row[0] else "2015"
+    data_span_end = str(span_row[1])[:4] if span_row[1] else "2026"
+
     analytics_data = {
         "histogram": histogram_data,
         "timeline": timeline_data,
-        "scatter": scatter_data
+        "scatter": scatter_data,
+        "status_distribution": status_distribution,
+        "top_authors": top_authors,
+        "categories": categories_data,
+        "vote_velocity": vote_velocity,
+        "keywords_top10": keywords_top10
     }
 
     # --- BLOCK 4: PIPELINE INFO ---
@@ -225,14 +422,17 @@ def export_analytics(con, growth_stats=[]):
         "last_updated": time.strftime("%Y-%m-%d %H:%M:%S"),
         "db_size_mb": 27, # Approx
         "total_records": ov[0],
-        "sources": ["president.gov.ua", "petition.kmu.gov.ua"]
+        "sources": ["president.gov.ua", "petition.kmu.gov.ua"],
+        "data_span": f"{data_span_start}-{data_span_end}",
+        "coverage": "~100% of significant petitions"
     }
 
     # --- FINAL ASSEMBLY ---
     output = {
-        "overview": overview_data,
+        "overview": {**overview_data, "platform_comparison": platform_comparison},
         "daily": daily_data,
         "analytics": analytics_data,
+        "insights": insights,
         "pipeline": pipeline_data
     }
     
