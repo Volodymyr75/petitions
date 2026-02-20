@@ -152,10 +152,7 @@ export default function Dashboard() {
     }, [isDark]);
 
     // --- TRANSFORM DATA ---
-    const historyData = daily.history ? daily.history.map(d => ({
-        date: d.date.slice(5),
-        value: d.value
-    })) : [];
+    const historyData = daily.history || [];
 
     const isSourceMatch = (source) => activeSource === 'all' || source === activeSource;
 
@@ -319,101 +316,180 @@ export default function Dashboard() {
 
                 {/* ═══════════════ BLOCK 2: DAILY DYNAMICS ═══════════════ */}
                 <section className="animate-in animate-in-delay-2">
-                    <SectionHeader title="Daily Dynamics" subtitle="Since the last automated sync" icon={TrendingUp} />
+                    <SectionHeader title="Daily Dynamics" subtitle={`Vote trends by source • ${daily.last_sync_date ? `Last sync: ${daily.last_sync_date}` : 'Since the last automated sync'}`} icon={TrendingUp} />
 
-                    <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-                        {/* Today's Pulse */}
-                        <GlassCard className={`relative overflow-hidden ${isDark ? '!bg-emerald-950/30' : '!bg-gradient-to-br !from-emerald-50 !to-white'}`}>
-                            <h3 className="text-lg font-bold text-emerald-600 dark:text-emerald-400 mb-6 flex items-center">
-                                <Calendar size={18} className="mr-2 opacity-75" />
-                                {daily.last_sync_date ? `Last Sync: ${daily.last_sync_date}` : 'Last 24 Hours'}
-                            </h3>
+                    {/* KPI Row */}
+                    <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
+                        <div className="glass-card-static px-4 py-3 text-center">
+                            <p className="text-xs text-[var(--text-muted)]">Today's Votes</p>
+                            <p className="text-xl font-bold font-mono text-emerald-500">+{daily.votes_added?.toLocaleString()}</p>
+                        </div>
+                        <div className="glass-card-static px-4 py-3 text-center">
+                            <p className="text-xs text-[var(--text-muted)]">New Petitions</p>
+                            <p className="text-xl font-bold font-mono text-indigo-500">+{daily.new_petitions}</p>
+                        </div>
+                        <div className="glass-card-static px-4 py-3 text-center">
+                            <p className="text-xs text-[var(--text-muted)]">7-Day Avg</p>
+                            <p className="text-xl font-bold font-mono text-[var(--text-primary)]">
+                                {historyData.length >= 7
+                                    ? Math.round(historyData.slice(-7).reduce((s, d) => s + d.total, 0) / 7).toLocaleString()
+                                    : '—'}
+                            </p>
+                        </div>
+                        <div className="glass-card-static px-4 py-3 text-center">
+                            <p className="text-xs text-[var(--text-muted)]">History Points</p>
+                            <p className="text-xl font-bold font-mono text-[var(--text-primary)]">{historyData.length}</p>
+                        </div>
+                    </div>
 
-                            <div className="grid grid-cols-2 gap-4 mb-8 relative z-10">
-                                <div>
-                                    <p className="text-sm text-emerald-600/70 dark:text-emerald-400/70 font-medium">New Petitions</p>
-                                    <p className="text-4xl font-extrabold text-emerald-600 dark:text-emerald-400 font-mono">+{daily.new_petitions}</p>
-                                </div>
-                                <div>
-                                    <p className="text-sm text-emerald-600/70 dark:text-emerald-400/70 font-medium">Votes Added</p>
-                                    <p className="text-4xl font-extrabold text-emerald-600 dark:text-emerald-400 font-mono">+{daily.votes_added?.toLocaleString()}</p>
-                                </div>
-                            </div>
-
-                            <div className="h-32 -mx-6 -mb-6 mt-4">
-                                {historyData.length > 0 ? (
-                                    <ResponsiveContainer width="100%" height="100%">
-                                        <AreaChart data={historyData}>
-                                            <defs>
-                                                <linearGradient id="colorVote" x1="0" y1="0" x2="0" y2="1">
-                                                    <stop offset="5%" stopColor="#10b981" stopOpacity={0.3} />
-                                                    <stop offset="95%" stopColor="#10b981" stopOpacity={0} />
-                                                </linearGradient>
-                                            </defs>
-                                            <Tooltip contentStyle={tooltipStyle(isDark)} />
-                                            <Area type="monotone" dataKey="value" stroke="#10b981" strokeWidth={3} fillOpacity={1} fill="url(#colorVote)" />
-                                        </AreaChart>
-                                    </ResponsiveContainer>
-                                ) : (
-                                    <div className="h-full flex items-center justify-center text-emerald-500/40 text-sm">
-                                        Collecting trend data...
-                                    </div>
-                                )}
+                    {/* Two Charts Side by Side */}
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                        {/* LEFT: Last 7 Days — Bar Chart */}
+                        <GlassCard>
+                            <h3 className="text-lg font-bold text-[var(--text-primary)] mb-1">Last 7 Days</h3>
+                            <p className="text-sm text-[var(--text-muted)] mb-4">Daily vote activity by source</p>
+                            <div className="h-56">
+                                <ResponsiveContainer width="100%" height="100%">
+                                    <BarChart data={historyData.slice(-7)}>
+                                        <XAxis
+                                            dataKey="date"
+                                            tick={{ fontSize: 11, fill: axisTickColor }}
+                                            tickFormatter={v => v.slice(5).replace('-', '.')}
+                                            axisLine={false} tickLine={false}
+                                        />
+                                        <YAxis axisLine={false} tickLine={false} tick={{ fontSize: 10, fill: axisTickColor }}
+                                            tickFormatter={v => v >= 1000 ? `${(v / 1000).toFixed(0)}k` : v} />
+                                        <Tooltip
+                                            contentStyle={tooltipStyle(isDark)}
+                                            labelFormatter={v => `📅 ${v}`}
+                                            formatter={(value, name, props) => {
+                                                const d = props.payload;
+                                                // props.name is what we pass in <Bar name="Cabinet" /> so it's capitalized
+                                                if (name === 'Cabinet' || name === 'cabinet') {
+                                                    return [`${value.toLocaleString()} votes (+${d.cab_new || 0} нових)`, '🏢 Cabinet'];
+                                                }
+                                                return [`${value.toLocaleString()} votes (+${d.pres_new || 0} нових)`, '🏛️ President'];
+                                            }}
+                                        />
+                                        <Legend iconType="circle" />
+                                        <Bar dataKey="president" stackId="a" fill="#3b82f6" name="President" radius={[0, 0, 0, 0]} />
+                                        <Bar dataKey="cabinet" stackId="a" fill="#0ea5e9" name="Cabinet" radius={[4, 4, 0, 0]} />
+                                    </BarChart>
+                                </ResponsiveContainer>
                             </div>
                         </GlassCard>
 
-                        {/* Biggest Movers Table */}
-                        <GlassCard className="lg:col-span-2">
-                            <div className="flex items-center justify-between mb-6">
-                                <h3 className="text-lg font-bold text-[var(--text-primary)]">Growth Leaders (Top 5)</h3>
-                                <span className="px-2.5 py-1 bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 text-xs font-bold rounded-full uppercase tracking-wide">
-                                    Trending
-                                </span>
-                            </div>
-
-                            <div className="overflow-x-auto">
-                                <table className="w-full text-sm">
-                                    <thead className="text-xs text-[var(--text-muted)] uppercase font-medium">
-                                        <tr className="border-b border-[var(--border-color)]">
-                                            <th className="px-4 py-3 text-left">Petition</th>
-                                            <th className="px-4 py-3 text-right">Growth (24h)</th>
-                                            <th className="px-4 py-3 text-right">Total Votes</th>
-                                            <th className="px-4 py-3 w-32">Progress to 25k</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody className="divide-y divide-[var(--border-color)]">
-                                        {daily.biggest_movers?.map((m, i) => (
-                                            <tr key={i} className="hover:bg-[var(--accent-glow)] transition-colors">
-                                                <td className="px-4 py-3">
-                                                    <a href={m.url} target="_blank" rel="noopener noreferrer"
-                                                        className="font-medium text-[var(--text-primary)] hover:text-indigo-500 line-clamp-1 block transition-colors"
-                                                        title={m.title}>
-                                                        {m.title}
-                                                    </a>
-                                                    <div className="flex items-center gap-2 mt-1">
-                                                        <span className="text-[10px] text-[var(--text-muted)]">ID: {m.url?.split('/').pop()}</span>
-                                                        <SourceBadge source={m.url?.includes('kmu') ? 'cabinet' : 'president'} />
-                                                    </div>
-                                                </td>
-                                                <td className="px-4 py-3 text-right">
-                                                    <span className="font-bold text-emerald-500 font-mono">+{m.delta?.toLocaleString()}</span>
-                                                </td>
-                                                <td className="px-4 py-3 text-right font-mono text-[var(--text-secondary)]">
-                                                    {m.total?.toLocaleString()}
-                                                </td>
-                                                <td className="px-4 py-3">
-                                                    <ProgressBar value={m.total} max={25000} />
-                                                    <div className="text-[10px] text-[var(--text-muted)] text-right mt-1 font-mono">
-                                                        {Math.round((m.total / 25000) * 100)}%
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                        ))}
-                                    </tbody>
-                                </table>
+                        {/* RIGHT: All History — Area Chart */}
+                        <GlassCard>
+                            <h3 className="text-lg font-bold text-[var(--text-primary)] mb-1">All History</h3>
+                            <p className="text-sm text-[var(--text-muted)] mb-4">
+                                {historyData.length > 0
+                                    ? `${historyData[0].date} → ${historyData[historyData.length - 1].date}`
+                                    : 'Collecting data...'
+                                }
+                            </p>
+                            <div className="h-56">
+                                <ResponsiveContainer width="100%" height="100%">
+                                    <AreaChart data={historyData}>
+                                        <defs>
+                                            <linearGradient id="colorTotalDaily" x1="0" y1="0" x2="0" y2="1">
+                                                <stop offset="5%" stopColor="#10b981" stopOpacity={0.6} />
+                                                <stop offset="95%" stopColor="#10b981" stopOpacity={0.05} />
+                                            </linearGradient>
+                                        </defs>
+                                        <XAxis
+                                            dataKey="date"
+                                            tick={{ fontSize: 10, fill: axisTickColor }}
+                                            tickFormatter={v => v.slice(5).replace('-', '.')}
+                                            minTickGap={30}
+                                            axisLine={false} tickLine={false}
+                                        />
+                                        <YAxis axisLine={false} tickLine={false} tick={{ fontSize: 10, fill: axisTickColor }}
+                                            tickFormatter={v => v >= 1000 ? `${(v / 1000).toFixed(0)}k` : v} />
+                                        <Tooltip
+                                            content={({ active, payload, label }) => {
+                                                if (active && payload && payload.length) {
+                                                    const d = payload[0].payload;
+                                                    const style = tooltipStyle(isDark);
+                                                    return (
+                                                        <div style={{ ...style, padding: '10px', backgroundColor: isDark ? 'rgba(30, 41, 59, 0.85)' : 'rgba(255, 255, 255, 0.85)', border: `1px solid ${isDark ? '#334155' : '#e2e8f0'}` }} className="shadow-lg rounded-lg text-sm bg-opacity-90">
+                                                            <p className="mb-2 text-[var(--text-primary)] font-medium">📅 {label}</p>
+                                                            <ul className="flex flex-col gap-1.5 m-0 p-0 list-none">
+                                                                <li style={{ color: '#0ea5e9', display: 'flex', alignItems: 'center' }}>
+                                                                    <span>🏢 Cabinet : {d.cabinet?.toLocaleString()} votes (+{d.cab_new || 0} нових)</span>
+                                                                </li>
+                                                                <li style={{ color: '#3b82f6', display: 'flex', alignItems: 'center' }}>
+                                                                    <span>🏛️ President : {d.president?.toLocaleString()} votes (+{d.pres_new || 0} нових)</span>
+                                                                </li>
+                                                                <li style={{ color: '#10b981', display: 'flex', alignItems: 'center', marginTop: '2px', fontWeight: 'bold' }}>
+                                                                    <span>📈 Всього : {(d.total || 0).toLocaleString()} votes</span>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    );
+                                                }
+                                                return null;
+                                            }}
+                                        />
+                                        <Legend iconType="circle" />
+                                        <Area type="monotone" dataKey="total" stroke="#10b981" fill="url(#colorTotalDaily)" strokeWidth={2} name="Total Votes" />
+                                    </AreaChart>
+                                </ResponsiveContainer>
                             </div>
                         </GlassCard>
                     </div>
+
+                    {/* Biggest Movers Table */}
+                    <GlassCard>
+                        <div className="flex items-center justify-between mb-6">
+                            <h3 className="text-lg font-bold text-[var(--text-primary)]">Growth Leaders (Top 5)</h3>
+                            <span className="px-2.5 py-1 bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 text-xs font-bold rounded-full uppercase tracking-wide">
+                                Trending
+                            </span>
+                        </div>
+
+                        <div className="overflow-x-auto">
+                            <table className="w-full text-sm">
+                                <thead className="text-xs text-[var(--text-muted)] uppercase font-medium">
+                                    <tr className="border-b border-[var(--border-color)]">
+                                        <th className="px-4 py-3 text-left">Petition</th>
+                                        <th className="px-4 py-3 text-right">Growth (24h)</th>
+                                        <th className="px-4 py-3 text-right">Total Votes</th>
+                                        <th className="px-4 py-3 w-32">Progress to 25k</th>
+                                    </tr>
+                                </thead>
+                                <tbody className="divide-y divide-[var(--border-color)]">
+                                    {daily.biggest_movers?.map((m, i) => (
+                                        <tr key={i} className="hover:bg-[var(--accent-glow)] transition-colors">
+                                            <td className="px-4 py-3">
+                                                <a href={m.url} target="_blank" rel="noopener noreferrer"
+                                                    className="font-medium text-[var(--text-primary)] hover:text-indigo-500 line-clamp-1 block transition-colors"
+                                                    title={m.title}>
+                                                    {m.title}
+                                                </a>
+                                                <div className="flex items-center gap-2 mt-1">
+                                                    <span className="text-[10px] text-[var(--text-muted)]">ID: {m.url?.split('/').pop()}</span>
+                                                    <SourceBadge source={m.url?.includes('kmu') ? 'cabinet' : 'president'} />
+                                                </div>
+                                            </td>
+                                            <td className="px-4 py-3 text-right">
+                                                <span className="font-bold text-emerald-500 font-mono">+{m.delta?.toLocaleString()}</span>
+                                            </td>
+                                            <td className="px-4 py-3 text-right font-mono text-[var(--text-secondary)]">
+                                                {m.total?.toLocaleString()}
+                                            </td>
+                                            <td className="px-4 py-3">
+                                                <ProgressBar value={m.total} max={25000} />
+                                                <div className="text-[10px] text-[var(--text-muted)] text-right mt-1 font-mono">
+                                                    {Math.round((m.total / 25000) * 100)}%
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    ))}
+                                </tbody>
+                            </table>
+                        </div>
+                    </GlassCard>
                 </section>
 
                 {/* ═══════════════ BLOCK 3: ENGAGEMENT & CONTENT ═══════════════ */}
