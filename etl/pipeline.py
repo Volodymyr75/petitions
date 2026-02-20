@@ -110,7 +110,6 @@ def export_analytics(con, growth_stats=[]):
     }
 
     # --- BLOCK 2: DAILY DYNAMICS ---
-    # In a real daily run, we would query 'daily_stats'. For now, we use current runtime inputs.
     print("   2. Computing Daily Dynamics...")
     
     # Sort growth stats by delta descending
@@ -118,11 +117,10 @@ def export_analytics(con, growth_stats=[]):
     
     today_date = time.strftime("%Y-%m-%d")
     
-    # Fetch last 30 days history for Sparkline
+    # Fetch ALL available history for sparkline/trend chart (not just 30 days)
     history_query = """
         SELECT date, total_votes_delta 
         FROM daily_stats 
-        WHERE date >= CURRENT_DATE - INTERVAL '30 days'
         ORDER BY date ASC
     """
     history_rows = con.execute(history_query).fetchall()
@@ -133,22 +131,32 @@ def export_analytics(con, growth_stats=[]):
         "votes_added": sum(g['delta'] for g in growth_stats),
         "biggest_movers": growth_stats[:5],
         "history": sparkline_data,
-        "status_changes": [] 
+        "status_changes": [],
+        "last_sync_date": None
     }
     
-    # ALWAYS fetch official daily stats for "new_petitions" and "votes_added"
-    # This ensures consistency whether running from daily_sync or just regenerating JSON
-    current_stats = con.execute("SELECT president_new + cabinet_new, total_votes_delta FROM daily_stats WHERE date = ?", [today_date]).fetchone()
+    # Try today's stats first, then fall back to LATEST available row
+    current_stats = con.execute(
+        "SELECT president_new + cabinet_new, total_votes_delta, date FROM daily_stats WHERE date = ?", 
+        [today_date]
+    ).fetchone()
+    
+    if not current_stats:
+        # Fallback: use the most recent daily_stats entry
+        current_stats = con.execute(
+            "SELECT president_new + cabinet_new, total_votes_delta, date FROM daily_stats ORDER BY date DESC LIMIT 1"
+        ).fetchone()
+    
     if current_stats:
         daily_data["new_petitions"] = current_stats[0]
         daily_data["votes_added"] = current_stats[1]
+        daily_data["last_sync_date"] = str(current_stats[2])
     
     # Fallback for "Biggest Movers" if runtime stats are empty
     if not growth_stats:
         print("   ⚠️ growth_stats is empty. Fetching fallback data from DB...")
-        # (Totals already fetched above)
             
-        # 2. Fetch Biggest Movers from petitions table
+        # Fetch Biggest Movers from petitions table
         movers_query = """
             SELECT title, url, (votes - votes_previous) as delta, votes
             FROM petitions 

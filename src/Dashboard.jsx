@@ -102,8 +102,8 @@ const InsightPill = ({ emoji, text }) => (
 
 const SourceBadge = ({ source }) => (
     <span className={`px-2 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wide ${source === 'president'
-            ? 'bg-blue-500/10 text-blue-600 dark:text-blue-400'
-            : 'bg-teal-500/10 text-teal-600 dark:text-teal-400'
+        ? 'bg-blue-500/10 text-blue-600 dark:text-blue-400'
+        : 'bg-teal-500/10 text-teal-600 dark:text-teal-400'
         }`}>
         {source === 'president' ? 'Pres' : 'Cab'}
     </span>
@@ -198,8 +198,8 @@ export default function Dashboard() {
 
     return (
         <div className={`min-h-screen p-4 md:p-8 lg:p-12 font-sans transition-colors duration-300 ${isDark
-                ? 'bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950'
-                : 'bg-gradient-to-br from-slate-50 via-white to-slate-100'
+            ? 'bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950'
+            : 'bg-gradient-to-br from-slate-50 via-white to-slate-100'
             }`}>
             <div className="max-w-7xl mx-auto space-y-12">
 
@@ -221,8 +221,8 @@ export default function Dashboard() {
                                     key={s}
                                     onClick={() => setActiveSource(s)}
                                     className={`px-3 py-1.5 text-xs font-semibold rounded-full transition-all ${activeSource === s
-                                            ? 'bg-indigo-600 text-white shadow-lg shadow-indigo-500/25'
-                                            : 'text-[var(--text-muted)] hover:text-[var(--text-primary)]'
+                                        ? 'bg-indigo-600 text-white shadow-lg shadow-indigo-500/25'
+                                        : 'text-[var(--text-muted)] hover:text-[var(--text-primary)]'
                                         }`}
                                 >
                                     {s === 'all' ? 'All' : s === 'president' ? 'President' : 'Cabinet'}
@@ -325,7 +325,8 @@ export default function Dashboard() {
                         {/* Today's Pulse */}
                         <GlassCard className={`relative overflow-hidden ${isDark ? '!bg-emerald-950/30' : '!bg-gradient-to-br !from-emerald-50 !to-white'}`}>
                             <h3 className="text-lg font-bold text-emerald-600 dark:text-emerald-400 mb-6 flex items-center">
-                                <Calendar size={18} className="mr-2 opacity-75" /> Last 24 Hours
+                                <Calendar size={18} className="mr-2 opacity-75" />
+                                {daily.last_sync_date ? `Last Sync: ${daily.last_sync_date}` : 'Last 24 Hours'}
                             </h3>
 
                             <div className="grid grid-cols-2 gap-4 mb-8 relative z-10">
