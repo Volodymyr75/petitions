@@ -117,14 +117,44 @@ def export_analytics(con, growth_stats=[]):
     
     today_date = time.strftime("%Y-%m-%d")
     
-    # Fetch ALL available history for sparkline/trend chart (not just 30 days)
+    # Fetch per-source history using votes_history + daily_stats for new petitions
     history_query = """
-        SELECT date, total_votes_delta 
-        FROM daily_stats 
-        ORDER BY date ASC
+        WITH daily_totals AS (
+            SELECT date, source, SUM(votes) as total_votes
+            FROM votes_history
+            GROUP BY date, source
+        ),
+        deltas AS (
+            SELECT 
+                t.date, 
+                t.source,
+                t.total_votes - LAG(t.total_votes) OVER (PARTITION BY t.source ORDER BY t.date) as vote_delta
+            FROM daily_totals t
+        ),
+        source_deltas AS (
+            SELECT date,
+                   COALESCE(SUM(vote_delta) FILTER (WHERE source='president'), 0) as president_delta,
+                   COALESCE(SUM(vote_delta) FILTER (WHERE source='cabinet'), 0) as cabinet_delta
+            FROM deltas
+            WHERE vote_delta IS NOT NULL
+            GROUP BY date
+        )
+        SELECT sd.date, sd.president_delta, sd.cabinet_delta,
+               COALESCE(ds.president_new, 0) as pres_new,
+               COALESCE(ds.cabinet_new, 0) as cab_new
+        FROM source_deltas sd
+        LEFT JOIN daily_stats ds ON sd.date = ds.date
+        ORDER BY sd.date ASC
     """
     history_rows = con.execute(history_query).fetchall()
-    sparkline_data = [{"date": str(h[0]), "value": h[1]} for h in history_rows]
+    sparkline_data = [{
+        "date": str(h[0]),
+        "president": max(h[1], 0),
+        "cabinet": max(h[2], 0),
+        "total": max(h[1], 0) + max(h[2], 0),
+        "pres_new": h[3],
+        "cab_new": h[4]
+    } for h in history_rows]
 
     daily_data = {
         "new_petitions": 0, 

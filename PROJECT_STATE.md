@@ -11,7 +11,8 @@
 3. **Dashboard Rewrite**: ✅ Повний рерайт `Dashboard.jsx` — 7 нових графіків, insight pills, platform comparison.
 4. **Source Toggle**: ✅ Фільтрація KPI, status distribution, scatter plot по source (All/President/Cabinet).
 5. **Design System**: ✅ Dark Mode + Glassmorphism + Google Fonts + micro-animations + timeline annotation.
-6. **Deploy**: ✅ Запушено на GitHub (`b7f6e62`).
+6. **Bugfix: Status Normalization**: ✅ Cabinet використовував англійські назви статусів (Unsupported, Approved, etc.), а President — українські. Додано `CASE WHEN` маппінг у `pipeline.py`: Unsupported→Архів, Approved→На розгляді, Answered→З відповіддю, Supported→Збір підписів. Тепер stacked bar chart коректно агрегує обидва source.
+7. **Deploy**: ✅ Запушено на GitHub (`c779bcd`).
 
 ### ✅ Що зроблено (V2) — повний список
 
