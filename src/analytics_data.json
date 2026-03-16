@@ -19,7 +19,7 @@
       {
         "source": "president",
         "total": 90477,
-        "avg_votes": 2136,
+        "avg_votes": 2137,
         "median_votes": 87.0,
         "success_rate": 5.25,
         "response_rate": 1.81
@@ -28,37 +28,37 @@
   },
   "daily": {
     "new_petitions": 0,
-    "votes_added": 35780,
+    "votes_added": 40595,
     "biggest_movers": [
       {
-        "title": "Про присвоєння почесного звання \"Герой України\" (посмертно) військовослужбовцю військової частини А4808 141 мотопіхотного батальйону ТИМКІВУ НАЗАРІЮ ЯРОСЛАВОВИЧУ, 1989 р.н., позивний \"НЕРВ\"",
-        "delta": 1734,
-        "total": 25297,
-        "url": "https://petition.president.gov.ua/petition/257062"
+        "title": "ПРИСВОЄННЯ ЗВАННЯ ГЕРОЙ УКРАЇНИ (ПОСМЕРТНО) ЗАХИСНИКУ НАШОЇ ДЕРЖАВИ - СТАРШОМУ СОЛДАТУ  1-ГО ІНЖЕНЕРНО - САПЕРНОГО ВІДДІЛЕННЯ 2-ГО ІНЖЕНЕРНО - САПЕРНОГО ВЗВОДУ ІНЖЕНЕРНО - САПЕРНОЇ РОТИ ГРУПИ ІНЖЕНЕРНОГО ЗАБЕЗПЕЧЕННЯ 117 ОКРЕМОЇМЕХАНІЗОВАНОЇ БРИГАДИ ВІЙСЬКЬВОЇ ЧАСТИНИ А4674  МІКЛУШУ ЛЮБОМИРУ МИХАЙЛОВИЧУ (ПОЗИВНИЙ «ДЖМІЛЬ»)",
+        "delta": 1105,
+        "total": 3580,
+        "url": "https://petition.president.gov.ua/petition/261540"
       },
       {
-        "title": "Присвоєння звання Героя України посмертно.",
-        "delta": 621,
-        "total": 3222,
-        "url": "https://petition.president.gov.ua/petition/261446"
+        "title": "Присвоєння звання Героя України(посмертно)Лазарик Роман Микалайович.",
+        "delta": 875,
+        "total": 3048,
+        "url": "https://petition.president.gov.ua/petition/261298"
       },
       {
         "title": "Просимо присвоїти найвище державне звання -Герой України (посмертно)-захиснику України,солдату Лазорука Юрію Дмитровичу.",
-        "delta": 510,
-        "total": 2204,
+        "delta": 865,
+        "total": 3069,
         "url": "https://petition.president.gov.ua/petition/261474"
       },
       {
-        "title": "Про присвоєння звання Герой України (посмертно) молодшому сержанту Пенцко Івану Богдановичу",
-        "delta": 488,
-        "total": 2216,
-        "url": "https://petition.president.gov.ua/petition/261838"
+        "title": "Шановний пане Президенте Володимир Олександрович. Я Шпонарська Ірина Андріївна, прошу Вас присвоїти почесне звання Героя України (посмертно) моєму чоловікові Шпонарському Ігорю Зіновійовичу, старшому солдату, старшому операторові 1-го відділення протитанкових  ракетних комплексів 2-го механізованого батальйону військової частини А4447.",
+        "delta": 658,
+        "total": 12869,
+        "url": "https://petition.president.gov.ua/petition/259872"
       },
       {
-        "title": "Прошу Президента, Володимира Олександровича, і український народ,присвоїти звання \"Героя України\" посмертно, моєму чоловікові - солдату Моложону Віталію Юрійовичу.",
-        "delta": 460,
-        "total": 3453,
-        "url": "https://petition.president.gov.ua/petition/260138"
+        "title": "Присвоєння звання Героя України посмертно.",
+        "delta": 470,
+        "total": 3692,
+        "url": "https://petition.president.gov.ua/petition/261446"
       }
     ],
     "history": [
@@ -669,20 +669,28 @@
         "total": 35780,
         "pres_new": 0,
         "cab_new": 0
+      },
+      {
+        "date": "2026-03-16",
+        "president": 14334,
+        "cabinet": 964,
+        "total": 15298,
+        "pres_new": 0,
+        "cab_new": 0
       }
     ],
     "status_changes": [],
-    "last_sync_date": "2026-03-15"
+    "last_sync_date": "2026-03-16"
   },
   "analytics": {
     "histogram": [
       {
         "bin": "0-100",
-        "count": 52244
+        "count": 52243
       },
       {
         "bin": "100-1k",
-        "count": 27946
+        "count": 27947
       },
       {
         "bin": "1k-10k",
@@ -690,11 +698,11 @@
       },
       {
         "bin": "10k-25k",
-        "count": 1870
+        "count": 1869
       },
       {
         "bin": "25k+",
-        "count": 4808
+        "count": 4809
       }
     ],
     "timeline": [
@@ -1341,230 +1349,134 @@
     ],
     "scatter": [
       {
-        "x": 1626,
-        "y": 3575,
+        "x": 2742,
+        "y": 519,
         "source": "president",
         "has_answer": false
       },
       {
-        "x": 232,
-        "y": 361,
+        "x": 1804,
+        "y": 13,
         "source": "president",
         "has_answer": false
       },
       {
-        "x": 1352,
-        "y": 16918,
+        "x": 1461,
+        "y": 5,
         "source": "president",
         "has_answer": false
       },
       {
-        "x": 1070,
-        "y": 25796,
-        "source": "president",
-        "has_answer": true
-      },
-      {
-        "x": 318,
-        "y": 2188,
+        "x": 218,
+        "y": 89,
         "source": "president",
         "has_answer": false
       },
       {
-        "x": 1248,
-        "y": 490,
+        "x": 1004,
+        "y": 536,
         "source": "president",
         "has_answer": false
       },
       {
-        "x": 511,
-        "y": 27,
+        "x": 421,
+        "y": 306,
         "source": "president",
         "has_answer": false
       },
       {
-        "x": 561,
-        "y": 19,
-        "source": "president",
-        "has_answer": false
-      },
-      {
-        "x": 256,
-        "y": 33,
-        "source": "president",
-        "has_answer": false
-      },
-      {
-        "x": 176,
-        "y": 48,
-        "source": "president",
-        "has_answer": false
-      },
-      {
-        "x": 1082,
-        "y": 25290,
-        "source": "president",
-        "has_answer": false
-      },
-      {
-        "x": 990,
-        "y": 18,
-        "source": "president",
-        "has_answer": false
-      },
-      {
-        "x": 674,
-        "y": 15,
-        "source": "president",
-        "has_answer": false
-      },
-      {
-        "x": 781,
-        "y": 51,
-        "source": "president",
-        "has_answer": false
-      },
-      {
-        "x": 2375,
-        "y": 374,
-        "source": "president",
-        "has_answer": false
-      },
-      {
-        "x": 215,
-        "y": 87,
-        "source": "president",
-        "has_answer": false
-      },
-      {
-        "x": 2503,
-        "y": 90,
-        "source": "president",
-        "has_answer": false
-      },
-      {
-        "x": 576,
-        "y": 11,
-        "source": "president",
-        "has_answer": false
-      },
-      {
-        "x": 261,
-        "y": 289,
-        "source": "president",
-        "has_answer": false
-      },
-      {
-        "x": 702,
-        "y": 78,
-        "source": "president",
-        "has_answer": false
-      },
-      {
-        "x": 4070,
-        "y": 49,
-        "source": "president",
-        "has_answer": false
-      },
-      {
-        "x": 170,
-        "y": 43,
-        "source": "president",
-        "has_answer": false
-      },
-      {
-        "x": 345,
-        "y": 112,
-        "source": "president",
-        "has_answer": false
-      },
-      {
-        "x": 366,
-        "y": 28,
-        "source": "president",
-        "has_answer": false
-      },
-      {
-        "x": 1929,
-        "y": 8198,
-        "source": "president",
-        "has_answer": false
-      },
-      {
-        "x": 312,
-        "y": 596,
-        "source": "president",
-        "has_answer": false
-      },
-      {
-        "x": 372,
-        "y": 18,
-        "source": "cabinet",
-        "has_answer": false
-      },
-      {
-        "x": 1030,
-        "y": 116,
-        "source": "president",
-        "has_answer": false
-      },
-      {
-        "x": 463,
-        "y": 321,
-        "source": "president",
-        "has_answer": false
-      },
-      {
-        "x": 1093,
-        "y": 102,
-        "source": "president",
-        "has_answer": false
-      },
-      {
-        "x": 1820,
-        "y": 415,
-        "source": "president",
-        "has_answer": false
-      },
-      {
-        "x": 436,
-        "y": 227,
-        "source": "president",
-        "has_answer": false
-      },
-      {
-        "x": 817,
-        "y": 72,
-        "source": "president",
-        "has_answer": false
-      },
-      {
-        "x": 989,
-        "y": 14,
-        "source": "president",
-        "has_answer": false
-      },
-      {
-        "x": 360,
-        "y": 154,
-        "source": "president",
-        "has_answer": false
-      },
-      {
-        "x": 679,
-        "y": 25,
-        "source": "president",
-        "has_answer": false
-      },
-      {
-        "x": 82,
+        "x": 321,
         "y": 38,
         "source": "president",
         "has_answer": false
       },
       {
-        "x": 279,
-        "y": 69,
+        "x": 745,
+        "y": 126,
+        "source": "president",
+        "has_answer": false
+      },
+      {
+        "x": 283,
+        "y": 27,
+        "source": "president",
+        "has_answer": false
+      },
+      {
+        "x": 991,
+        "y": 6989,
+        "source": "president",
+        "has_answer": false
+      },
+      {
+        "x": 167,
+        "y": 17,
+        "source": "president",
+        "has_answer": false
+      },
+      {
+        "x": 694,
+        "y": 23,
+        "source": "president",
+        "has_answer": false
+      },
+      {
+        "x": 448,
+        "y": 101,
+        "source": "president",
+        "has_answer": false
+      },
+      {
+        "x": 1852,
+        "y": 3266,
+        "source": "president",
+        "has_answer": false
+      },
+      {
+        "x": 1583,
+        "y": 68,
+        "source": "president",
+        "has_answer": false
+      },
+      {
+        "x": 260,
+        "y": 22,
+        "source": "president",
+        "has_answer": false
+      },
+      {
+        "x": 1016,
+        "y": 260,
+        "source": "cabinet",
+        "has_answer": false
+      },
+      {
+        "x": 232,
+        "y": 45,
+        "source": "president",
+        "has_answer": false
+      },
+      {
+        "x": 2058,
+        "y": 204,
+        "source": "president",
+        "has_answer": false
+      },
+      {
+        "x": 1272,
+        "y": 151,
+        "source": "president",
+        "has_answer": false
+      },
+      {
+        "x": 86,
+        "y": 89,
+        "source": "president",
+        "has_answer": false
+      },
+      {
+        "x": 437,
+        "y": 70,
         "source": "president",
         "has_answer": false
       },
@@ -1575,1436 +1487,878 @@
         "has_answer": false
       },
       {
-        "x": 259,
-        "y": 288,
+        "x": 707,
+        "y": 10,
         "source": "president",
         "has_answer": false
       },
       {
-        "x": 1507,
+        "x": 104,
+        "y": 38,
+        "source": "president",
+        "has_answer": false
+      },
+      {
+        "x": 713,
+        "y": 27,
+        "source": "president",
+        "has_answer": false
+      },
+      {
+        "x": 1187,
+        "y": 141,
+        "source": "president",
+        "has_answer": false
+      },
+      {
+        "x": 515,
         "y": 26,
         "source": "president",
         "has_answer": false
       },
       {
-        "x": 218,
-        "y": 195,
-        "source": "president",
-        "has_answer": false
-      },
-      {
-        "x": 299,
-        "y": 50,
-        "source": "cabinet",
-        "has_answer": false
-      },
-      {
-        "x": 1136,
-        "y": 7074,
-        "source": "president",
-        "has_answer": false
-      },
-      {
-        "x": 806,
-        "y": 32,
-        "source": "president",
-        "has_answer": false
-      },
-      {
-        "x": 483,
-        "y": 41,
-        "source": "president",
-        "has_answer": false
-      },
-      {
-        "x": 204,
-        "y": 118,
-        "source": "president",
-        "has_answer": false
-      },
-      {
-        "x": 3609,
-        "y": 1186,
-        "source": "president",
-        "has_answer": false
-      },
-      {
-        "x": 1702,
-        "y": 13951,
-        "source": "president",
-        "has_answer": false
-      },
-      {
-        "x": 404,
-        "y": 84,
-        "source": "president",
-        "has_answer": false
-      },
-      {
-        "x": 225,
-        "y": 764,
-        "source": "president",
-        "has_answer": false
-      },
-      {
-        "x": 194,
-        "y": 13,
-        "source": "president",
-        "has_answer": false
-      },
-      {
-        "x": 805,
-        "y": 3669,
-        "source": "president",
-        "has_answer": false
-      },
-      {
-        "x": 631,
-        "y": 21,
-        "source": "president",
-        "has_answer": false
-      },
-      {
-        "x": 417,
-        "y": 49,
-        "source": "president",
-        "has_answer": false
-      },
-      {
-        "x": 2040,
-        "y": 236,
-        "source": "president",
-        "has_answer": false
-      },
-      {
-        "x": 1046,
-        "y": 221,
-        "source": "president",
-        "has_answer": false
-      },
-      {
-        "x": 223,
-        "y": 5064,
-        "source": "president",
-        "has_answer": false
-      },
-      {
-        "x": 1046,
-        "y": 2,
-        "source": "cabinet",
-        "has_answer": false
-      },
-      {
-        "x": 802,
-        "y": 102,
-        "source": "president",
-        "has_answer": false
-      },
-      {
-        "x": 498,
-        "y": 917,
-        "source": "cabinet",
-        "has_answer": false
-      },
-      {
-        "x": 1365,
-        "y": 4,
-        "source": "president",
-        "has_answer": false
-      },
-      {
-        "x": 89,
-        "y": 202,
-        "source": "president",
-        "has_answer": false
-      },
-      {
-        "x": 254,
-        "y": 124,
-        "source": "president",
-        "has_answer": false
-      },
-      {
-        "x": 1369,
-        "y": 25117,
-        "source": "president",
-        "has_answer": false
-      },
-      {
-        "x": 412,
-        "y": 43,
-        "source": "president",
-        "has_answer": false
-      },
-      {
-        "x": 804,
-        "y": 6384,
-        "source": "president",
-        "has_answer": false
-      },
-      {
-        "x": 3719,
-        "y": 165,
-        "source": "president",
-        "has_answer": false
-      },
-      {
-        "x": 1161,
-        "y": 25218,
-        "source": "president",
-        "has_answer": false
-      },
-      {
-        "x": 2046,
-        "y": 50,
-        "source": "president",
-        "has_answer": false
-      },
-      {
-        "x": 1208,
-        "y": 37,
-        "source": "president",
-        "has_answer": false
-      },
-      {
-        "x": 1496,
-        "y": 4730,
-        "source": "president",
-        "has_answer": false
-      },
-      {
-        "x": 381,
-        "y": 75,
-        "source": "president",
-        "has_answer": false
-      },
-      {
-        "x": 152,
-        "y": 69,
-        "source": "president",
-        "has_answer": false
-      },
-      {
-        "x": 194,
-        "y": 90,
-        "source": "president",
-        "has_answer": false
-      },
-      {
-        "x": 1267,
-        "y": 1498,
-        "source": "president",
-        "has_answer": false
-      },
-      {
-        "x": 312,
-        "y": 59,
-        "source": "president",
-        "has_answer": false
-      },
-      {
-        "x": 380,
-        "y": 25836,
-        "source": "president",
-        "has_answer": false
-      },
-      {
-        "x": 1629,
-        "y": 264,
-        "source": "president",
-        "has_answer": false
-      },
-      {
-        "x": 77,
-        "y": 44,
-        "source": "cabinet",
-        "has_answer": false
-      },
-      {
-        "x": 3251,
-        "y": 25231,
-        "source": "president",
-        "has_answer": false
-      },
-      {
-        "x": 381,
-        "y": 174,
-        "source": "president",
-        "has_answer": false
-      },
-      {
-        "x": 1650,
-        "y": 7825,
-        "source": "president",
-        "has_answer": false
-      },
-      {
-        "x": 523,
-        "y": 149,
-        "source": "cabinet",
-        "has_answer": false
-      },
-      {
-        "x": 124,
-        "y": 7,
-        "source": "president",
-        "has_answer": false
-      },
-      {
-        "x": 1462,
-        "y": 11,
-        "source": "president",
-        "has_answer": false
-      },
-      {
-        "x": 951,
-        "y": 60,
-        "source": "president",
-        "has_answer": false
-      },
-      {
-        "x": 2303,
-        "y": 25699,
-        "source": "president",
-        "has_answer": false
-      },
-      {
-        "x": 2044,
-        "y": 126,
-        "source": "president",
-        "has_answer": false
-      },
-      {
-        "x": 607,
-        "y": 204,
-        "source": "president",
-        "has_answer": false
-      },
-      {
-        "x": 62,
-        "y": 145,
-        "source": "president",
-        "has_answer": false
-      },
-      {
-        "x": 535,
-        "y": 19,
-        "source": "president",
-        "has_answer": false
-      },
-      {
-        "x": 891,
-        "y": 83,
-        "source": "president",
-        "has_answer": false
-      },
-      {
-        "x": 563,
-        "y": 48,
-        "source": "president",
-        "has_answer": false
-      },
-      {
-        "x": 84,
-        "y": 54,
-        "source": "president",
-        "has_answer": false
-      },
-      {
-        "x": 1158,
-        "y": 25344,
-        "source": "president",
-        "has_answer": false
-      },
-      {
-        "x": 933,
-        "y": 66,
-        "source": "president",
-        "has_answer": false
-      },
-      {
-        "x": 1416,
-        "y": 70,
-        "source": "president",
-        "has_answer": false
-      },
-      {
-        "x": 272,
-        "y": 82,
-        "source": "president",
-        "has_answer": false
-      },
-      {
-        "x": 466,
-        "y": 54,
-        "source": "president",
-        "has_answer": false
-      },
-      {
-        "x": 557,
-        "y": 214,
-        "source": "president",
-        "has_answer": false
-      },
-      {
-        "x": 3722,
-        "y": 24,
-        "source": "cabinet",
-        "has_answer": false
-      },
-      {
-        "x": 1129,
-        "y": 32,
-        "source": "president",
-        "has_answer": false
-      },
-      {
-        "x": 2893,
-        "y": 30,
-        "source": "president",
-        "has_answer": false
-      },
-      {
-        "x": 1087,
-        "y": 17,
-        "source": "president",
-        "has_answer": false
-      },
-      {
-        "x": 264,
-        "y": 17,
-        "source": "president",
-        "has_answer": false
-      },
-      {
-        "x": 2037,
-        "y": 131,
-        "source": "president",
-        "has_answer": false
-      },
-      {
-        "x": 134,
-        "y": 41,
-        "source": "president",
-        "has_answer": false
-      },
-      {
-        "x": 153,
-        "y": 26742,
-        "source": "president",
-        "has_answer": true
-      },
-      {
-        "x": 1514,
-        "y": 2941,
-        "source": "president",
-        "has_answer": false
-      },
-      {
-        "x": 358,
-        "y": 55,
-        "source": "president",
-        "has_answer": false
-      },
-      {
-        "x": 318,
-        "y": 74,
-        "source": "president",
-        "has_answer": false
-      },
-      {
-        "x": 117,
-        "y": 12,
-        "source": "president",
-        "has_answer": false
-      },
-      {
-        "x": 21,
-        "y": 26,
-        "source": "president",
-        "has_answer": false
-      },
-      {
-        "x": 878,
-        "y": 14,
-        "source": "president",
-        "has_answer": false
-      },
-      {
-        "x": 158,
-        "y": 436,
-        "source": "president",
-        "has_answer": false
-      },
-      {
-        "x": 2908,
-        "y": 5,
-        "source": "cabinet",
-        "has_answer": false
-      },
-      {
-        "x": 475,
-        "y": 273,
-        "source": "president",
-        "has_answer": false
-      },
-      {
-        "x": 246,
-        "y": 156,
-        "source": "president",
-        "has_answer": false
-      },
-      {
-        "x": 167,
-        "y": 34,
-        "source": "president",
-        "has_answer": false
-      },
-      {
-        "x": 118,
-        "y": 163,
-        "source": "president",
-        "has_answer": false
-      },
-      {
-        "x": 152,
-        "y": 5,
-        "source": "president",
-        "has_answer": false
-      },
-      {
-        "x": 644,
-        "y": 17,
-        "source": "president",
-        "has_answer": false
-      },
-      {
-        "x": 558,
-        "y": 265,
-        "source": "president",
-        "has_answer": false
-      },
-      {
-        "x": 298,
-        "y": 61,
-        "source": "president",
-        "has_answer": false
-      },
-      {
-        "x": 902,
-        "y": 95,
-        "source": "president",
-        "has_answer": false
-      },
-      {
-        "x": 466,
-        "y": 105,
-        "source": "president",
-        "has_answer": false
-      },
-      {
-        "x": 169,
-        "y": 17,
-        "source": "cabinet",
-        "has_answer": false
-      },
-      {
-        "x": 3584,
-        "y": 9084,
-        "source": "president",
-        "has_answer": false
-      },
-      {
-        "x": 189,
-        "y": 5,
-        "source": "president",
-        "has_answer": false
-      },
-      {
-        "x": 257,
+        "x": 725,
         "y": 20,
-        "source": "president",
-        "has_answer": false
-      },
-      {
-        "x": 222,
-        "y": 41,
-        "source": "president",
-        "has_answer": false
-      },
-      {
-        "x": 456,
-        "y": 27,
-        "source": "president",
-        "has_answer": false
-      },
-      {
-        "x": 456,
-        "y": 67,
-        "source": "president",
-        "has_answer": false
-      },
-      {
-        "x": 293,
-        "y": 3098,
-        "source": "president",
-        "has_answer": false
-      },
-      {
-        "x": 656,
-        "y": 20535,
-        "source": "president",
-        "has_answer": false
-      },
-      {
-        "x": 854,
-        "y": 25,
-        "source": "president",
-        "has_answer": false
-      },
-      {
-        "x": 737,
-        "y": 14,
-        "source": "president",
-        "has_answer": false
-      },
-      {
-        "x": 339,
-        "y": 71,
-        "source": "president",
-        "has_answer": false
-      },
-      {
-        "x": 829,
-        "y": 130,
-        "source": "president",
-        "has_answer": false
-      },
-      {
-        "x": 161,
-        "y": 9,
-        "source": "president",
-        "has_answer": false
-      },
-      {
-        "x": 2039,
-        "y": 137,
-        "source": "president",
-        "has_answer": false
-      },
-      {
-        "x": 1055,
-        "y": 145,
-        "source": "president",
-        "has_answer": false
-      },
-      {
-        "x": 1646,
-        "y": 11,
         "source": "cabinet",
         "has_answer": false
       },
       {
-        "x": 220,
-        "y": 130,
-        "source": "president",
-        "has_answer": false
-      },
-      {
-        "x": 19047,
-        "y": 168,
-        "source": "president",
-        "has_answer": false
-      },
-      {
-        "x": 309,
-        "y": 687,
-        "source": "president",
-        "has_answer": false
-      },
-      {
-        "x": 248,
-        "y": 96,
-        "source": "president",
-        "has_answer": false
-      },
-      {
-        "x": 369,
-        "y": 67,
-        "source": "president",
-        "has_answer": false
-      },
-      {
-        "x": 85,
-        "y": 53,
-        "source": "president",
-        "has_answer": false
-      },
-      {
-        "x": 644,
-        "y": 12,
-        "source": "president",
-        "has_answer": false
-      },
-      {
-        "x": 111,
-        "y": 307,
-        "source": "president",
-        "has_answer": false
-      },
-      {
-        "x": 2837,
-        "y": 82,
-        "source": "president",
-        "has_answer": false
-      },
-      {
-        "x": 3007,
-        "y": 95,
-        "source": "president",
-        "has_answer": false
-      },
-      {
-        "x": 1362,
-        "y": 12791,
-        "source": "president",
-        "has_answer": false
-      },
-      {
-        "x": 340,
-        "y": 7,
-        "source": "president",
-        "has_answer": false
-      },
-      {
-        "x": 1102,
-        "y": 11,
-        "source": "president",
-        "has_answer": false
-      },
-      {
-        "x": 1773,
-        "y": 48,
-        "source": "president",
-        "has_answer": false
-      },
-      {
-        "x": 243,
-        "y": 77,
-        "source": "president",
-        "has_answer": false
-      },
-      {
-        "x": 727,
-        "y": 80,
-        "source": "president",
-        "has_answer": false
-      },
-      {
-        "x": 528,
-        "y": 22,
-        "source": "president",
-        "has_answer": false
-      },
-      {
-        "x": 1134,
-        "y": 139,
-        "source": "president",
-        "has_answer": false
-      },
-      {
-        "x": 74,
-        "y": 305,
-        "source": "president",
-        "has_answer": false
-      },
-      {
-        "x": 645,
-        "y": 76,
-        "source": "president",
-        "has_answer": false
-      },
-      {
-        "x": 9980,
-        "y": 56,
+        "x": 341,
+        "y": 28,
         "source": "cabinet",
         "has_answer": false
       },
       {
-        "x": 897,
-        "y": 160,
-        "source": "president",
-        "has_answer": false
-      },
-      {
-        "x": 106,
-        "y": 188,
-        "source": "president",
-        "has_answer": false
-      },
-      {
-        "x": 570,
-        "y": 50,
-        "source": "president",
-        "has_answer": false
-      },
-      {
-        "x": 335,
-        "y": 250,
-        "source": "president",
-        "has_answer": false
-      },
-      {
-        "x": 322,
-        "y": 53,
-        "source": "president",
-        "has_answer": false
-      },
-      {
-        "x": 1,
-        "y": 69,
-        "source": "president",
-        "has_answer": false
-      },
-      {
-        "x": 587,
-        "y": 69,
-        "source": "president",
-        "has_answer": false
-      },
-      {
-        "x": 101,
-        "y": 27,
-        "source": "president",
-        "has_answer": false
-      },
-      {
-        "x": 1661,
-        "y": 73,
-        "source": "cabinet",
-        "has_answer": false
-      },
-      {
-        "x": 658,
-        "y": 216,
-        "source": "president",
-        "has_answer": false
-      },
-      {
-        "x": 314,
-        "y": 67,
-        "source": "president",
-        "has_answer": false
-      },
-      {
-        "x": 1180,
-        "y": 2,
-        "source": "cabinet",
-        "has_answer": false
-      },
-      {
-        "x": 552,
-        "y": 58,
-        "source": "president",
-        "has_answer": false
-      },
-      {
-        "x": 1394,
-        "y": 43,
-        "source": "president",
-        "has_answer": false
-      },
-      {
-        "x": 253,
-        "y": 29,
-        "source": "president",
-        "has_answer": false
-      },
-      {
-        "x": 2881,
-        "y": 1,
-        "source": "cabinet",
-        "has_answer": false
-      },
-      {
-        "x": 324,
-        "y": 14,
-        "source": "president",
-        "has_answer": false
-      },
-      {
-        "x": 997,
-        "y": 20,
-        "source": "president",
-        "has_answer": false
-      },
-      {
-        "x": 141,
-        "y": 17,
-        "source": "president",
-        "has_answer": false
-      },
-      {
-        "x": 528,
-        "y": 184,
-        "source": "president",
-        "has_answer": false
-      },
-      {
-        "x": 188,
-        "y": 20,
-        "source": "president",
-        "has_answer": false
-      },
-      {
-        "x": 2559,
-        "y": 3550,
-        "source": "president",
-        "has_answer": false
-      },
-      {
-        "x": 1367,
-        "y": 3,
-        "source": "president",
-        "has_answer": false
-      },
-      {
-        "x": 501,
-        "y": 19,
-        "source": "president",
-        "has_answer": false
-      },
-      {
-        "x": 213,
-        "y": 117,
-        "source": "president",
-        "has_answer": false
-      },
-      {
-        "x": 326,
-        "y": 569,
-        "source": "president",
-        "has_answer": false
-      },
-      {
-        "x": 1083,
-        "y": 18,
-        "source": "president",
-        "has_answer": false
-      },
-      {
-        "x": 274,
-        "y": 27,
-        "source": "president",
-        "has_answer": false
-      },
-      {
-        "x": 590,
-        "y": 25,
-        "source": "president",
-        "has_answer": false
-      },
-      {
-        "x": 83,
-        "y": 162,
-        "source": "president",
-        "has_answer": false
-      },
-      {
-        "x": 1032,
-        "y": 37,
-        "source": "president",
-        "has_answer": false
-      },
-      {
-        "x": 983,
-        "y": 131,
-        "source": "president",
-        "has_answer": false
-      },
-      {
-        "x": 1173,
-        "y": 4,
-        "source": "cabinet",
-        "has_answer": false
-      },
-      {
-        "x": 565,
-        "y": 37,
-        "source": "president",
-        "has_answer": false
-      },
-      {
-        "x": 669,
-        "y": 6336,
-        "source": "president",
-        "has_answer": false
-      },
-      {
-        "x": 1277,
-        "y": 222,
-        "source": "president",
-        "has_answer": false
-      },
-      {
-        "x": 181,
-        "y": 242,
-        "source": "president",
-        "has_answer": false
-      },
-      {
-        "x": 154,
-        "y": 110,
-        "source": "president",
-        "has_answer": false
-      },
-      {
-        "x": 1036,
-        "y": 21,
-        "source": "president",
-        "has_answer": false
-      },
-      {
-        "x": 764,
-        "y": 47,
-        "source": "president",
-        "has_answer": false
-      },
-      {
-        "x": 31,
-        "y": 84,
-        "source": "president",
-        "has_answer": false
-      },
-      {
-        "x": 251,
-        "y": 98,
-        "source": "president",
-        "has_answer": false
-      },
-      {
-        "x": 2015,
-        "y": 24045,
-        "source": "president",
-        "has_answer": false
-      },
-      {
-        "x": 599,
-        "y": 231,
-        "source": "president",
-        "has_answer": false
-      },
-      {
-        "x": 960,
-        "y": 3091,
-        "source": "president",
-        "has_answer": false
-      },
-      {
-        "x": 364,
-        "y": 49,
-        "source": "president",
-        "has_answer": false
-      },
-      {
-        "x": 168,
-        "y": 96,
-        "source": "president",
-        "has_answer": false
-      },
-      {
-        "x": 600,
-        "y": 594,
-        "source": "president",
-        "has_answer": false
-      },
-      {
-        "x": 271,
-        "y": 24,
-        "source": "president",
-        "has_answer": false
-      },
-      {
-        "x": 1372,
-        "y": 29260,
-        "source": "president",
-        "has_answer": false
-      },
-      {
-        "x": 2129,
-        "y": 133,
-        "source": "president",
-        "has_answer": false
-      },
-      {
-        "x": 3477,
-        "y": 20,
-        "source": "president",
-        "has_answer": false
-      },
-      {
-        "x": 538,
-        "y": 358,
-        "source": "president",
-        "has_answer": false
-      },
-      {
-        "x": 199,
-        "y": 5,
-        "source": "president",
-        "has_answer": false
-      },
-      {
-        "x": 546,
-        "y": 21,
-        "source": "president",
-        "has_answer": false
-      },
-      {
-        "x": 44,
+        "x": 729,
         "y": 241,
         "source": "president",
         "has_answer": false
       },
       {
-        "x": 1560,
-        "y": 25379,
-        "source": "president",
-        "has_answer": true
+        "x": 1589,
+        "y": 9,
+        "source": "cabinet",
+        "has_answer": false
       },
       {
-        "x": 172,
-        "y": 25,
+        "x": 2338,
+        "y": 1302,
         "source": "president",
         "has_answer": false
       },
       {
-        "x": 848,
-        "y": 195,
+        "x": 2739,
+        "y": 323,
         "source": "president",
         "has_answer": false
       },
       {
-        "x": 1610,
-        "y": 13664,
+        "x": 342,
+        "y": 112,
         "source": "president",
         "has_answer": false
       },
       {
-        "x": 119,
-        "y": 51,
+        "x": 717,
+        "y": 122,
         "source": "president",
         "has_answer": false
       },
       {
-        "x": 173,
-        "y": 40,
+        "x": 1281,
+        "y": 156,
         "source": "president",
         "has_answer": false
       },
       {
-        "x": 47,
-        "y": 163,
+        "x": 1092,
+        "y": 25192,
         "source": "president",
         "has_answer": false
       },
       {
-        "x": 90,
-        "y": 110,
+        "x": 144,
+        "y": 11,
         "source": "president",
         "has_answer": false
       },
       {
-        "x": 1118,
-        "y": 8723,
+        "x": 355,
+        "y": 33,
         "source": "president",
         "has_answer": false
       },
       {
-        "x": 687,
-        "y": 70,
+        "x": 248,
+        "y": 132,
         "source": "president",
         "has_answer": false
       },
       {
-        "x": 2352,
-        "y": 320,
+        "x": 361,
+        "y": 10,
         "source": "president",
         "has_answer": false
       },
       {
-        "x": 753,
-        "y": 844,
+        "x": 725,
+        "y": 226,
+        "source": "president",
+        "has_answer": false
+      },
+      {
+        "x": 1632,
+        "y": 17,
         "source": "president",
         "has_answer": false
       },
       {
         "x": 97,
-        "y": 25,
+        "y": 202,
         "source": "president",
         "has_answer": false
       },
       {
-        "x": 1581,
-        "y": 35,
-        "source": "president",
-        "has_answer": false
-      },
-      {
-        "x": 1352,
-        "y": 15,
-        "source": "president",
-        "has_answer": false
-      },
-      {
-        "x": 430,
-        "y": 4157,
-        "source": "cabinet",
-        "has_answer": false
-      },
-      {
-        "x": 368,
-        "y": 243,
-        "source": "president",
-        "has_answer": false
-      },
-      {
-        "x": 520,
-        "y": 9,
-        "source": "president",
-        "has_answer": false
-      },
-      {
-        "x": 326,
-        "y": 121,
-        "source": "president",
-        "has_answer": false
-      },
-      {
-        "x": 1482,
-        "y": 8,
-        "source": "president",
-        "has_answer": false
-      },
-      {
-        "x": 165,
-        "y": 40,
-        "source": "president",
-        "has_answer": false
-      },
-      {
-        "x": 272,
-        "y": 1420,
-        "source": "cabinet",
-        "has_answer": false
-      },
-      {
-        "x": 2083,
-        "y": 75,
-        "source": "president",
-        "has_answer": false
-      },
-      {
-        "x": 538,
-        "y": 179,
-        "source": "president",
-        "has_answer": false
-      },
-      {
-        "x": 912,
-        "y": 47,
-        "source": "president",
-        "has_answer": false
-      },
-      {
-        "x": 147,
-        "y": 99,
-        "source": "president",
-        "has_answer": false
-      },
-      {
-        "x": 294,
-        "y": 3805,
-        "source": "president",
-        "has_answer": false
-      },
-      {
-        "x": 1197,
-        "y": 442,
-        "source": "president",
-        "has_answer": false
-      },
-      {
-        "x": 1202,
-        "y": 10245,
-        "source": "president",
-        "has_answer": false
-      },
-      {
-        "x": 388,
-        "y": 26,
-        "source": "president",
-        "has_answer": false
-      },
-      {
-        "x": 1581,
-        "y": 86,
-        "source": "president",
-        "has_answer": false
-      },
-      {
-        "x": 148,
-        "y": 37,
-        "source": "president",
-        "has_answer": false
-      },
-      {
-        "x": 1425,
-        "y": 25350,
-        "source": "president",
-        "has_answer": false
-      },
-      {
-        "x": 137,
-        "y": 36,
-        "source": "president",
-        "has_answer": false
-      },
-      {
-        "x": 2232,
-        "y": 121,
-        "source": "president",
-        "has_answer": false
-      },
-      {
-        "x": 73,
-        "y": 13,
-        "source": "president",
-        "has_answer": false
-      },
-      {
-        "x": 1643,
-        "y": 7166,
-        "source": "president",
-        "has_answer": false
-      },
-      {
-        "x": 258,
-        "y": 62,
-        "source": "president",
-        "has_answer": false
-      },
-      {
-        "x": 894,
-        "y": 8,
-        "source": "president",
-        "has_answer": false
-      },
-      {
-        "x": 58,
-        "y": 228,
-        "source": "president",
-        "has_answer": false
-      },
-      {
-        "x": 1686,
-        "y": 4411,
-        "source": "president",
-        "has_answer": false
-      },
-      {
-        "x": 215,
-        "y": 256,
-        "source": "president",
-        "has_answer": false
-      },
-      {
-        "x": 2493,
-        "y": 12,
-        "source": "president",
-        "has_answer": false
-      },
-      {
-        "x": 604,
-        "y": 195,
-        "source": "president",
-        "has_answer": false
-      },
-      {
-        "x": 1867,
-        "y": 49,
-        "source": "president",
-        "has_answer": false
-      },
-      {
-        "x": 1895,
-        "y": 25,
-        "source": "president",
-        "has_answer": false
-      },
-      {
-        "x": 1409,
-        "y": 102,
-        "source": "president",
-        "has_answer": false
-      },
-      {
-        "x": 354,
-        "y": 293,
-        "source": "president",
-        "has_answer": false
-      },
-      {
-        "x": 1003,
-        "y": 54,
-        "source": "president",
-        "has_answer": false
-      },
-      {
-        "x": 1494,
-        "y": 5386,
-        "source": "president",
-        "has_answer": false
-      },
-      {
-        "x": 1065,
-        "y": 66,
-        "source": "president",
-        "has_answer": false
-      },
-      {
-        "x": 1225,
-        "y": 199,
-        "source": "president",
-        "has_answer": false
-      },
-      {
-        "x": 3917,
+        "x": 899,
         "y": 20,
         "source": "president",
         "has_answer": false
       },
       {
-        "x": 270,
+        "x": 137,
+        "y": 34,
+        "source": "president",
+        "has_answer": false
+      },
+      {
+        "x": 9681,
+        "y": 66,
+        "source": "president",
+        "has_answer": false
+      },
+      {
+        "x": 3743,
+        "y": 27,
+        "source": "president",
+        "has_answer": false
+      },
+      {
+        "x": 191,
+        "y": 37,
+        "source": "president",
+        "has_answer": false
+      },
+      {
+        "x": 1987,
+        "y": 9,
+        "source": "president",
+        "has_answer": false
+      },
+      {
+        "x": 1276,
+        "y": 372,
+        "source": "president",
+        "has_answer": false
+      },
+      {
+        "x": 1009,
+        "y": 4173,
+        "source": "president",
+        "has_answer": false
+      },
+      {
+        "x": 95,
+        "y": 29,
+        "source": "president",
+        "has_answer": false
+      },
+      {
+        "x": 1715,
+        "y": 35,
+        "source": "president",
+        "has_answer": false
+      },
+      {
+        "x": 643,
+        "y": 63,
+        "source": "president",
+        "has_answer": false
+      },
+      {
+        "x": 1720,
+        "y": 11,
+        "source": "president",
+        "has_answer": false
+      },
+      {
+        "x": 708,
+        "y": 20,
+        "source": "president",
+        "has_answer": false
+      },
+      {
+        "x": 3049,
+        "y": 4913,
+        "source": "president",
+        "has_answer": false
+      },
+      {
+        "x": 1134,
+        "y": 137,
+        "source": "president",
+        "has_answer": false
+      },
+      {
+        "x": 777,
+        "y": 93,
+        "source": "president",
+        "has_answer": false
+      },
+      {
+        "x": 332,
+        "y": 57,
+        "source": "president",
+        "has_answer": false
+      },
+      {
+        "x": 1541,
+        "y": 8854,
+        "source": "president",
+        "has_answer": false
+      },
+      {
+        "x": 479,
+        "y": 20,
+        "source": "president",
+        "has_answer": false
+      },
+      {
+        "x": 403,
+        "y": 31,
+        "source": "president",
+        "has_answer": false
+      },
+      {
+        "x": 2808,
+        "y": 32,
+        "source": "president",
+        "has_answer": false
+      },
+      {
+        "x": 419,
+        "y": 70,
+        "source": "president",
+        "has_answer": false
+      },
+      {
+        "x": 278,
+        "y": 125,
+        "source": "president",
+        "has_answer": false
+      },
+      {
+        "x": 29,
+        "y": 54,
+        "source": "president",
+        "has_answer": false
+      },
+      {
+        "x": 1877,
+        "y": 29,
+        "source": "president",
+        "has_answer": false
+      },
+      {
+        "x": 933,
+        "y": 23,
+        "source": "president",
+        "has_answer": false
+      },
+      {
+        "x": 341,
+        "y": 51,
+        "source": "president",
+        "has_answer": false
+      },
+      {
+        "x": 1804,
+        "y": 1260,
+        "source": "president",
+        "has_answer": false
+      },
+      {
+        "x": 908,
+        "y": 28,
+        "source": "president",
+        "has_answer": false
+      },
+      {
+        "x": 316,
+        "y": 36,
+        "source": "president",
+        "has_answer": false
+      },
+      {
+        "x": 852,
+        "y": 25386,
+        "source": "president",
+        "has_answer": false
+      },
+      {
+        "x": 6867,
+        "y": 13,
+        "source": "president",
+        "has_answer": false
+      },
+      {
+        "x": 610,
+        "y": 86,
+        "source": "president",
+        "has_answer": false
+      },
+      {
+        "x": 579,
+        "y": 57,
+        "source": "president",
+        "has_answer": false
+      },
+      {
+        "x": 2473,
+        "y": 17322,
+        "source": "president",
+        "has_answer": false
+      },
+      {
+        "x": 939,
+        "y": 78,
+        "source": "president",
+        "has_answer": false
+      },
+      {
+        "x": 446,
+        "y": 53,
+        "source": "president",
+        "has_answer": false
+      },
+      {
+        "x": 290,
+        "y": 14,
+        "source": "president",
+        "has_answer": false
+      },
+      {
+        "x": 772,
+        "y": 55,
+        "source": "president",
+        "has_answer": false
+      },
+      {
+        "x": 821,
+        "y": 78,
+        "source": "president",
+        "has_answer": false
+      },
+      {
+        "x": 830,
+        "y": 7625,
+        "source": "president",
+        "has_answer": false
+      },
+      {
+        "x": 360,
+        "y": 17,
+        "source": "president",
+        "has_answer": false
+      },
+      {
+        "x": 736,
+        "y": 48,
+        "source": "president",
+        "has_answer": false
+      },
+      {
+        "x": 352,
+        "y": 16,
+        "source": "president",
+        "has_answer": false
+      },
+      {
+        "x": 726,
+        "y": 14,
+        "source": "president",
+        "has_answer": false
+      },
+      {
+        "x": 90,
+        "y": 8,
+        "source": "president",
+        "has_answer": false
+      },
+      {
+        "x": 242,
+        "y": 1717,
+        "source": "president",
+        "has_answer": false
+      },
+      {
+        "x": 103,
+        "y": 900,
+        "source": "president",
+        "has_answer": false
+      },
+      {
+        "x": 647,
+        "y": 35,
+        "source": "president",
+        "has_answer": false
+      },
+      {
+        "x": 1464,
+        "y": 25607,
+        "source": "president",
+        "has_answer": false
+      },
+      {
+        "x": 804,
+        "y": 30,
+        "source": "president",
+        "has_answer": false
+      },
+      {
+        "x": 81,
+        "y": 1089,
+        "source": "president",
+        "has_answer": false
+      },
+      {
+        "x": 397,
+        "y": 36,
+        "source": "president",
+        "has_answer": false
+      },
+      {
+        "x": 132,
+        "y": 98,
+        "source": "president",
+        "has_answer": false
+      },
+      {
+        "x": 692,
+        "y": 115,
+        "source": "president",
+        "has_answer": false
+      },
+      {
+        "x": 338,
+        "y": 185,
+        "source": "president",
+        "has_answer": false
+      },
+      {
+        "x": 146,
+        "y": 10,
+        "source": "cabinet",
+        "has_answer": false
+      },
+      {
+        "x": 1328,
+        "y": 227,
+        "source": "president",
+        "has_answer": false
+      },
+      {
+        "x": 596,
+        "y": 8,
+        "source": "president",
+        "has_answer": false
+      },
+      {
+        "x": 1187,
+        "y": 87,
+        "source": "president",
+        "has_answer": false
+      },
+      {
+        "x": 8817,
+        "y": 30,
+        "source": "president",
+        "has_answer": false
+      },
+      {
+        "x": 37,
+        "y": 11,
+        "source": "president",
+        "has_answer": false
+      },
+      {
+        "x": 539,
+        "y": 29,
+        "source": "president",
+        "has_answer": false
+      },
+      {
+        "x": 120,
+        "y": 5,
+        "source": "president",
+        "has_answer": false
+      },
+      {
+        "x": 1985,
+        "y": 108,
+        "source": "president",
+        "has_answer": false
+      },
+      {
+        "x": 571,
+        "y": 1319,
+        "source": "president",
+        "has_answer": false
+      },
+      {
+        "x": 2498,
+        "y": 75,
+        "source": "president",
+        "has_answer": false
+      },
+      {
+        "x": 5480,
+        "y": 24,
+        "source": "president",
+        "has_answer": false
+      },
+      {
+        "x": 172,
+        "y": 603,
+        "source": "president",
+        "has_answer": false
+      },
+      {
+        "x": 2092,
+        "y": 95,
+        "source": "cabinet",
+        "has_answer": false
+      },
+      {
+        "x": 123,
+        "y": 85,
+        "source": "president",
+        "has_answer": false
+      },
+      {
+        "x": 1770,
+        "y": 30,
+        "source": "president",
+        "has_answer": false
+      },
+      {
+        "x": 946,
+        "y": 37,
+        "source": "president",
+        "has_answer": false
+      },
+      {
+        "x": 1394,
         "y": 4,
         "source": "president",
         "has_answer": false
       },
       {
-        "x": 207,
-        "y": 107,
+        "x": 1353,
+        "y": 6,
         "source": "president",
         "has_answer": false
       },
       {
-        "x": 1789,
-        "y": 65,
+        "x": 4414,
+        "y": 32,
         "source": "president",
         "has_answer": false
       },
       {
-        "x": 69,
-        "y": 149,
+        "x": 346,
+        "y": 56,
+        "source": "president",
+        "has_answer": false
+      },
+      {
+        "x": 180,
+        "y": 31,
+        "source": "president",
+        "has_answer": false
+      },
+      {
+        "x": 1105,
+        "y": 2974,
+        "source": "president",
+        "has_answer": false
+      },
+      {
+        "x": 325,
+        "y": 8,
+        "source": "president",
+        "has_answer": false
+      },
+      {
+        "x": 64,
+        "y": 95,
+        "source": "president",
+        "has_answer": false
+      },
+      {
+        "x": 216,
+        "y": 77,
+        "source": "president",
+        "has_answer": false
+      },
+      {
+        "x": 220,
+        "y": 110,
+        "source": "president",
+        "has_answer": false
+      },
+      {
+        "x": 68,
+        "y": 291,
+        "source": "president",
+        "has_answer": false
+      },
+      {
+        "x": 1131,
+        "y": 25179,
+        "source": "president",
+        "has_answer": false
+      },
+      {
+        "x": 802,
+        "y": 57,
+        "source": "president",
+        "has_answer": false
+      },
+      {
+        "x": 2073,
+        "y": 482,
+        "source": "president",
+        "has_answer": false
+      },
+      {
+        "x": 674,
+        "y": 145,
+        "source": "president",
+        "has_answer": false
+      },
+      {
+        "x": 109,
+        "y": 29,
+        "source": "president",
+        "has_answer": false
+      },
+      {
+        "x": 3155,
+        "y": 25295,
+        "source": "president",
+        "has_answer": true
+      },
+      {
+        "x": 271,
+        "y": 22,
+        "source": "president",
+        "has_answer": false
+      },
+      {
+        "x": 111,
+        "y": 12,
+        "source": "president",
+        "has_answer": false
+      },
+      {
+        "x": 303,
+        "y": 75,
+        "source": "president",
+        "has_answer": false
+      },
+      {
+        "x": 161,
+        "y": 588,
+        "source": "president",
+        "has_answer": false
+      },
+      {
+        "x": 1842,
+        "y": 551,
+        "source": "president",
+        "has_answer": false
+      },
+      {
+        "x": 2037,
+        "y": 12,
+        "source": "president",
+        "has_answer": false
+      },
+      {
+        "x": 1113,
+        "y": 60,
+        "source": "president",
+        "has_answer": false
+      },
+      {
+        "x": 189,
+        "y": 155,
+        "source": "president",
+        "has_answer": false
+      },
+      {
+        "x": 155,
+        "y": 78,
+        "source": "president",
+        "has_answer": false
+      },
+      {
+        "x": 1756,
+        "y": 92,
+        "source": "president",
+        "has_answer": false
+      },
+      {
+        "x": 244,
+        "y": 8,
+        "source": "president",
+        "has_answer": false
+      },
+      {
+        "x": 15497,
+        "y": 3,
+        "source": "president",
+        "has_answer": false
+      },
+      {
+        "x": 412,
+        "y": 59,
+        "source": "president",
+        "has_answer": false
+      },
+      {
+        "x": 757,
+        "y": 43,
+        "source": "president",
+        "has_answer": false
+      },
+      {
+        "x": 6867,
+        "y": 15,
+        "source": "president",
+        "has_answer": false
+      },
+      {
+        "x": 292,
+        "y": 52,
+        "source": "president",
+        "has_answer": false
+      },
+      {
+        "x": 272,
+        "y": 29,
+        "source": "president",
+        "has_answer": false
+      },
+      {
+        "x": 189,
+        "y": 469,
+        "source": "president",
+        "has_answer": false
+      },
+      {
+        "x": 844,
+        "y": 12,
+        "source": "president",
+        "has_answer": false
+      },
+      {
+        "x": 107,
+        "y": 261,
+        "source": "president",
+        "has_answer": false
+      },
+      {
+        "x": 1392,
+        "y": 9925,
+        "source": "president",
+        "has_answer": false
+      },
+      {
+        "x": 278,
+        "y": 39,
+        "source": "president",
+        "has_answer": false
+      },
+      {
+        "x": 462,
+        "y": 6,
+        "source": "president",
+        "has_answer": false
+      },
+      {
+        "x": 142,
+        "y": 9,
+        "source": "president",
+        "has_answer": false
+      },
+      {
+        "x": 794,
+        "y": 21,
+        "source": "president",
+        "has_answer": false
+      },
+      {
+        "x": 1411,
+        "y": 444,
+        "source": "president",
+        "has_answer": false
+      },
+      {
+        "x": 3951,
+        "y": 25562,
+        "source": "president",
+        "has_answer": true
+      },
+      {
+        "x": 13221,
+        "y": 141,
+        "source": "president",
+        "has_answer": false
+      },
+      {
+        "x": 342,
+        "y": 99,
+        "source": "president",
+        "has_answer": false
+      },
+      {
+        "x": 3555,
+        "y": 25307,
+        "source": "president",
+        "has_answer": true
+      },
+      {
+        "x": 4426,
+        "y": 175,
+        "source": "president",
+        "has_answer": false
+      },
+      {
+        "x": 359,
+        "y": 32,
+        "source": "president",
+        "has_answer": false
+      },
+      {
+        "x": 89,
+        "y": 398,
+        "source": "president",
+        "has_answer": false
+      },
+      {
+        "x": 141,
+        "y": 58,
         "source": "president",
         "has_answer": false
       },
@@ -3015,128 +2369,782 @@
         "has_answer": false
       },
       {
-        "x": 1717,
-        "y": 25329,
+        "x": 294,
+        "y": 31,
         "source": "president",
         "has_answer": false
       },
       {
-        "x": 224,
-        "y": 141,
+        "x": 391,
+        "y": 4533,
         "source": "president",
         "has_answer": false
       },
       {
-        "x": 821,
-        "y": 183,
-        "source": "president",
-        "has_answer": false
-      },
-      {
-        "x": 416,
-        "y": 80,
-        "source": "president",
-        "has_answer": false
-      },
-      {
-        "x": 659,
-        "y": 177,
-        "source": "president",
-        "has_answer": false
-      },
-      {
-        "x": 1180,
-        "y": 991,
+        "x": 260,
+        "y": 2293,
         "source": "cabinet",
         "has_answer": false
       },
       {
-        "x": 575,
-        "y": 362,
+        "x": 349,
+        "y": 201,
         "source": "president",
         "has_answer": false
       },
       {
-        "x": 736,
-        "y": 37,
+        "x": 468,
+        "y": 16,
+        "source": "cabinet",
+        "has_answer": false
+      },
+      {
+        "x": 660,
+        "y": 264,
         "source": "president",
         "has_answer": false
       },
       {
-        "x": 461,
-        "y": 1728,
+        "x": 555,
+        "y": 43,
         "source": "president",
         "has_answer": false
       },
       {
-        "x": 1182,
-        "y": 50,
+        "x": 537,
+        "y": 269,
         "source": "president",
         "has_answer": false
       },
       {
-        "x": 1249,
-        "y": 2516,
+        "x": 2321,
+        "y": 63,
         "source": "president",
         "has_answer": false
       },
       {
-        "x": 1632,
+        "x": 1024,
+        "y": 29,
+        "source": "president",
+        "has_answer": false
+      },
+      {
+        "x": 2345,
+        "y": 4907,
+        "source": "president",
+        "has_answer": false
+      },
+      {
+        "x": 603,
+        "y": 2,
+        "source": "president",
+        "has_answer": false
+      },
+      {
+        "x": 349,
+        "y": 100,
+        "source": "president",
+        "has_answer": false
+      },
+      {
+        "x": 354,
+        "y": 157,
+        "source": "president",
+        "has_answer": false
+      },
+      {
+        "x": 490,
+        "y": 150,
+        "source": "president",
+        "has_answer": false
+      },
+      {
+        "x": 296,
+        "y": 241,
+        "source": "president",
+        "has_answer": false
+      },
+      {
+        "x": 794,
+        "y": 58,
+        "source": "president",
+        "has_answer": false
+      },
+      {
+        "x": 501,
+        "y": 244,
+        "source": "president",
+        "has_answer": false
+      },
+      {
+        "x": 703,
+        "y": 5311,
+        "source": "president",
+        "has_answer": false
+      },
+      {
+        "x": 792,
+        "y": 25128,
+        "source": "president",
+        "has_answer": false
+      },
+      {
+        "x": 1046,
+        "y": 25657,
+        "source": "president",
+        "has_answer": false
+      },
+      {
+        "x": 1495,
+        "y": 40,
+        "source": "president",
+        "has_answer": false
+      },
+      {
+        "x": 617,
+        "y": 771,
+        "source": "president",
+        "has_answer": false
+      },
+      {
+        "x": 939,
+        "y": 17,
+        "source": "president",
+        "has_answer": false
+      },
+      {
+        "x": 6549,
+        "y": 19,
+        "source": "president",
+        "has_answer": false
+      },
+      {
+        "x": 233,
+        "y": 879,
+        "source": "president",
+        "has_answer": false
+      },
+      {
+        "x": 251,
+        "y": 3933,
+        "source": "president",
+        "has_answer": false
+      },
+      {
+        "x": 1356,
+        "y": 25922,
+        "source": "president",
+        "has_answer": false
+      },
+      {
+        "x": 108,
+        "y": 101,
+        "source": "president",
+        "has_answer": false
+      },
+      {
+        "x": 427,
+        "y": 8092,
+        "source": "president",
+        "has_answer": false
+      },
+      {
+        "x": 2312,
+        "y": 8067,
+        "source": "president",
+        "has_answer": false
+      },
+      {
+        "x": 288,
+        "y": 763,
+        "source": "president",
+        "has_answer": false
+      },
+      {
+        "x": 903,
+        "y": 40,
+        "source": "cabinet",
+        "has_answer": false
+      },
+      {
+        "x": 260,
+        "y": 12,
+        "source": "president",
+        "has_answer": false
+      },
+      {
+        "x": 316,
+        "y": 61,
+        "source": "president",
+        "has_answer": false
+      },
+      {
+        "x": 2604,
+        "y": 42,
+        "source": "president",
+        "has_answer": false
+      },
+      {
+        "x": 206,
+        "y": 67,
+        "source": "president",
+        "has_answer": false
+      },
+      {
+        "x": 143,
+        "y": 5951,
+        "source": "president",
+        "has_answer": false
+      },
+      {
+        "x": 350,
+        "y": 343,
+        "source": "president",
+        "has_answer": false
+      },
+      {
+        "x": 2921,
+        "y": 56,
+        "source": "president",
+        "has_answer": false
+      },
+      {
+        "x": 1694,
+        "y": 40,
+        "source": "president",
+        "has_answer": false
+      },
+      {
+        "x": 195,
+        "y": 27,
+        "source": "president",
+        "has_answer": false
+      },
+      {
+        "x": 393,
+        "y": 11,
+        "source": "president",
+        "has_answer": false
+      },
+      {
+        "x": 232,
+        "y": 16,
+        "source": "president",
+        "has_answer": false
+      },
+      {
+        "x": 3429,
+        "y": 29,
+        "source": "cabinet",
+        "has_answer": false
+      },
+      {
+        "x": 1892,
+        "y": 5,
+        "source": "president",
+        "has_answer": false
+      },
+      {
+        "x": 836,
+        "y": 38,
+        "source": "president",
+        "has_answer": false
+      },
+      {
+        "x": 64,
+        "y": 41,
+        "source": "president",
+        "has_answer": false
+      },
+      {
+        "x": 89,
+        "y": 43,
+        "source": "president",
+        "has_answer": false
+      },
+      {
+        "x": 1252,
+        "y": 145,
+        "source": "president",
+        "has_answer": false
+      },
+      {
+        "x": 2281,
+        "y": 25384,
+        "source": "president",
+        "has_answer": true
+      },
+      {
+        "x": 734,
+        "y": 993,
+        "source": "president",
+        "has_answer": false
+      },
+      {
+        "x": 303,
+        "y": 11,
+        "source": "president",
+        "has_answer": false
+      },
+      {
+        "x": 1531,
+        "y": 34,
+        "source": "president",
+        "has_answer": false
+      },
+      {
+        "x": 444,
+        "y": 19,
+        "source": "president",
+        "has_answer": false
+      },
+      {
+        "x": 195,
+        "y": 31,
+        "source": "president",
+        "has_answer": false
+      },
+      {
+        "x": 1374,
+        "y": 25368,
+        "source": "president",
+        "has_answer": false
+      },
+      {
+        "x": 1079,
+        "y": 92,
+        "source": "president",
+        "has_answer": false
+      },
+      {
+        "x": 378,
+        "y": 195,
+        "source": "president",
+        "has_answer": false
+      },
+      {
+        "x": 538,
+        "y": 59,
+        "source": "president",
+        "has_answer": false
+      },
+      {
+        "x": 1608,
+        "y": 25306,
+        "source": "president",
+        "has_answer": true
+      },
+      {
+        "x": 718,
+        "y": 27,
+        "source": "president",
+        "has_answer": false
+      },
+      {
+        "x": 258,
+        "y": 21,
+        "source": "president",
+        "has_answer": false
+      },
+      {
+        "x": 1710,
+        "y": 69,
+        "source": "president",
+        "has_answer": false
+      },
+      {
+        "x": 959,
+        "y": 31,
+        "source": "president",
+        "has_answer": false
+      },
+      {
+        "x": 1099,
+        "y": 28,
+        "source": "cabinet",
+        "has_answer": false
+      },
+      {
+        "x": 687,
+        "y": 218,
+        "source": "president",
+        "has_answer": false
+      },
+      {
+        "x": 1269,
+        "y": 25230,
+        "source": "president",
+        "has_answer": false
+      },
+      {
+        "x": 66,
+        "y": 879,
+        "source": "president",
+        "has_answer": false
+      },
+      {
+        "x": 476,
         "y": 14,
         "source": "president",
         "has_answer": false
       },
       {
-        "x": 139,
-        "y": 111,
+        "x": 626,
+        "y": 5505,
         "source": "president",
         "has_answer": false
       },
       {
-        "x": 727,
+        "x": 342,
+        "y": 26,
+        "source": "president",
+        "has_answer": false
+      },
+      {
+        "x": 549,
+        "y": 151,
+        "source": "president",
+        "has_answer": false
+      },
+      {
+        "x": 323,
+        "y": 57,
+        "source": "president",
+        "has_answer": false
+      },
+      {
+        "x": 409,
+        "y": 365,
+        "source": "president",
+        "has_answer": false
+      },
+      {
+        "x": 89,
+        "y": 12,
+        "source": "president",
+        "has_answer": false
+      },
+      {
+        "x": 1489,
+        "y": 23,
+        "source": "president",
+        "has_answer": false
+      },
+      {
+        "x": 2070,
+        "y": 38,
+        "source": "president",
+        "has_answer": false
+      },
+      {
+        "x": 38,
+        "y": 333,
+        "source": "president",
+        "has_answer": false
+      },
+      {
+        "x": 1914,
+        "y": 10773,
+        "source": "president",
+        "has_answer": false
+      },
+      {
+        "x": 422,
+        "y": 106,
+        "source": "president",
+        "has_answer": false
+      },
+      {
+        "x": 424,
         "y": 47,
         "source": "president",
         "has_answer": false
       },
       {
-        "x": 4061,
-        "y": 8,
+        "x": 226,
+        "y": 10,
         "source": "president",
         "has_answer": false
       },
       {
-        "x": 704,
-        "y": 7,
+        "x": 956,
+        "y": 113,
         "source": "president",
         "has_answer": false
       },
       {
-        "x": 919,
-        "y": 261,
+        "x": 515,
+        "y": 5588,
         "source": "president",
         "has_answer": false
       },
       {
-        "x": 95,
-        "y": 18,
+        "x": 766,
+        "y": 178,
         "source": "president",
         "has_answer": false
       },
       {
-        "x": 6531,
-        "y": 1934,
-        "source": "president",
-        "has_answer": false
-      },
-      {
-        "x": 458,
+        "x": 199,
         "y": 94,
         "source": "president",
         "has_answer": false
       },
       {
-        "x": 274,
+        "x": 243,
+        "y": 32,
+        "source": "president",
+        "has_answer": false
+      },
+      {
+        "x": 196,
+        "y": 4,
+        "source": "president",
+        "has_answer": false
+      },
+      {
+        "x": 322,
+        "y": 843,
+        "source": "president",
+        "has_answer": false
+      },
+      {
+        "x": 1836,
+        "y": 1491,
+        "source": "president",
+        "has_answer": false
+      },
+      {
+        "x": 246,
+        "y": 136,
+        "source": "president",
+        "has_answer": false
+      },
+      {
+        "x": 279,
+        "y": 36,
+        "source": "president",
+        "has_answer": false
+      },
+      {
+        "x": 1363,
+        "y": 126,
+        "source": "president",
+        "has_answer": false
+      },
+      {
+        "x": 318,
+        "y": 259,
+        "source": "president",
+        "has_answer": false
+      },
+      {
+        "x": 607,
+        "y": 25253,
+        "source": "president",
+        "has_answer": false
+      },
+      {
+        "x": 208,
+        "y": 399,
+        "source": "president",
+        "has_answer": false
+      },
+      {
+        "x": 415,
+        "y": 419,
+        "source": "president",
+        "has_answer": false
+      },
+      {
+        "x": 3300,
+        "y": 25109,
+        "source": "president",
+        "has_answer": true
+      },
+      {
+        "x": 290,
+        "y": 27,
+        "source": "president",
+        "has_answer": false
+      },
+      {
+        "x": 706,
+        "y": 135,
+        "source": "president",
+        "has_answer": false
+      },
+      {
+        "x": 1679,
+        "y": 25779,
+        "source": "president",
+        "has_answer": false
+      },
+      {
+        "x": 1175,
+        "y": 702,
+        "source": "president",
+        "has_answer": false
+      },
+      {
+        "x": 1864,
+        "y": 1433,
+        "source": "president",
+        "has_answer": false
+      },
+      {
+        "x": 913,
+        "y": 5067,
+        "source": "president",
+        "has_answer": false
+      },
+      {
+        "x": 311,
+        "y": 103,
+        "source": "president",
+        "has_answer": false
+      },
+      {
+        "x": 1212,
+        "y": 15,
+        "source": "president",
+        "has_answer": false
+      },
+      {
+        "x": 2412,
+        "y": 49,
+        "source": "president",
+        "has_answer": false
+      },
+      {
+        "x": 97,
+        "y": 39,
+        "source": "president",
+        "has_answer": false
+      },
+      {
+        "x": 166,
+        "y": 16,
+        "source": "president",
+        "has_answer": false
+      },
+      {
+        "x": 2994,
+        "y": 99,
+        "source": "cabinet",
+        "has_answer": false
+      },
+      {
+        "x": 54,
+        "y": 15,
+        "source": "president",
+        "has_answer": false
+      },
+      {
+        "x": 18,
+        "y": 21,
+        "source": "president",
+        "has_answer": false
+      },
+      {
+        "x": 347,
+        "y": 50,
+        "source": "president",
+        "has_answer": false
+      },
+      {
+        "x": 739,
+        "y": 73,
+        "source": "president",
+        "has_answer": false
+      },
+      {
+        "x": 294,
+        "y": 48,
+        "source": "president",
+        "has_answer": false
+      },
+      {
+        "x": 40,
+        "y": 2628,
+        "source": "president",
+        "has_answer": false
+      },
+      {
+        "x": 41,
+        "y": 161,
+        "source": "president",
+        "has_answer": false
+      },
+      {
+        "x": 199,
         "y": 10,
+        "source": "president",
+        "has_answer": false
+      },
+      {
+        "x": 103,
+        "y": 27,
+        "source": "president",
+        "has_answer": false
+      },
+      {
+        "x": 163,
+        "y": 855,
+        "source": "president",
+        "has_answer": false
+      },
+      {
+        "x": 376,
+        "y": 57,
+        "source": "president",
+        "has_answer": false
+      },
+      {
+        "x": 419,
+        "y": 102,
+        "source": "president",
+        "has_answer": false
+      },
+      {
+        "x": 256,
+        "y": 83,
+        "source": "president",
+        "has_answer": false
+      },
+      {
+        "x": 1456,
+        "y": 588,
+        "source": "president",
+        "has_answer": false
+      },
+      {
+        "x": 1003,
+        "y": 25450,
+        "source": "president",
+        "has_answer": false
+      },
+      {
+        "x": 98,
+        "y": 189,
+        "source": "president",
+        "has_answer": false
+      },
+      {
+        "x": 554,
+        "y": 223,
+        "source": "president",
+        "has_answer": false
+      },
+      {
+        "x": 587,
+        "y": 99,
+        "source": "president",
+        "has_answer": false
+      },
+      {
+        "x": 217,
+        "y": 7,
         "source": "president",
         "has_answer": false
       }
@@ -3145,7 +3153,7 @@
       {
         "status": "Архів",
         "source": "president",
-        "count": 85207
+        "count": 85211
       },
       {
         "status": "Архів",
@@ -3155,7 +3163,7 @@
       {
         "status": "На розгляді",
         "source": "president",
-        "count": 3114
+        "count": 3115
       },
       {
         "status": "З відповіддю",
@@ -3165,7 +3173,7 @@
       {
         "status": "Збір підписів",
         "source": "president",
-        "count": 519
+        "count": 514
       },
       {
         "status": "На розгляді",
@@ -3194,9 +3202,9 @@
       {
         "author": "Поліщук Олеся Сергіївна",
         "petitions": 13,
-        "total_votes": 238841,
+        "total_votes": 238970,
         "max_votes": 25436,
-        "avg_votes": 18372
+        "avg_votes": 18382
       },
       {
         "author": "Гончаренко Олексій Олексійович",
@@ -3243,9 +3251,9 @@
       {
         "author": "Шанчук Анна Василівна",
         "petitions": 4,
-        "total_votes": 92250,
+        "total_votes": 92511,
         "max_votes": 26133,
-        "avg_votes": 23063
+        "avg_votes": 23128
       },
       {
         "author": "Гула Сергій Євгенович",
@@ -3292,101 +3300,101 @@
         "id": "259148",
         "title": "Шановний пане президенте України!\r\nЗвертаємося до Вас з проханням про присвоєння звання «Герой України» (посмертно) старшому сержанту поліції Качуру Ігорю Анатолійовичу, поліцейському взводу №2 батальйону спеціальних операцій «Еней» Департаменту поліції особливого призначення «Обʼєднана штурмова бригада Національної поліції України «Лють».",
         "url": "https://petition.president.gov.ua/petition/259148",
-        "votes_start": 3362,
-        "votes_current": 6908,
-        "growth_7d": 3546,
+        "votes_start": 3584,
+        "votes_current": 7197,
+        "growth_7d": 3613,
         "days_tracked": 8,
-        "daily_rate": 507.0
-      },
-      {
-        "id": "261124",
-        "title": "Прошу Вас розглянути петицію щодо присвоєння звання «Герой України» (посмертно) військовослужбовцю Збройних Сил України ТИМКІВ Івану Дмитровичу\r\n ( 09.04.1979-30.05.2025)",
-        "url": "https://petition.president.gov.ua/petition/261124",
-        "votes_start": 1783,
-        "votes_current": 5137,
-        "growth_7d": 3354,
-        "days_tracked": 8,
-        "daily_rate": 479.0
-      },
-      {
-        "id": "261374",
-        "title": "Шановний пане Президенте!\r\n\r\nЗвертаємось до вас із проханням присвоїти Герой України посмертно солдату Коваленко Артему Володимировичу воїн який віддав своє життя за свободу незалежність і територіальну цілісність нашої держави",
-        "url": "https://petition.president.gov.ua/petition/261374",
-        "votes_start": 1508,
-        "votes_current": 4811,
-        "growth_7d": 3303,
-        "days_tracked": 8,
-        "daily_rate": 472.0
+        "daily_rate": 516.0
       },
       {
         "id": "261512",
         "title": "Присвоїти звання Герой України Гашицькому Денису",
         "url": "https://petition.president.gov.ua/petition/261512",
-        "votes_start": 400,
-        "votes_current": 3652,
-        "growth_7d": 3252,
+        "votes_start": 573,
+        "votes_current": 4075,
+        "growth_7d": 3502,
+        "days_tracked": 8,
+        "daily_rate": 500.0
+      },
+      {
+        "id": "261124",
+        "title": "Прошу Вас розглянути петицію щодо присвоєння звання «Герой України» (посмертно) військовослужбовцю Збройних Сил України ТИМКІВ Івану Дмитровичу\r\n ( 09.04.1979-30.05.2025)",
+        "url": "https://petition.president.gov.ua/petition/261124",
+        "votes_start": 2184,
+        "votes_current": 5437,
+        "growth_7d": 3253,
         "days_tracked": 8,
         "daily_rate": 465.0
       },
       {
-        "id": "261392",
-        "title": "Про присвоєння звання Героя України (посмертно)\r\nголовному сержанту 2-го механізованого батальйону,\r\n14-тої окремої механізованої бригади імені князя\r\nРомана РЕПШ Анатолію Валерійовичу.",
-        "url": "https://petition.president.gov.ua/petition/261392",
-        "votes_start": 1928,
-        "votes_current": 5153,
-        "growth_7d": 3225,
-        "days_tracked": 8,
-        "daily_rate": 461.0
+        "id": "261540",
+        "title": "ПРИСВОЄННЯ ЗВАННЯ ГЕРОЙ УКРАЇНИ (ПОСМЕРТНО) ЗАХИСНИКУ НАШОЇ ДЕРЖАВИ - СТАРШОМУ СОЛДАТУ  1-ГО ІНЖЕНЕРНО - САПЕРНОГО ВІДДІЛЕННЯ 2-ГО ІНЖЕНЕРНО - САПЕРНОГО ВЗВОДУ ІНЖЕНЕРНО - САПЕРНОЇ РОТИ ГРУПИ ІНЖЕНЕРНОГО ЗАБЕЗПЕЧЕННЯ 117 ОКРЕМОЇМЕХАНІЗОВАНОЇ БРИГАДИ ВІЙСЬКЬВОЇ ЧАСТИНИ А4674  МІКЛУШУ ЛЮБОМИРУ МИХАЙЛОВИЧУ (ПОЗИВНИЙ «ДЖМІЛЬ»)",
+        "url": "https://petition.president.gov.ua/petition/261540",
+        "votes_start": 489,
+        "votes_current": 3580,
+        "growth_7d": 3091,
+        "days_tracked": 7,
+        "daily_rate": 515.0
       },
       {
-        "id": "261332",
-        "title": "Присвоєння звання Герой України (посмертно) Захиснику нашої держави –  старшому лейтенанту Суходольському Костянтину Валерійовичу (позивний «Сухий»), старшому офіцеру 1-ї бойової групи 3-ї групи спеціального призначення (висотної) 1-го окремого загону спеціального призначення Центру спеціального призначення «Омега» Національної гвардії України.",
-        "url": "https://petition.president.gov.ua/petition/261332",
-        "votes_start": 2449,
-        "votes_current": 5456,
-        "growth_7d": 3007,
+        "id": "261374",
+        "title": "Шановний пане Президенте!\r\n\r\nЗвертаємось до вас із проханням присвоїти Герой України посмертно солдату Коваленко Артему Володимировичу воїн який віддав своє життя за свободу незалежність і територіальну цілісність нашої держави",
+        "url": "https://petition.president.gov.ua/petition/261374",
+        "votes_start": 2012,
+        "votes_current": 4991,
+        "growth_7d": 2979,
         "days_tracked": 8,
-        "daily_rate": 430.0
-      },
-      {
-        "id": "261216",
-        "title": "Вшанувати мужність сержанта Бориса Віталія Віталійовича та присвоїти йому звання «Герой України» (посмертно).",
-        "url": "https://petition.president.gov.ua/petition/261216",
-        "votes_start": 3237,
-        "votes_current": 6209,
-        "growth_7d": 2972,
-        "days_tracked": 8,
-        "daily_rate": 425.0
+        "daily_rate": 426.0
       },
       {
         "id": "261166",
         "title": "\"Присвоєння звання Героя України(посмертно) Лутченко Тарас Валентинович\"",
         "url": "https://petition.president.gov.ua/petition/261166",
-        "votes_start": 2125,
-        "votes_current": 5094,
-        "growth_7d": 2969,
+        "votes_start": 2454,
+        "votes_current": 5341,
+        "growth_7d": 2887,
         "days_tracked": 8,
-        "daily_rate": 424.0
+        "daily_rate": 412.0
       },
       {
-        "id": "261328",
-        "title": "Прошу присвоїти моєму чоловіку молодшому сержанту Шереметі Юрію Орестовичу почесне звання Герой України (посмертно) командиру аеромобільного відділення 82 ОДШБ",
-        "url": "https://petition.president.gov.ua/petition/261328",
-        "votes_start": 5044,
-        "votes_current": 7690,
-        "growth_7d": 2646,
+        "id": "261216",
+        "title": "Вшанувати мужність сержанта Бориса Віталія Віталійовича та присвоїти йому звання «Герой України» (посмертно).",
+        "url": "https://petition.president.gov.ua/petition/261216",
+        "votes_start": 3736,
+        "votes_current": 6534,
+        "growth_7d": 2798,
         "days_tracked": 8,
-        "daily_rate": 378.0
+        "daily_rate": 400.0
+      },
+      {
+        "id": "261332",
+        "title": "Присвоєння звання Герой України (посмертно) Захиснику нашої держави –  старшому лейтенанту Суходольському Костянтину Валерійовичу (позивний «Сухий»), старшому офіцеру 1-ї бойової групи 3-ї групи спеціального призначення (висотної) 1-го окремого загону спеціального призначення Центру спеціального призначення «Омега» Національної гвардії України.",
+        "url": "https://petition.president.gov.ua/petition/261332",
+        "votes_start": 2874,
+        "votes_current": 5666,
+        "growth_7d": 2792,
+        "days_tracked": 8,
+        "daily_rate": 399.0
+      },
+      {
+        "id": "261446",
+        "title": "Присвоєння звання Героя України посмертно.",
+        "url": "https://petition.president.gov.ua/petition/261446",
+        "votes_start": 1115,
+        "votes_current": 3692,
+        "growth_7d": 2577,
+        "days_tracked": 8,
+        "daily_rate": 368.0
       },
       {
         "id": "261068",
         "title": "Про присвоєння найвищого звання \"Герой України\"(посмертно) старшому солдату Бардар Андрію Андрійовичу, який віддав життя захищаючи територіальну цілісність та суверенітет України.",
         "url": "https://petition.president.gov.ua/petition/261068",
-        "votes_start": 5402,
-        "votes_current": 8002,
-        "growth_7d": 2600,
+        "votes_start": 5707,
+        "votes_current": 8260,
+        "growth_7d": 2553,
         "days_tracked": 8,
-        "daily_rate": 371.0
+        "daily_rate": 365.0
       }
     ],
     "keywords_top10": [
@@ -3455,12 +3463,12 @@
     },
     {
       "emoji": "🏛️",
-      "text": "Presidential portal has 16x more petitions than Cabinet, but Cabinet petitions average 619 votes vs 2136.",
+      "text": "Presidential portal has 16x more petitions than Cabinet, but Cabinet petitions average 619 votes vs 2137.",
       "type": "platform_comparison"
     }
   ],
   "pipeline": {
-    "last_updated": "2026-03-15 05:47:57",
+    "last_updated": "2026-03-16 06:13:07",
     "db_size_mb": 27,
     "total_records": 96025,
     "sources": [
