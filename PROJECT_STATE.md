@@ -1,7 +1,15 @@
 # 📊 Petition Analytics — Project State
 
-> **Останнє оновлення**: 2026-02-20
+> **Останнє оновлення**: 2026-03-27
 > **Призначення:** Швидке відновлення контексту після перезапуску розмови
+
+---
+
+## 📅 Сесія 2026-03-27: Hotfix Cloud Sync (Akamai Bypass)
+1. **Збій синхронізації**: Отримано помилку *Failed to fetch (404/Timeout)* під час `pre-flight` перевірки (`cloud_sync.py`). Причина — посилення захисту від ботів (Akamai Bot Manager) на сайті петицій Президента (код `403 Forbidden` для стандартних HTTP-клієнтів).
+2. **Вирішення (Bypass)**: Бібліотеку `requests` повністю замінено на `curl_cffi` (імітація TLS відбитків Chrome). 
+3. **Реалізація**: Оновлено імпорти в `scraper_detail.py` та `scraper_president.py`. Видалено статичний `HEADERS` для уникнення конфліктів fingerprint, додано аргумент `impersonate="chrome"`. Залежність `curl-cffi` додано в `requirements.txt`.
+4. **Deploy**: Зміни протестовані локально і завантажені (pushed) на GitHub для відновлення роботи GitHub Actions.
 
 ---
 
