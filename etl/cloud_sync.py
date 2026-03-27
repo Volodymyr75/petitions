@@ -12,7 +12,7 @@ Usage:
 import os
 import sys
 import duckdb
-import requests
+from curl_cffi import requests
 import time
 import json
 import argparse
@@ -74,7 +74,7 @@ def cleanup_backup(con):
     print("✅ Backup removed")
 
 
-def sync_president_updates(con, today_str, stats):
+def sync_president_updates(con, today_str, stats, session):
     """Updates active petitions."""
     print("\n--- 1. President Updates (Active) ---")
     
@@ -96,7 +96,7 @@ def sync_president_updates(con, today_str, stats):
     for row in active_ids:
         pet_id, old_votes, old_status = row[0], row[1], row[2]
         
-        data = fetch_petition_detail(pet_id)
+        data = fetch_petition_detail(pet_id, session=session)
         
         if not data:
             errors += 1
@@ -154,7 +154,7 @@ def sync_president_updates(con, today_str, stats):
             print(f"🔄 Status change for {pet_id}: {old_status} -> {current_status}")
             status_changes.append({"id": pet_id, "from": old_status, "to": current_status})
             
-        time.sleep(0.5)
+        time.sleep(1.5)
         
     stats["errors"] = errors
     stats["vote_delta"] = votes_delta_sum
@@ -164,7 +164,7 @@ def sync_president_updates(con, today_str, stats):
     return votes_delta_sum, status_changes, growth_stats
 
 
-def sync_president_new(con, today_str, stats):
+def sync_president_new(con, today_str, stats, session):
     """Discovers new petitions from listing pages."""
     print("\n--- 2. President New Petitions (Discovery) ---")
     
@@ -177,7 +177,7 @@ def sync_president_new(con, today_str, stats):
         print(f"Scanning page {page}...")
         
         try:
-            resp = requests.get(url, timeout=15)
+            resp = session.get(url, timeout=15)
             if resp.status_code != 200:
                 print(f"⚠️ Error {resp.status_code} fetching page {page}")
                 break
@@ -197,7 +197,7 @@ def sync_president_new(con, today_str, stats):
                     continue
                 
                 pet_id = int(s_id)
-                data = fetch_petition_detail(pet_id)
+                data = fetch_petition_detail(pet_id, session=session)
                 
                 if data and 'error' not in data:
                     print(f"✨ Found NEW: {s_id} - {data['title'][:40]}...")
@@ -222,7 +222,7 @@ def sync_president_new(con, today_str, stats):
                         "total": data['votes'],
                         "url": data['url']
                     })
-                    time.sleep(0.8)
+                    time.sleep(1.5)
                 
             print(f"Page {page}: found {page_new_count} new petitions.")
             
@@ -336,8 +336,11 @@ def main():
         sys.exit(1)
 
     # Step 2: Pre-flight Check
+    # Create a single shared session to avoid Akamai flagging excessive TLS handshakes
+    session = requests.Session(impersonate="chrome")
+
     if not args.skip_preflight:
-        preflight_result = run_preflight_check(con, verbose=True)
+        preflight_result = run_preflight_check(con, session=session, verbose=True)
         if not preflight_result.passed:
             print("\n❌ Pre-flight check failed. Aborting sync.")
             notify_sync_failure("Pre-flight Check", preflight_result.errors)
@@ -354,8 +357,8 @@ def main():
     
     try:
         # Step 4: Run Sync
-        pres_delta, pres_status_changes, pres_growth = sync_president_updates(con, today_str, stats)
-        pres_new, pres_new_list = sync_president_new(con, today_str, stats)
+        pres_delta, pres_status_changes, pres_growth = sync_president_updates(con, today_str, stats, session)
+        pres_new, pres_new_list = sync_president_new(con, today_str, stats, session)
         cab_new, cab_delta, cab_growth = sync_cabinet(con, today_str, stats)
         
         # Step 5: Post-sync Validation

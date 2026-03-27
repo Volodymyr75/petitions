@@ -74,7 +74,7 @@ def get_dynamic_markers(con):
     return markers
 
 
-def run_preflight_check(con, verbose=True):
+def run_preflight_check(con, session=None, verbose=True):
     """
     Test a few petitions from DB to verify the scraper is still alive and compatible.
     Returns ValidationResult.
@@ -94,7 +94,7 @@ def run_preflight_check(con, verbose=True):
     
     for marker in markers:
         pet_id = marker["id"]
-        data = fetch_petition_detail(pet_id)
+        data = fetch_petition_detail(pet_id, session=session)
         
         if not data or "error" in data:
             result.add_warning(f"Petition {pet_id} ({marker['type']}): Failed to fetch (404/Timeout)")
