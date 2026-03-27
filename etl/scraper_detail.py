@@ -1,5 +1,5 @@
 
-import requests
+from curl_cffi import requests
 from bs4 import BeautifulSoup
 import time
 import random
@@ -75,12 +75,12 @@ def fetch_petition_detail(pet_id, session=None, attempt=1, max_attempts=3):
     Returns dict or None if 404/Error.
     """
     if session is None:
-        session = requests.Session()
+        session = requests.Session(impersonate="chrome")
         
     url = f"{BASE_URL}{pet_id}"
     
     try:
-        resp = session.get(url, headers=HEADERS, timeout=15)
+        resp = session.get(url, timeout=15)
         
         # Handle 404 cleanly
         if resp.status_code == 404:

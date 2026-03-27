@@ -1,4 +1,5 @@
 duckdb==1.4.3
 requests
+curl-cffi
 beautifulsoup4
 python-dotenv

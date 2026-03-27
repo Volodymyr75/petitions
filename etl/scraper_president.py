@@ -1,4 +1,4 @@
-import requests
+from curl_cffi import requests
 from bs4 import BeautifulSoup
 import time
 import json
@@ -34,7 +34,7 @@ def scrape_president_petitions(max_pages=1, start_page=1, status="active"):
         print(f"Fetching {url}...")
         
         try:
-            response = requests.get(url, headers=HEADERS, timeout=10)
+            response = requests.get(url, timeout=10, impersonate="chrome")
             if response.status_code != 200:
                 print(f"Failed to fetch page {page}: {response.status_code}")
                 break
